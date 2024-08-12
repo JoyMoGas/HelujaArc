@@ -1,0 +1,20 @@
+/* Estilos para el logotipo en el body */
+.body-logo {
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Estilos para el logotipo en la navbar */
+.navbar-logo img {
+    height: 50px; /* Ajusta el tamaño del logo para la navbar */
+}
+
+/* Opcional: Estilo fijo para la navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white; /* O el color de tu navbar */
+    z-index: 1000; /* Para que siempre esté encima */
+}

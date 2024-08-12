@@ -1,0 +1,81 @@
+/* Reset de márgenes y padding */
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 100px; /* Ajusta según el tamaño de la navbar */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que el body ocupe toda la altura visible */
+    background: #f4f4f4;
+    position: relative;
+}
+
+/* Estilo para la navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+/* Contenido de la navbar */
+.navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Logo en la navbar */
+.navbar img {
+    height: 60px; /* Ajusta según el tamaño que desees */
+    transition: height 0.3s, transform 0.3s;
+}
+
+/* Estilo para los enlaces de la navbar */
+.navbar nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para el contenido del body */
+.content {
+    text-align: center; /* Centra el texto y otros elementos dentro del contenedor */
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo en el cuerpo */
+#logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    transition: top 0.3s, left 0.3s, height 0.5s, transform 0.5s;
+}

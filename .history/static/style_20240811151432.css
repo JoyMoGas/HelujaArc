@@ -1,0 +1,88 @@
+/* Estilo general para el body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Color de fondo del body */
+    color: #333; /* Color del texto */
+    padding: 0;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    position: relative; /* Asegúrate de que el body pueda contener el logotipo en su posición inicial */
+}
+
+/* Estilo para la navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Color de fondo de la navbar */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para dar profundidad */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo para los enlaces de la navbar */
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos base para el logotipo */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease; /* Transición suave */
+    z-index: 1100; /* Asegúrate de que esté por encima de la navbar */
+}
+
+#logo {
+    width: 150px; /* Tamaño inicial */
+    height: auto;
+}
+
+.navbar-logo {
+    position: relative; /* Cambiar a relative para que pueda posicionarse correctamente dentro de la navbar */
+}
+
+.navbar-logo img {
+    width: 50px; /* Tamaño en la navbar */
+    height: auto;
+}
+
+/* Estilos cuando el usuario hace scroll */
+.scroll-active .logo-container {
+    top: 0; /* Posición en la navbar */
+    left: 10px; /* Ajusta según el diseño */
+    transform: none;
+}
+
+.scroll-active #logo {
+    width: 50px; /* Tamaño en la navbar */
+}
+
+/* Estilo adicional para la sección de contenido */
+.content {
+    padding: 20px;
+    margin-top: 60px; /* Espacio para que el contenido no quede oculto detrás de la navbar */
+}

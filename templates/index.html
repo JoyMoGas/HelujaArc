@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación del Logo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación del Logo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" crossorigin="anonymous">
 </head>
 <body>
-    <div id="demoBox"></div>
-    <div class="navbar">
-        <div class="navbar-content">
-            <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo">
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+  <div id="demoBox"></div>
+  <div class="navbar">
+    <div class="navbar-content">
+      <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo">
+      <a id="title" href="#">HELUJ<span>A</span>rq</a>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about_page') }}">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="toggle-theme"><i class="fa-solid fa-sun" style="color: #ffffff;"></i></button>
+
     </div>
-    <div class="content">
-        <!-- Contenido aquí -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
-    </div>
-    <script src="{{url_for('static', filename='scripts.js')}}"></script>
+  </div>
+  
+  <div class="content">
+    <h1 id="name">Hector R. Montano Gastelum</h1>
+    <!-- Contenido aquí -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo tempor, a dapibus nisl ultricies.</p>
+  </div>
+  <script src="{{url_for('static', filename='scripts.js')}}"></script>
 </body>
 </html>

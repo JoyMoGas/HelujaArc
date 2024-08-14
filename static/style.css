@@ -1,118 +1,193 @@
-/* General Styles and Reset */
-body, h1, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
+/* Estilo para el cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  padding-top: 120px; /* Ajusta según el tamaño de la navbar */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh; /* Ocupa toda la altura visible */
+  background: #dfdfdf;
 }
 
 /* Estilo para la navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.7s ease;
-    z-index: 2;
-    box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* La navbar es transparente por defecto */
+  color: #ff9900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .navbar.scrolled {
-    background-color: #333;
+  background-color: #f0f0f0; /* Cambia a un color sólido cuando haces scroll */
 }
 
+/* Contenido de la navbar */
 .navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    transition: padding 0.3s ease;
+  display: flex;
+  align-items: center; /* Alinea verticalmente el botón y el label */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
+  gap: 30px;
 }
 
+/* Estilo cuando se ha hecho scroll y el logo está en la navbar */
+.navbar.scrolled .navbar-content {
+  padding: 0px; /* Reduce el padding cuando se hace scroll */
+  padding-left: 0px; /* Elimina el padding en la izquierda */
+}
+
+/* Logo en la navbar */
+.navbar img {
+  padding: 0;
+  height: 60px; /* Ajusta el tamaño del logo en la navbar */
+  transition: height 1.5s, transform 1.5s; /* Transiciones simultáneas */
+}
+
+.navbar span {
+  font-weight: bold; /* Asegúrate de que el texto sea bold */
+  padding: 0;
+  font-size: 1em;
+  transition: color 1s ease, height 2s, transform 2s; /* Transición para el color */
+}
+
+/* Estilo para los enlaces de la navbar */
 .navbar nav ul {
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 30px;
-    padding-left: 120px;
+  gap: 20px;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 230px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .navbar nav ul li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .navbar nav ul li a {
-    color: #fff;
-    text-decoration: none;
+  color: #ff9900;
+  text-decoration: none;
 }
 
+/* Estilo para el contenido del body */
 .content {
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    padding-top: 35em;
-    box-sizing: border-box;
-    margin-top: 0;
+  text-align: center; /* Centra el texto y otros elementos dentro del contenedor */
+  width: 100%;
+  max-width: 1200px; /* Asegura que el contenido no se estire demasiado */
+  padding: 800px 10px 0 10px; /* Ajusta el padding según sea necesario */
+  box-sizing: border-box;
 }
 
-#demoBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 750px;
-    background-image: url("https://parametric-architecture.com/wp-content/uploads/2023/05/Tim-Fu-AI-3.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 1;
-    overflow: hidden;
-}
-
-/* Definir los keyframes para la animación del logo */
-@keyframes moveToNavbar {
-    0% {
-        top: 110px;
-        left: 50%;
-        transform: translateX(-50%) scale(1);
-        height: 300px;
-    }
-    100% {
-        top: 0px;
-        left: 120px;
-        transform: translateX(0) scale(0.6);
-        height: 100px;
-    }
-}
-
-/* Estilo inicial del logotipo */
+/* Logo en el cuerpo */
 #logo {
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 300px;
-    transition: none;
-    animation: none;
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 300px;
+  transition: top 1.5s, left 1.5s, height 1.5s, transform 1.5s;
 }
 
-/* Estilo cuando se hace scroll */
-.navbar.scrolled #logo {
-    animation: moveToNavbar 1.5s forwards;
+#title {
+  font-weight: bold; /* Asegúrate de que el texto sea bold */
+  color: #fff;
+  font-size: 3rem;
+  text-decoration: none;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 300px;
+  transition: top 2s, left 2s, height 2s, transform 2s, color 1s ease; /* Transición para el color */
+}
+
+#title span {
+  font-weight: bold; /* Asegúrate de que el texto sea bold */
+  font-size: 3.5rem;
+  color: #ff9900;
+  transition: color 1s ease; /* Transición para el color */
+}
+
+/* Estilo para la imagen de fondo */
+#demoBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px; /* La imagen cubrirá la altura completa de la ventana */
+  background-image: url("http://rag3dviz.com/wp-content/uploads/2015/08/ExteriorCAM07.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1; /* Esto asegura que la imagen esté por debajo de la navbar */
+  transition-duration: 0.5s;
+}
+
+#title.dark-mode {
+  color: #fff;
+}
+
+/* Modo oscuro */
+body.dark-mode #demoBox {
+  background-image: url("http://rag3dviz.com/wp-content/uploads/2015/08/Night04corrected.jpg");
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+body.dark-mode .navbar {
+  background-color: transparent;
+}
+
+body.dark-mode .navbar.scrolled {
+  background-color: #333;
+}
+
+body.dark-mode #title {
+  color: #f4f4f4;
+}
+
+body.dark-mode #title span {
+  color: #d68204;
+}
+
+body.dark-mode .navbar nav ul li a {
+  color: #fff;
+}
+
+/* Estilo para el botón de toggle */
+#toggle-theme {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #toggle-theme {
+  color: #fff; /* Ajusta el color para que sea visible en el modo oscuro */
+}
+
+body.light-mode #toggle-theme {
+  color: #333; /* Color del ícono en modo claro */
+}
+
+#toggle-theme:hover {
+  transform: scale(1.2); /* Añade un pequeño efecto al hacer hover */
 }

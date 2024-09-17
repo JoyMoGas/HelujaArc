@@ -1,14 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Londrina+Outline&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* * COLORS
+#e6e6e6 (Conveys luxury and exclusivity) "silver"
+#424245 (navbar) "Gray" 
+#f5f5f7 Background "Cultured White"
+#0066cc Details (buttons, links, etc) "True Blue"
+#f56300 (Conveys excitement and novelty) "orange"
+#FABC3F
+#194a6e
+#192413
+#ecead3
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* * Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 /* Estilo para el cuerpo */
 body {
-  font-family: Arial, sans-serif;
-  padding-top: 120px; /* Ajusta según el tamaño de la navbar */
+  font-family: 'Nonito', sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
-  align-items: flex-start;
-  height: 100vh; /* Ocupa toda la altura visible */
-  background: #dfdfdf;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ecead3;
+  color: #192413;
+}
+
+.phrase {
+  padding-bottom: 0;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.smooth-scroll-wrapper {
+  flex: 1; /* Esto hace que el contenido principal ocupe el espacio restante */
 }
 
 /* Estilo para la navbar */
@@ -17,31 +61,94 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; /* La navbar es transparente por defecto */
-  color: #ff9900;
+  padding-top: 10px;
+  padding-left: 20px; /* Añade espacio a la izquierda de la navbar */
+  background-color: transparent;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease;
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  transition: background-color 0.3s ease, padding-top 0.5s;
   z-index: 1000;
   box-sizing: border-box;
 }
 
-.navbar.scrolled {
-  background-color: #f0f0f0; /* Cambia a un color sólido cuando haces scroll */
+.navbar .home-navbar {
+  padding-bottom: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  width: fit-content;
 }
 
-/* Contenido de la navbar */
+.navbar.scrolled a:hover {
+  color: #f5f5f7;
+}
+
+.navbar a:hover {
+  color: #192413;
+}
+
+/* Estilo para cuando se hace scroll */
+.navbar.scrolled .home-navbar {
+  animation: lineCollapseIn 0.5s forwards; /* Aplica la animación cuando se hace scroll */
+}
+
+/* Estilo para la navbar cuando se hace scroll */
+.navbar.scrolled {
+  padding-top: 0px;
+  
+  background-color:#192413d8;
+  backdrop-filter: blur(6px);
+}
+
+/* Estilo para los enlaces de la navbar cuando se hace scroll */
+.navbar.scrolled a {
+  color: #f5f5f7;
+}
+
+/* Animación para la línea al entrar */
+@keyframes lineCollapseIn {
+  0% {
+    border-bottom-width: 2px;
+    transform: scaleX(1);
+    padding-bottom: 8px;
+  }
+  50% {
+    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
+  }
+  100% {
+    transform: scaleX(0.5); /* Termina la animación con la línea más corta */
+    padding-bottom: 2px;
+  }
+}
+
+/* Animación para la línea al salir */
+@keyframes lineCollapseOut {
+  0% {
+    border-bottom-width: 2px;
+    transform: scaleX(0.5); /* Línea más corta cuando empieza a salir */
+    padding-bottom: 2px;
+  }
+  50% {
+    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
+  }
+  100% {
+    border-bottom-width: 2px;
+    transform: scaleX(1); /* Línea completa cuando termina la animación de salida */
+    padding-bottom: 8px;
+  }
+}
+
+/* Aplica la animación de salida cuando se quita la clase `scrolled` */
+.navbar:not(.scrolled) .home-navbar {
+  animation: lineCollapseOut 0.5s forwards;
+}
+
 .navbar-content {
   display: flex;
-  align-items: center; /* Alinea verticalmente el botón y el label */
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   max-width: 1200px;
-  padding-left: 0px;
   box-sizing: border-box;
   transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
-  gap: 30px;
 }
 
 /* Estilo cuando se ha hecho scroll y el logo está en la navbar */
@@ -50,144 +157,238 @@ body {
   padding-left: 0px; /* Elimina el padding en la izquierda */
 }
 
-/* Logo en la navbar */
-.navbar img {
-  padding: 0;
-  height: 60px; /* Ajusta el tamaño del logo en la navbar */
-  transition: height 1.5s, transform 1.5s; /* Transiciones simultáneas */
-}
-
-.navbar span {
-  font-weight: bold; /* Asegúrate de que el texto sea bold */
-  padding: 0;
-  font-size: 1em;
-  transition: color 1s ease, height 2s, transform 2s; /* Transición para el color */
-}
-
 /* Estilo para los enlaces de la navbar */
 .navbar nav ul {
-  gap: 20px;
+  user-select: none;
   display: flex;
   list-style-type: none;
   margin: 0;
-  padding-left: 230px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 60px;
 }
 
-.navbar nav ul li {
-  margin-left: 20px;
-}
-
+/* Estilo general para los enlaces de la navbar */
 .navbar nav ul li a {
-  color: #ff9900;
+  color: #f5f5f7;
   text-decoration: none;
-}
-
-/* Estilo para el contenido del body */
-.content {
-  text-align: center; /* Centra el texto y otros elementos dentro del contenedor */
-  width: 100%;
-  max-width: 1200px; /* Asegura que el contenido no se estire demasiado */
-  padding: 800px 10px 0 10px; /* Ajusta el padding según sea necesario */
-  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.3s;
 }
 
 /* Logo en el cuerpo */
 #logo {
+  user-select: none;
   position: absolute;
   top: 220px;
   left: 50%;
+  height: 250px;
   transform: translateX(-50%);
-  height: 300px;
-  transition: top 1.5s, left 1.5s, height 1.5s, transform 1.5s;
+  transition: all 1s ease;
 }
 
-#title {
-  font-weight: bold; /* Asegúrate de que el texto sea bold */
-  color: #fff;
-  font-size: 3rem;
-  text-decoration: none;
+#logo-title {
+  user-select: none;
   position: absolute;
   top: 500px;
   left: 50%;
+  height: 100px;
   transform: translateX(-50%);
-  height: 300px;
-  transition: top 2s, left 2s, height 2s, transform 2s, color 1s ease; /* Transición para el color */
+  transition: all 1s ease-in-out;
 }
 
-#title span {
-  font-weight: bold; /* Asegúrate de que el texto sea bold */
-  font-size: 3.5rem;
-  color: #ff9900;
-  transition: color 1s ease; /* Transición para el color */
+.subtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2em;
+  color: #192413;
+}
+
+#titles{
+  color: #192413; 
+  font-size: 2.5em;
 }
 
 /* Estilo para la imagen de fondo */
 #demoBox {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 750px; /* La imagen cubrirá la altura completa de la ventana */
-  background-image: url("http://rag3dviz.com/wp-content/uploads/2015/08/ExteriorCAM07.jpg");
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
+  url("images/renders/01.png");
   background-size: cover;
-  background-attachment: fixed;
-  z-index: 1; /* Esto asegura que la imagen esté por debajo de la navbar */
-  transition-duration: 0.5s;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ease; /* Transición suave para el filtro */
 }
 
-#title.dark-mode {
-  color: #fff;
+/* Contenido principal */
+.content {
+  max-width: 100%;
+  line-height: 1.4;
 }
 
-/* Modo oscuro */
-body.dark-mode #demoBox {
-  background-image: url("http://rag3dviz.com/wp-content/uploads/2015/08/Night04corrected.jpg");
+section {
+  display: grid;
+  place-items: center;
+  background-color: #f6f4e7;
+  color: #192413;
+  padding: 5em;
 }
 
-body.dark-mode {
-  background-color: #333;
-  color: #f4f4f4;
+p {
+  padding: 1em 8em 1em 8em;
+  font-size: 1.5em;
 }
 
-body.dark-mode .navbar {
-  background-color: transparent;
+.cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
-body.dark-mode .navbar.scrolled {
-  background-color: #333;
+
+/* SLIDESHOW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Slider */
+
+
+footer {
+  background-color: #192413;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body.dark-mode #title {
-  color: #f4f4f4;
+.footer-left, .footer-center, .footer-right {
+  flex: 1; /* Permite que cada columna ocupe un espacio igual */
+  display: flex;
+  justify-content: center; /* Centra los elementos dentro de cada columna horizontalmente */
+  align-items: center;
 }
 
-body.dark-mode #title span {
-  color: #d68204;
+.footer-left {
+  justify-content: flex-start; /* Alinea el contenido a la izquierda dentro de esta columna */
 }
 
-body.dark-mode .navbar nav ul li a {
-  color: #fff;
+.footer-center {
+  display: flex;
+  flex-direction: column; /* Apila verticalmente el contenido */
+  align-items: center; /* Centra el contenido horizontalmente dentro de la columna */
 }
 
-/* Estilo para el botón de toggle */
-#toggle-theme {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+.footer-right {
+  justify-content: flex-end; /* Alinea el contenido a la derecha dentro de esta columna */
+}
+
+.footer a {
+  font-weight: 500;
+  color: #FABC3F;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.footer a:hover {
+  color: #ecf0f1;
+}
+
+.footer .logo-personal {
+  height: 55px;
   cursor: pointer;
+}
+
+.footer .foot-cont {
+  margin: 0;
+}
+
+
+
+.gallery-container {
+height: 100%;
+width: 100%;
+text-align: center;
+margin: 50px auto;
+}
+
+.gallery-container h1 {
+margin-bottom: 20px;
+font-size: 2.5rem;
+color: #192413;
+}
+
+.gallery {
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.gallery-item {
+position: relative;
+width: 45em;
+height: 35em;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+overflow: hidden;
+transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+width: 100%;
+height: 100%;
+transition: transform 0.5s ease, filter 0.5s ease;
+filter: grayscale(60%);
+}
+
+.gallery-item:hover img {
+filter: grayscale(0);
+transform: scale(1.05); /* Zoom leve dentro del contenedor */
+}
+
+.gallery-item-text {
+position: absolute;
+bottom: 20px;
+left: 20px;
+width: 100%;
+color: #192413;
+padding: 15px;
+text-align: left;
+max-width: 90%;
+transition: transform 0.3s ease;
+}
+
+.gallery-item h2 {
+font-size: 2.5rem;
+width: 100%;
+margin-bottom: 7em; /* Espacio para el párrafo */
+transition: transform 0.3s ease;
+}
+
+.gallery-item p {  
+  font-size: 1.2rem;
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  left: 0; /* Alinea con el texto del título */
+  bottom: 0; /* Coloca el párrafo justo debajo del título */
+  padding-left: 15px;
+  margin-bottom: 15em;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode #toggle-theme {
-  color: #fff; /* Ajusta el color para que sea visible en el modo oscuro */
+.gallery-item:hover .gallery-item-text {
+transform: translateY(-15px);
 }
 
-body.light-mode #toggle-theme {
-  color: #333; /* Color del ícono en modo claro */
-}
-
-#toggle-theme:hover {
-  transform: scale(1.2); /* Añade un pequeño efecto al hacer hover */
+.gallery-item:hover p {
+color: #192413;
+transform: translateY(2em); /* Ajusta la distancia para que el párrafo se desplace hacia abajo */
 }

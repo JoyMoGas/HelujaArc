@@ -1,3 +1,55 @@
+document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
+  window.addEventListener("scroll", () =>{
+  const logo = document.getElementById("logo") as HTMLImageElement;
+  const title = document.getElementById("title") as HTMLElement;
+  const subtitle = document.getElementById("subtitle") as HTMLElement;
+  const logoTitle = document.getElementById("logo-title") as HTMLElement;
+
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 1) {
+    logo.style.position = "fixed";
+    logo.style.top = "0px";
+    logo.style.left = "140px";
+    logo.style.height = "60px";
+    logo.style.transform = "scale(0.6)";
+
+    logoTitle.style.position = "fixed";
+    logoTitle.style.top = "-8px";
+    logoTitle.style.left = "135px";
+    logoTitle.style.height = "11%";
+    logoTitle.style.transform = "scale(0.5)";
+  } else {
+    logo.style.position = "absolute";
+    logo.style.top = "220px";
+    logo.style.left = "50%";
+    logo.style.height = "250px";
+    logo.style.transform = "translateX(-50%) scale(1)";
+
+    logoTitle.style.position = "absolute";
+    logoTitle.style.top = "500px";
+    logoTitle.style.left = "50%";
+    logoTitle.style.height = "100px";
+    logoTitle.style.transform = "translateX(-50%) scale(1)";
+
+  }
+  });
+});
+
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar') as HTMLElement;
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+/* 
 document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo(0, 0);
   const logo = document.getElementById('logo') as HTMLImageElement;
@@ -54,36 +106,4 @@ window.addEventListener('scroll', () => {
 window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
-
-// Selecciona el botón y el ícono
-const toggleButton = document.getElementById('toggle-theme') as HTMLButtonElement;
-const icon = toggleButton.querySelector('i') as HTMLElement;
-
-// Verifica el estado inicial del tema
-let darkMode = false;
-
-// Función para actualizar el ícono
-function updateIcon() {
-  if (darkMode) {
-    icon.className = 'fa-solid fa-moon'; // Cambia al ícono de luna
-    icon.style.color = '#ffffff'; // Color del ícono en modo oscuro
-  } else {
-    icon.className = 'fa-solid fa-sun'; // Cambia al ícono de sol
-    icon.style.color = '#ff9900'; // Color del ícono en modo claro
-  }
-}
-
-// Función para alternar el modo
-function toggleTheme() {
-  darkMode = !darkMode;
-  document.body.classList.toggle('dark-mode', darkMode);
-  updateIcon();
-}
-
-// Añade el evento click al botón
-if (toggleButton) {
-  toggleButton.addEventListener('click', toggleTheme);
-}
-
-// Inicializa el ícono al cargar la página
-updateIcon();
+*/

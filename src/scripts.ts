@@ -10,27 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (scrollPosition > 1) {
     logo.style.position = "fixed";
-    logo.style.top = "0px";
+    logo.style.top = "8px";
     logo.style.left = "140px";
-    logo.style.height = "60px";
+    logo.style.height = "45px";
     logo.style.transform = "scale(0.6)";
 
     logoTitle.style.position = "fixed";
-    logoTitle.style.top = "-8px";
-    logoTitle.style.left = "135px";
-    logoTitle.style.height = "11%";
+    logoTitle.style.top = "13px";
+    logoTitle.style.left = "235px";
+    logoTitle.style.height = "35px";
     logoTitle.style.transform = "scale(0.5)";
   } else {
     logo.style.position = "absolute";
-    logo.style.top = "220px";
+    logo.style.top = "110px";
     logo.style.left = "50%";
     logo.style.height = "250px";
     logo.style.transform = "translateX(-50%) scale(1)";
 
     logoTitle.style.position = "absolute";
-    logoTitle.style.top = "500px";
+    logoTitle.style.top = "380px";
     logoTitle.style.left = "50%";
-    logoTitle.style.height = "100px";
+    logoTitle.style.height = "85px";
     logoTitle.style.transform = "translateX(-50%) scale(1)";
 
   }

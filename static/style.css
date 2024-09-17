@@ -51,10 +51,6 @@ body {
   font-style: normal;
 }
 
-.smooth-scroll-wrapper {
-  flex: 1; /* Esto hace que el contenido principal ocupe el espacio restante */
-}
-
 /* Estilo para la navbar */
 .navbar {
   position: fixed;
@@ -66,7 +62,7 @@ body {
   background-color: transparent;
   display: flex;
   justify-content: flex-start; /* Alinea los elementos a la izquierda */
-  transition: background-color 0.3s ease, padding-top 0.5s;
+  transition: background-color 0.8s ease, padding-top 0.5s;
   z-index: 1000;
   box-sizing: border-box;
 }
@@ -79,7 +75,7 @@ body {
 }
 
 .navbar.scrolled a:hover {
-  color: #f5f5f7;
+  color: #e9e4af;
 }
 
 .navbar a:hover {
@@ -95,7 +91,7 @@ body {
 .navbar.scrolled {
   padding-top: 0px;
   
-  background-color:#192413d8;
+  background-color:#192413d7;
   backdrop-filter: blur(6px);
 }
 
@@ -181,22 +177,55 @@ body {
 #logo {
   user-select: none;
   position: absolute;
-  top: 220px;
+  top: 110px;
   left: 50%;
   height: 250px;
   transform: translateX(-50%);
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideIn 2s forwards ease-in-out;
   transition: all 1s ease;
 }
 
+/* Animación para el logo */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Animación corregida para el logo-title */
+@keyframes slideInTitle {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 50px); /* Cambia a -50% en X */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0); /* También -50% en X aquí */
+  }
+}
+
+
+/* Título del logo centrado */
 #logo-title {
   user-select: none;
   position: absolute;
-  top: 500px;
+  top: 380px;
   left: 50%;
-  height: 100px;
+  height: 85px;
   transform: translateX(-50%);
-  transition: all 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(-50px); 
+  animation: slideInTitle 2s forwards ease-in-out;
+  transition: all 1.5s ease;
 }
+
 
 .subtitle {
   font-family: "Lato", sans-serif;
@@ -308,7 +337,7 @@ footer {
 }
 
 
-
+/*
 .gallery-container {
 height: 100%;
 width: 100%;
@@ -350,7 +379,7 @@ filter: grayscale(60%);
 
 .gallery-item:hover img {
 filter: grayscale(0);
-transform: scale(1.05); /* Zoom leve dentro del contenedor */
+transform: scale(1.05);
 }
 
 .gallery-item-text {
@@ -368,7 +397,7 @@ transition: transform 0.3s ease;
 .gallery-item h2 {
 font-size: 2.5rem;
 width: 100%;
-margin-bottom: 7em; /* Espacio para el párrafo */
+margin-bottom: 7em;
 transition: transform 0.3s ease;
 }
 
@@ -377,8 +406,8 @@ transition: transform 0.3s ease;
   color: transparent;
   position: absolute;
   width: 100%;
-  left: 0; /* Alinea con el texto del título */
-  bottom: 0; /* Coloca el párrafo justo debajo del título */
+  left: 0;
+  bottom: 0;
   padding-left: 15px;
   margin-bottom: 15em;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -390,5 +419,95 @@ transform: translateY(-15px);
 
 .gallery-item:hover p {
 color: #192413;
-transform: translateY(2em); /* Ajusta la distancia para que el párrafo se desplace hacia abajo */
+transform: translateY(2em);
+
+}
+*/
+
+
+
+
+.gallery-container {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.gallery-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #192413;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  position: relative;
+  width: 30em;
+  height: 40em;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(60%);
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05); 
+}
+
+.gallery-item-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100%;
+  color: #192413;
+  padding: 15px;
+  text-align: left;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item h2 {
+  font-size: 2.5rem;
+  width: 100%;
+  margin-bottom: 7em; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-item p {  
+  font-size: 1.2rem;
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  left: 0;  
+  bottom: 0; 
+  padding-left: 15px;
+  margin-bottom: 15em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-text {
+  transform: translateY(-15px);
+}
+
+.gallery-item:hover p {
+  color: #192413;
+  transform: translateY(2em);
 }

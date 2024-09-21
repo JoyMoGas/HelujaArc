@@ -48,43 +48,69 @@
   <div class="gallery-container">
     <h1>PROYECTOS MAS RECIENTES</h1>
     <div class="gallery">
+      {% for project_id, project in projects.items() %}
         <div class="gallery-item">
-            <img src="static/images/renders/01.png" alt="Itinerante">
+          <a href="{{ url_for('project_detail', project_id=project_id) }}">
+            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
             <div class="gallery-item-text">
-                <h2>The F House </h2>
-                <p>Detalles del proyecto</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="static/images/renders/01.png" alt="Botes">
-            <div class="gallery-item-text">
-                <h2>Heluja Project</h2>
-                <p>Detalles del proyecto</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-          <img src="static/images/renders/01.png" alt="Botes">
-          <div class="gallery-item-text">
-              <h2>Heluja Project</h2>
+              <h2>{{ project.title }}</h2>
               <p>Detalles del proyecto</p>
-          </div>
-      </div>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="{{ url_for('project_detail', project_id=project_id) }}">
+            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+            <div class="gallery-item-text">
+              <h2>{{ project.title }}</h2>
+              <p>Detalles del proyecto</p>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="{{ url_for('project_detail', project_id=project_id) }}">
+            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+            <div class="gallery-item-text">
+              <h2>{{ project.title }}</h2>
+              <p>Detalles del proyecto</p>
+            </div>
+          </a>
+        </div>
+        
+      {% endfor %}
     </div>
-  </div>
+</div>
 
 
   <section>
     <h1 id="titles">PROYECTOS</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel
-      dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo
-      tempor, a dapibus nisl ultricies.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel
-      dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo
-      tempor, a dapibus nisl ultricies.
-    </p>
+    <div class="album">
+      {% for project_id, project in projects.items() %}
+      <div class="responsive-container-block bg">
+        <div class="responsive-container-block img-cont">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img img-last" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        <div class="responsive-container-block img-cont">
+          <img class="img img-big" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img img-big img-last" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        <div class="responsive-container-block img-cont">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </section>
-  <section>
+
+
+  <section style="background-color: #FFFFFF;">
     <h1 id="titles">EN PROCESO</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel

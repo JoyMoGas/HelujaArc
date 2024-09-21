@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrollPosition = window.scrollY;
 
-  if (scrollPosition > 1) {
+  if (scrollPosition > 50) {
     logo.style.position = "fixed";
     logo.style.top = "8px";
     logo.style.left = "140px";
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     logoTitle.style.position = "fixed";
     logoTitle.style.top = "13px";
-    logoTitle.style.left = "235px";
+    logoTitle.style.left = "240px";
     logoTitle.style.height = "35px";
     logoTitle.style.transform = "scale(0.5)";
   } else {

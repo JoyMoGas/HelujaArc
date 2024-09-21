@@ -4,7 +4,7 @@
 
 /* * COLORS
 #e6e6e6 (Conveys luxury and exclusivity) "silver"
-#424245 (navbar) "Gray" 
+#424245 (navbar) "Gray"
 #f5f5f7 Background "Cultured White"
 #0066cc Details (buttons, links, etc) "True Blue"
 #f56300 (Conveys excitement and novelty) "orange"
@@ -12,6 +12,30 @@
 #194a6e
 #192413
 #ecead3
+
+* COLORES
+#FFFFFF
+#F7F7F7
+
+* TEXTOS
+#333333
+#666666
+
+* NAVBAR
+#2C3E50
+#ECF0F1
+#ECF0F1
+
+* ENLACES, BOTONES
+#3498DB
+
+Distribución:
+Navbar/Footer: #2C3E50
+Sección 1 (fondo): #FFFFFF
+Sección 2 (fondo): #F7F7F7
+Textos: #333333 (títulos), #666666 (subtítulos)
+Botones/Enlaces: #3498DB
+
 */
 
 * {
@@ -39,7 +63,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #ecead3;
+  background-color: #FFFFFF;
   color: #192413;
 }
 
@@ -75,29 +99,28 @@ body {
 }
 
 .navbar.scrolled a:hover {
-  color: #e9e4af;
+  color: #5DADE2;
 }
 
 .navbar a:hover {
-  color: #192413;
+  color: #D0D3D4;
 }
 
 /* Estilo para cuando se hace scroll */
 .navbar.scrolled .home-navbar {
-  animation: lineCollapseIn 0.5s forwards; /* Aplica la animación cuando se hace scroll */
+  animation: lineCollapseIn 0.5s forwards;
 }
 
 /* Estilo para la navbar cuando se hace scroll */
 .navbar.scrolled {
   padding-top: 0px;
-  
-  background-color:#192413d7;
-  backdrop-filter: blur(6px);
+  background-color:#2c3e50e4;
+  backdrop-filter: blur(8px);
 }
 
 /* Estilo para los enlaces de la navbar cuando se hace scroll */
 .navbar.scrolled a {
-  color: #f5f5f7;
+  color: #ECF0F1;
 }
 
 /* Animación para la línea al entrar */
@@ -261,7 +284,7 @@ body {
 section {
   display: grid;
   place-items: center;
-  background-color: #f6f4e7;
+  background-color: #F7F7F7;
   color: #192413;
   padding: 5em;
 }
@@ -285,7 +308,7 @@ p {
 
 
 footer {
-  background-color: #192413;
+  background-color: #2C3E50;
   text-align: center;
   width: 100%;
   padding: 0;
@@ -510,4 +533,53 @@ transform: translateY(2em);
 .gallery-item:hover p {
   color: #192413;
   transform: translateY(2em);
+}
+
+
+
+.album .responsive-container-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.album .img-cont {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33.3%;
+  margin: 0;
+}
+
+.album .img {
+  width: 100%;
+  object-fit: cover; /* Ajusta la imagen sin perder proporción */
+  margin-bottom: 20px;
+}
+
+/* Imágenes más grandes en el centro */
+.album .img-big {
+  height: 360px; /* Puedes ajustar esta altura a lo que necesites */
+}
+
+@media (max-width: 768px) {
+  .album .img-cont {
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .album .img-big {
+    height: 200px; /* Ajusta la altura en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 500px) {
+  .album .img {
+    width: 94%;
+  }
+
+  .album .img-big {
+    height: 150px; /* Ajusta para pantallas móviles */
+  }
 }

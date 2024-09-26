@@ -107,3 +107,17 @@ window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
 */
+window.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll<HTMLAnchorElement>('.navbar ul li a');
+  const currentURL = window.location.pathname;
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && currentURL === href) {
+      link.parentElement?.classList.add('active');
+    } else {
+      link.parentElement?.classList.remove('active');  // Elimina la clase active en otros enlaces
+    }
+  });
+});
+

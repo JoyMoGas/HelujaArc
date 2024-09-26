@@ -103,3 +103,17 @@ window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
 */
+window.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.navbar ul li a');
+    const currentURL = window.location.pathname;
+    links.forEach(link => {
+        var _a, _b;
+        const href = link.getAttribute('href');
+        if (href && currentURL === href) {
+            (_a = link.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add('active');
+        }
+        else {
+            (_b = link.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove('active'); // Elimina la clase active en otros enlaces
+        }
+    });
+});

@@ -35,12 +35,12 @@ def load_projects():
 @app.route('/')
 def index():
     projects = load_projects()  # Cargamos los proyectos
-    return render_template('index.html', projects=projects)
+    return render_template('index.html', projects=projects, current_page='home')
 
 @app.route('/projects')
 def projects_page():
     projects = load_projects()  # Cargamos los proyectos
-    return render_template('projects.html', projects=projects)
+    return render_template('projects.html', projects=projects, current_page='projects')
 
 @app.route('/project/<project_id>')
 def project_detail(project_id):
@@ -54,12 +54,12 @@ def project_detail(project_id):
 
 @app.route('/')
 def contact_page():
-    return render_template('contact.html')
+    return render_template('contact.html', current_page='contact')
 
 
 @app.route('/about')
 def about_page():
-    return render_template('about.html')
+    return render_template('about.html', current_page='about')
 
 if __name__ == '__main__':
     app.run(debug=True)

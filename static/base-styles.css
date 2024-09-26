@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Londrina+Outline&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* Estilo para la navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 20px; /* Añade espacio a la izquierda de la navbar */
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  transition: background-color 0.8s ease, padding-top 0.5s;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.navbar .home-navbar {
+  padding-bottom: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  width: fit-content;
+}
+
+.navbar.scrolled a:hover {
+  color: #5DADE2;
+}
+
+.navbar a:hover {
+  color: #D0D3D4;
+}
+
+/* Estilo para cuando se hace scroll */
+.navbar.scrolled .home-navbar {
+  animation: lineCollapseIn 0.5s forwards;
+}
+
+/* Estilo para la navbar cuando se hace scroll */
+.navbar.scrolled {
+  padding-top: 0px;
+  background-color:#2c3e50e4;
+  backdrop-filter: blur(8px);
+}
+
+/* Estilo para los enlaces de la navbar cuando se hace scroll */
+.navbar.scrolled a {
+  color: #ECF0F1;
+}
+
+/* Animación para la línea al entrar */
+@keyframes lineCollapseIn {
+  0% {
+    border-bottom-width: 2px;
+    transform: scaleX(1);
+    padding-bottom: 8px;
+  }
+  50% {
+    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
+  }
+  100% {
+    transform: scaleX(0.5); /* Termina la animación con la línea más corta */
+    padding-bottom: 2px;
+  }
+}
+
+/* Animación para la línea al salir */
+@keyframes lineCollapseOut {
+  0% {
+    border-bottom-width: 2px;
+    transform: scaleX(0.5); /* Línea más corta cuando empieza a salir */
+    padding-bottom: 2px;
+  }
+  50% {
+    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
+  }
+  100% {
+    border-bottom-width: 2px;
+    transform: scaleX(1); /* Línea completa cuando termina la animación de salida */
+    padding-bottom: 8px;
+  }
+}
+
+/* Aplica la animación de salida cuando se quita la clase `scrolled` */
+.navbar:not(.scrolled) .home-navbar {
+  animation: lineCollapseOut 0.5s forwards;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
+}
+
+/* Estilo cuando se ha hecho scroll y el logo está en la navbar */
+.navbar.scrolled .navbar-content {
+  padding: 0px; /* Reduce el padding cuando se hace scroll */
+  padding-left: 0px; /* Elimina el padding en la izquierda */
+}
+
+/* Estilo para los enlaces de la navbar */
+.navbar nav ul {
+  user-select: none;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 60px;
+}
+
+/* Estilo general para los enlaces de la navbar */
+.navbar nav ul li a {
+  color: #f5f5f7;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+
+
+
+
+
+
+footer {
+  background-color: #2C3E50;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1; /* Permite que cada columna ocupe un espacio igual */
+  display: flex;
+  justify-content: center; /* Centra los elementos dentro de cada columna horizontalmente */
+  align-items: center;
+}
+
+.footer-left {
+  justify-content: flex-start; /* Alinea el contenido a la izquierda dentro de esta columna */
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column; /* Apila verticalmente el contenido */
+  align-items: center; /* Centra el contenido horizontalmente dentro de la columna */
+}
+
+.footer-right {
+  justify-content: flex-end; /* Alinea el contenido a la derecha dentro de esta columna */
+}
+
+.footer a {
+  font-weight: 500;
+  color: #FABC3F;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.footer a:hover {
+  color: #ecf0f1;
+}
+
+.footer .logo-personal {
+  height: 55px;
+  cursor: pointer;
+}
+
+.footer .foot-cont {
+  margin: 0;
+}

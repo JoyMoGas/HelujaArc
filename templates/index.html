@@ -1,133 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animación del Logo y Slider</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+{% extends "base.html" %}
+{% block title %}HELUJAArq{% endblock %}
+{% block head %}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
 
-</head>
-<body>
+{% block body %}
+
+  <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
+  <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
   <div id="scroll-anchor"></div>
-  <div class="navbar">
-    <div class="navbar-content">
-      <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
-      <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
-      <!-- #region 
-      <a id="title" href="/">HELUJA</a>
-      <a id="subtitle" href="/">ARQUITECTURA</a>
-      -->
-      <nav>
-        <ul>
-          <li><a href="{{ url_for('index') }}" class="home-navbar">INICIO</a></li>
-          <li><a href="{{ url_for('about_page') }}">ACERCA DE</a></li>
-          <li><a href="{{ url_for('projects_page') }}">PROYECTOS</a></li>
-          <li><a href="{{ url_for('contact_page') }}">CONTACTO</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  
 
-    <div id="demoBox"></div>
-    <div class="content">
-      <!-- Contenido aquí -->
-      <section class="mainInfo">
-        <h1> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
-        <p class="phrase">
-          “La misión del arquitecto es ayudar a las personas entender cómo hacer la vida más bella, hacer un mundo mejor para vivir y darle una justificación y un sentido a la vida” <a href="https://franklloydwright.org" style="text-decoration: none; color: #424245;"><strong>Frank Lloyd Wright</strong></a>
-        </p>
-        <p style="padding-top: 0;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tenetur alias ipsa vitae sit! Illum nostrum beatae voluptatibus odio accusamus quibusdam dignissimos nihil velit nisi vero quidem reiciendis accusantium maxime, amet repellat culpa voluptas cupiditate. Aliquam maiores aperiam necessitatibus! Sed nihil neque facilis facere nisi obcaecati laboriosam autem voluptatum atque.
-        </p>
-      </section>
+  <div id="demoBox"></div>
+  <div class="content">
+    <!-- Contenido aquí -->
+    <section class="mainInfo">
+      <h1> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
+      <p class="phrase">
+        “La misión del arquitecto es ayudar a las personas entender cómo hacer la vida más bella, hacer un mundo mejor para vivir y darle una justificación y un sentido a la vida” <a href="https://franklloydwright.org" style="text-decoration: none; color: #424245;"><strong>Frank Lloyd Wright</strong></a>
+      </p>
+      <p style="padding-top: 0;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tenetur alias ipsa vitae sit! Illum nostrum beatae voluptatibus odio accusamus quibusdam dignissimos nihil velit nisi vero quidem reiciendis accusantium maxime, amet repellat culpa voluptas cupiditate. Aliquam maiores aperiam necessitatibus! Sed nihil neque facilis facere nisi obcaecati laboriosam autem voluptatum atque.
+      </p>
+    </section>
 
-  <!-- Slider -->
-  
-  <div class="gallery-container">
-    <h1>PROYECTOS MAS RECIENTES</h1>
-    <div class="gallery">
-      {% for project_id, project in projects.items() %}
-        <div class="gallery-item">
-          <a href="{{ url_for('project_detail', project_id=project_id) }}">
-            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-            <div class="gallery-item-text">
-              <h2>{{ project.title }}</h2>
-              <p>Detalles del proyecto</p>
-            </div>
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a href="{{ url_for('project_detail', project_id=project_id) }}">
-            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-            <div class="gallery-item-text">
-              <h2>{{ project.title }}</h2>
-              <p>Detalles del proyecto</p>
-            </div>
-          </a>
-        </div>
-        <div class="gallery-item">
-          <a href="{{ url_for('project_detail', project_id=project_id) }}">
-            <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-            <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-            <div class="gallery-item-text">
-              <h2>{{ project.title }}</h2>
-              <p>Detalles del proyecto</p>
-            </div>
-          </a>
-        </div>
-        
-      {% endfor %}
-    </div>
-</div>
-
-
-  <section>
-    <h1 id="titles">PROYECTOS</h1>
-    <div class="album">
-      {% for project_id, project in projects.items() %}
-      <div class="responsive-container-block bg">
-        <div class="responsive-container-block img-cont">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img img-last" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block img-cont">
-          <img class="img img-big" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img img-big img-last" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block img-cont">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
+    <!-- Slider -->
+    <div class="gallery-container">
+      <h1>PROYECTOS MAS RECIENTES</h1>
+      <div class="gallery">
+        {% for project_id, project in projects.items() %}
+          <div class="gallery-item">
+            <a href="{{ url_for('project_detail', project_id=project_id) }}">
+              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+              <div class="gallery-item-text">
+                <h2>{{ project.title }}</h2>
+                <p>Detalles del proyecto</p>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="{{ url_for('project_detail', project_id=project_id) }}">
+              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+              <div class="gallery-item-text">
+                <h2>{{ project.title }}</h2>
+                <p>Detalles del proyecto</p>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="{{ url_for('project_detail', project_id=project_id) }}">
+              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+              <div class="gallery-item-text">
+                <h2>{{ project.title }}</h2>
+                <p>Detalles del proyecto</p>
+              </div>
+            </a>
+          </div>
+          
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-  </section>
-
-
-  <section style="background-color: #FFFFFF;">
-    <h1 id="titles">EN PROCESO</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel
-      dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo
-      tempor, a dapibus nisl ultricies.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel
-      dolor eu dui dapibus tempus. Integer ultricies mauris sit amet justo
-      tempor, a dapibus nisl ultricies.
-    </p>
-  </section>
   </div>
 
-  <footer>
-    <p>Author: Heluja Arquitectura</p>
-    <p><a href="mailto:hege@example.com">helujaarq@example.com</a></p>
-  </footer>
-  
-  <script src="{{url_for('static', filename='scripts.js')}}"></script>
-</body>
-</html>
+    <!-- Sección de proyectos -->
+    <section>
+      <h1 id="titles">PROYECTOS</h1>
+      <div class="album">
+        {% for project_id, project in projects.items() %}
+        <div class="responsive-container-block bg">
+          <div class="responsive-container-block img-cont">
+            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+            <img class="img img-last" src="{{ url_for('static', filename=project.main_image) }}">
+          </div>
+          <div class="responsive-container-block img-cont">
+            <img class="img img-big" src="{{ url_for('static', filename=project.main_image) }}">
+            <img class="img img-big img-last" src="{{ url_for('static', filename=project.main_image) }}">
+          </div>
+          <div class="responsive-container-block img-cont">
+            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Sección "En proceso" -->
+  </div>
+  {% endblock %}
+
+

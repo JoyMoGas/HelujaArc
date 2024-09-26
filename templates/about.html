@@ -1,11 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-</head>
-<body>
-    <h1>This is the About Page</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Extended Web Page{% endblock %}
+
+{% block head %}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about-styles.css') }}">
+{% endblock %}
+
+{% block body %}
+<section id="hero">
+    <div class="hero-content">
+        <h1><span class="subtitle">Bienvenido a </span>
+            Heluja Arquitectura </h1>
+        <p style="font-size: 2.5rem;">Tu visión, nuestro diseño</p>
+    </div>
+    <img src="static/images/foto porta.png" alt="Architect" class="hero-image"> <!-- Imagen del arquitecto -->
+</section>
+
+
+<section id="about">
+    <h1>Acerca de mí</h1>
+    <h2>ARQUITECTO HECTOR R. MONTAÑO GASTELUM</h2>
+    <p>
+        Mi nombre es HECTOR R. MONTAÑO GASTELUM, soy un joven arquitecto con experiencia en la coordinación y desarrollo de proyectos arquitectónicos, desde viviendas unifamiliares hasta inmuebles industriales. Me apasiona materializar ideas arquitectónicas y busco constantemente aprender nuevas habilidades que me permitan ofrecer mejores resultados a la sociedad. Me considero curioso, creativo y comprometido, dispuesto a enfrentar nuevos retos.
+
+Mi enfoque profesional se basa en la filosofía "Yes is More" (Bjarke Ingels), donde veo las limitantes de cada proyecto como oportunidades para crear espacios distintivos y beneficiosos tanto para los usuarios como para el entorno.
+    </p>
+</section>
+
+<div class="section-container">
+    <div class="section-education">
+        <h1>Educación</h1>
+        <ul>
+            <li>2024 Diplomado en BIM-Revit por Universidad Anáhuac Puebla.</li>
+            <li>2023 Arquitecto. La Universidad de Sonora.</li>
+            <li>2022 Prácticas Profesionales. Dirección de Infraestructura y Adquisiciones. Universidad de Sonora.</li>
+            <li>2018 - 2023 Lic en Arquitectura. Universidad de Sonora.</li>
+            <li>2017-2018 Estudios iniciales en Ing. Civil. Universidad de Sonora.</li>
+        </ul>
+    </div>
+    <div class="section-experience">
+        <h1>Experiencia Profesional</h1>
+        <ul>
+            <li>
+                2024 Supervisor y Control de Obra - Grupo Valey Desarrollos.
+                <p>Supervisión de Obra. Vivienda en serie. Cuantificación de materiales y generación de catálogo de conceptos. Control de obra y personal.</p>
+            </li>
+            <li>
+                2023 - 2024 Líder de Proyectos - Grupo Valey Desarrollos.
+                <p>Planteamiento y desarrollo de proyectos ejecutivos. Gestión y seguimiento de trámites antes instancias gubernamentales.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<section id="skills" class="skills-section">
+    <h1>Habilidades en Software</h1>
+    <div class="wrapper">
+        <div class="icon">
+            <img src="static/images/icons/software/ac.png" alt="Software 1" class="skill-logo">
+            <span class="tooltip">AutoCAD</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/Ai.png" alt="Adobe Ilustrator" class="skill-logo">
+            <span class="tooltip">Adobe Illustrator</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/Lumion.png" alt="Software 3" class="skill-logo">
+            <span class="tooltip">Lumion</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/image (6).png" alt="Software 4" class="skill-logo">
+            <span class="tooltip">Software 4</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/ps.png" alt="Software 5" class="skill-logo">
+            <span class="tooltip">Adobe Photoshop</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/MC.png" alt="Software 6" class="skill-logo">
+            <span class="tooltip">Software 6</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/Revit.png" alt="Software 7" class="skill-logo">
+            <span class="tooltip">Revit</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/SK.png" alt="Software 8" class="skill-logo">
+            <span class="tooltip">Software 8</span>
+        </div>
+        <div class="icon">
+            <img src="static/images/icons/software/TW.png" alt="Software 9" class="skill-logo">
+            <span class="tooltip">Twinmotion</span>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="service-card">
+        <h3>Consulting</h3>
+        <p>Expert advice to help you achieve your business goals.</p>
+    </div>
+    <div class="service-card">
+        <h3>Development</h3>
+        <p>High-quality software solutions tailored to your needs.</p>
+    </div>
+    <div class="service-card">
+        <h3>Support</h3>
+        <p>24/7 assistance to keep your operations running smoothly.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</section>
+{% endblock %}

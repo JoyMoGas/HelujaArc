@@ -5,6 +5,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 /* Fuentes */
 body {
   overflow-x: hidden;
@@ -18,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   color: #2c3e50;  
-  line-height: 1.6; /* Espaciado de línea */
+ /* Espaciado de línea */
   color: #333; /* Color de texto */
   background-color: #FFFFFF; /* Color de fondo */
 }
@@ -48,7 +56,7 @@ h1, h2, h3 {
 
 #hero {
   background-color: #2c3e50; /* Color de fondo */
-  height: 80vh; /* Altura de la sección hero */
+  height: 100vh; /* Altura de la sección hero */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -74,14 +82,19 @@ h1, h2, h3 {
 }
 
 .hero-content h1 {
-  font-size: 3.5em; /* Tamaño del encabezado */
+  padding-top: 2em;
+  font-size: 4em; /* Tamaño del encabezado */
 }
 
 .hero-content p {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
   font-size: 1.5rem; /* Tamaño del párrafo */
 }
 
 #about h1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
   font-size: 3em !important; /* Tamaño del encabezado */
 }
 
@@ -89,6 +102,25 @@ h1, h2, h3 {
   font-size: 1.5rem; /* Tamaño del encabezado */
 }
 
+#skills h1 {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  font-size: 3em !important; /* Tamaño del encabezado */
+}
+
+.services {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-size: 3em !important;
+}
+
+.hero-content img {
+  padding-top: 2em;
+  position: relative;
+  height: 60%;
+  width: 60%;
+  padding-left: 25%;
+}
 
 
 /* Imagen del arquitecto */
@@ -98,8 +130,8 @@ h1, h2, h3 {
     to bottom, black 55%, rgba(0, 0, 0, 0.01 )100%
 );
   position: relative; /* Mantiene la imagen en el flujo del documento */
-  size: 50%;
-  max-width: 50%; /* Ancho máximo de la imagen */
+  size: 100vh;
+  max-width: 100%; /* Ancho máximo de la imagen */
   opacity: 0.9; /* Efecto de superposición */
   border-radius: 10px; /* Bordes redondeados */
 }
@@ -294,6 +326,64 @@ h1, h2, h3 {
   }
 
 
+
+.gallery-section {
+    display: flex;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0);
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(25%);
+}
+
+.gallery-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+}
+
+.gallery-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.gallery-text p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .gallery-section {
+        flex-direction: column;
+    }
+
+    .gallery-item {
+        margin-bottom: 10px;
+    }
+}
+
+
 /* Sección Services */
 #services {
   color: #2c3e50;
@@ -314,41 +404,140 @@ h1, h2, h3 {
 }
 
 
-/* Sección Contacto */
+.gallery-container {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.gallery-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #192413;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  position: relative;
+  width: 30em;
+  height: 40em;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(60%);
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05); 
+}
+
+.gallery-item-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100%;
+  color: #192413;
+  padding: 15px;
+  text-align: left;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item h2 {
+  font-size: 2.5rem;
+  width: 100%;
+  margin-bottom: 7em; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-item p {  
+  font-size: 1.2rem;
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  left: 0;  
+  bottom: 0; 
+  padding-left: 15px;
+  margin-bottom: 15em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-text {
+  transform: translateY(-15px);
+}
+
+.gallery-item:hover p {
+  color: #192413;
+  transform: translateY(2em);
+}
+
 #contact {
   width: 100%;
-  padding: 2rem 1rem; /* Espaciado */
-  background-color: #f7f7f7; /* Fondo blanco */
+  background-color: #f7f7f7; /* Fondo oscuro para contrastar */
+  color: #2c3e50; /* Texto claro */
+  padding: 3rem 2rem; /* Espaciado generoso */
+  text-align: center; /* Centrar el contenido */
+  position: relative; /* Para elementos decorativos */
+  overflow: hidden; /* Evita que los elementos animados sobresalgan */
 }
 
-.form-group {
-  margin-bottom: 1rem; /* Margen inferior */
-  display: flex;
-  flex-direction: column; /* Coloca etiquetas y campos de entrada en columna */
+#contact h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* Añade un poco de espaciado entre letras */
 }
 
-label {
-  margin-bottom: 0.5rem; /* Margen inferior para las etiquetas */
+#contact p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6; /* Mejora la legibilidad */
 }
 
-input, textarea {
-  padding: 0.5rem; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde */
-  border-radius: 4px; /* Bordes redondeados */
-  width: 100%; /* Ancho completo */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+.contact-button {
+  font-size: 1.5rem;
+  background-color: #2c3e50; /* Color llamativo para el botón */
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px; /* Botón redondeado */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-button {
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  padding: 0.75rem 1.5rem; /* Espaciado interno */
-  border-radius: 4px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor tipo puntero */
-  transition: background-color 0.3s; /* Transición para el color de fondo */
+.contact-button:hover {
+  background-color: #3d5770; /* Color más oscuro al pasar el ratón */
 }
 
-button:hover {
-  background-color: #0056b3; /* Color del botón en hover */
+
+/* Animación sutil para los elementos decorativos */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
 }

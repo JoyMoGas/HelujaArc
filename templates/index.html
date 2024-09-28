@@ -2,31 +2,27 @@
 {% block title %}HELUJAArq{% endblock %}
 {% block head %}
 <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% endblock %}
 
 {% block body %}
 
-  <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
-  <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
-  <div id="scroll-anchor"></div>
+<img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
+<img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
 
-  <div id="demoBox"></div>
-  <div class="content">
-    <!-- Contenido aquí -->
-    <section class="mainInfo">
-      <h1> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
-      <p class="phrase">
-        “La misión del arquitecto es ayudar a las personas entender cómo hacer la vida más bella, hacer un mundo mejor para vivir y darle una justificación y un sentido a la vida” <a href="https://franklloydwright.org" style="text-decoration: none; color: #424245;"><strong>Frank Lloyd Wright</strong></a>
-      </p>
-      <p style="padding-top: 0;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tenetur alias ipsa vitae sit! Illum nostrum beatae voluptatibus odio accusamus quibusdam dignissimos nihil velit nisi vero quidem reiciendis accusantium maxime, amet repellat culpa voluptas cupiditate. Aliquam maiores aperiam necessitatibus! Sed nihil neque facilis facere nisi obcaecati laboriosam autem voluptatum atque.
-      </p>
-    </section>
 
-    <!-- Slider -->
-    <div class="gallery-container">
-      <h1>PROYECTOS MAS RECIENTES</h1>
+<div id="demoBox"></div>
+  <!-- Contenido aquí -->
+  <section id="inicio" class="mainInfo">
+    <h1 style="padding-top: 1em; padding-bottom: 1em;"> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
+    <p>
+      Mi nombre es HECTOR R. MONTAÑO GASTELUM, soy un joven arquitecto con experiencia en la coordinación y desarrollo de proyectos arquitectónicos, desde viviendas unifamiliares hasta inmuebles industriales. Me apasiona materializar ideas arquitectónicas y busco constantemente aprender nuevas habilidades que me permitan ofrecer mejores resultados a la sociedad. Me considero curioso, creativo y comprometido, dispuesto a enfrentar nuevos retos.
+      Mi enfoque profesional se basa en la filosofía "Yes is More" (Bjarke Ingels), donde veo las limitantes de cada proyecto como oportunidades para crear espacios distintivos y beneficiosos tanto para los usuarios como para el entorno.
+    </p>
+  </section>
+
+  <section class="gallery-container">
+      <h1 id="titulo">PROYECTOS MAS RECIENTES</h1>
       <div class="gallery">
         {% for project_id, project in projects.items() %}
           <div class="gallery-item">
@@ -62,35 +58,105 @@
           
         {% endfor %}
       </div>
-  </div>
+  </section>
 
-    <!-- Sección de proyectos -->
-    <section>
-      <h1 id="titles">PROYECTOS</h1>
-      <div class="album">
-        {% for project_id, project in projects.items() %}
-        <div class="responsive-container-block bg">
-          <div class="responsive-container-block img-cont">
-            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-            <img class="img img-last" src="{{ url_for('static', filename=project.main_image) }}">
-          </div>
-          <div class="responsive-container-block img-cont">
-            <img class="img img-big" src="{{ url_for('static', filename=project.main_image) }}">
-            <img class="img img-big img-last" src="{{ url_for('static', filename=project.main_image) }}">
-          </div>
-          <div class="responsive-container-block img-cont">
-            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-            <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+  <section id="proyectos">
+    <h1 id="titulo">PROYECTOS</h1>
+    <div class="album">
+      {% for project_id, project in projects.items() %}
+        <div class="responsive-container-block">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        <div class="responsive-container-block">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        <div class="responsive-container-block">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        <div class="responsive-container-block">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+        </div>
+        
+      {% endfor %}
+    </div>
+</section>
+
+
+
+
+
+  <section id="about">
+    <div class="gallery-container">
+      <h1 id="titulo">MIS SERVICIOS</h1>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="static/images/renders/Ejecucion.jpg" alt="">
+            <div class="gallery-item-text">
+              <h2>EJECUCION DE OBRA</h2>
+              <p>Detalles del servicio</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+          <img src="static/images/renders/ejecutivo.jpg" alt="">
+          <div class="gallery-item-text">
+            <h2>PROYECTO EJECUTIVO</h2>
+            <p>Detalles del servicio</p>
           </div>
         </div>
-        {% endfor %}
+        <div class="gallery-item">
+          <img src="static/images/renders/antiproyecto.jpg" alt="">
+          <div class="gallery-item-text">
+            <h2>ANTEPROYECTO</h2>
+            <p>Detalles del servicio</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Sección "En proceso" -->
-  </div>
-  {% endblock %}
-
-
+  <section id="skills" class="skills-section">
+    <h1 id="titulo">HABILIDADES DE SOFTWARE</h1>
+    <div class="wrapper">
+      <div class="icon">
+        <img src="static/images/icons/software/ac.png" alt="Software 1" class="skill-logo">
+        <span class="tooltip">AutoCAD</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/Ai.png" alt="Adobe Ilustrator" class="skill-logo">
+        <span class="tooltip">Adobe Illustrator</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/Lumion.png" alt="Software 3" class="skill-logo">
+        <span class="tooltip">Lumion</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/image (6).png" alt="Software 4" class="skill-logo">
+        <span class="tooltip">Rhinoceros</span>
+      </div>
+      <div class="icon">
+          <img src="static/images/icons/software/ps.png" alt="Software 5" class="skill-logo">
+          <span class="tooltip">Adobe Photoshop</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/MC.png" alt="Software 6" class="skill-logo">
+        <span class="tooltip">Microsoft Office</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/Revit.png" alt="Software 7" class="skill-logo">
+        <span class="tooltip">Revit</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/SK.png" alt="Software 8" class="skill-logo">
+        <span class="tooltip">Sketchup</span>
+      </div>
+      <div class="icon">
+        <img src="static/images/icons/software/TW.png" alt="Software 9" class="skill-logo">
+        <span class="tooltip">Twinmotion</span>
+      </div>
+    </div>
+  </section>
+{% endblock %}

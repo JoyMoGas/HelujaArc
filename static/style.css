@@ -1,53 +1,16 @@
 ::selection {
-  color: #FFFFFF; /* Color del texto seleccionado */
-  background-color: #2c3e50; /* Color de fondo del texto seleccionado */
+  color: #FFFFFF;
+  background-color: #2c3e50;/
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Londrina+Outline&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-/* * COLORS
-#e6e6e6 (Conveys luxury and exclusivity) "silver"
-#424245 (navbar) "Gray"
-#f5f5f7 Background "Cultured White"
-#0066cc Details (buttons, links, etc) "True Blue"
-#f56300 (Conveys excitement and novelty) "orange"
-#FABC3F
-#194a6e
-#192413
-#ecead3
-
-* COLORES
-#FFFFFF
-#F7F7F7
-
-* TEXTOS
-#333333
-#666666
-
-* NAVBAR
-#2C3E50
-#ECF0F1
-#ECF0F1
-
-* ENLACES, BOTONES
-#3498DB
-
-Distribución:
-Navbar/Footer: #2C3E50
-Sección 1 (fondo): #FFFFFF
-Sección 2 (fondo): #F7F7F7
-Textos: #333333 (títulos), #666666 (subtítulos)
-Botones/Enlaces: #3498DB
-
-*/
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
 }
 
 /* * Smooth Scrolling */
@@ -55,7 +18,34 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Logo en el cuerpo */
+body {
+  font-family: 'Nonito', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #F7F7F7;
+  color: #2c3e50;
+}
+
+/* Estilo para la imagen de fondo */
+#demoBox {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
+  url("images/renders/01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ease; /* Transición suave para el filtro */
+}
+
 #logo {
   user-select: none;
   position: absolute;
@@ -94,7 +84,12 @@ html {
   }
 }
 
-/* Título del logo centrado */
+#titulo{
+  padding-bottom: 2em;
+  padding-top: 2em;
+  font-size: 24px;
+}
+
 #logo-title {
   user-select: none;
   position: absolute;
@@ -109,177 +104,29 @@ html {
   z-index: 1000;
 }
 
-/* Estilo para el cuerpo */
-body {
-  font-family: 'Nonito', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
-  color: #192413;
+#titles{
+  padding-top: 2em;
+  color: #2c3e50; 
+  font-size: 2.5em;
 }
-
-.phrase {
-  padding-bottom: 0;
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
 
 .subtitle {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 2em;
-  color: #192413;
-}
-
-#titles{
-  color: #192413; 
-  font-size: 2.5em;
-}
-
-/* Estilo para la imagen de fondo */
-#demoBox {
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
-  url("images/renders/01.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: filter 0.5s ease; /* Transición suave para el filtro */
-}
-
-/* Contenido principal */
-.content {
-  max-width: 100%;
-  line-height: 1.4;
+  color: #2c3e50;
 }
 
 section {
-  display: grid;
-  place-items: center;
-  background-color: #F7F7F7;
-  color: #192413;
-  padding: 5em;
+  color: #2c3e50;
 }
 
-p {
-  padding: 1em 8em 1em 8em;
-  font-size: 1.5em;
+.mainInfo p {
+  text-align: justify;
+  padding: 1em 15em 1em 15em;
+  font-size: 18px;
 }
-
-.cover {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-}
-
-
-/* SLIDESHOW
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Slider */
-
-
-
-
-/*
-.gallery-container {
-height: 100%;
-width: 100%;
-text-align: center;
-margin: 50px auto;
-}
-
-.gallery-container h1 {
-margin-bottom: 20px;
-font-size: 2.5rem;
-color: #192413;
-}
-
-.gallery {
-width: 100%;
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
-}
-
-.gallery-item {
-position: relative;
-width: 45em;
-height: 35em;
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-overflow: hidden;
-transition: transform 0.3s ease;
-}
-
-.gallery-item img {
-width: 100%;
-height: 100%;
-transition: transform 0.5s ease, filter 0.5s ease;
-filter: grayscale(60%);
-}
-
-.gallery-item:hover img {
-filter: grayscale(0);
-transform: scale(1.05);
-}
-
-.gallery-item-text {
-position: absolute;
-bottom: 20px;
-left: 20px;
-width: 100%;
-color: #192413;
-padding: 15px;
-text-align: left;
-max-width: 90%;
-transition: transform 0.3s ease;
-}
-
-.gallery-item h2 {
-font-size: 2.5rem;
-width: 100%;
-margin-bottom: 7em;
-transition: transform 0.3s ease;
-}
-
-.gallery-item p {  
-  font-size: 1.2rem;
-  color: transparent;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  padding-left: 15px;
-  margin-bottom: 15em;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.gallery-item:hover .gallery-item-text {
-transform: translateY(-15px);
-}
-
-.gallery-item:hover p {
-color: #192413;
-transform: translateY(2em);
-
-}
-*/
-
 
 
 
@@ -287,13 +134,6 @@ transform: translateY(2em);
   height: 100%;
   width: 100%;
   text-align: center;
-  margin: 50px auto;
-}
-
-.gallery-container h1 {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: #192413;
 }
 
 .gallery {
@@ -369,51 +209,143 @@ transform: translateY(2em);
 }
 
 
+.album {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+  justify-content: space-between; /* Espacio entre las imágenes */
+}
 
 .album .responsive-container-block {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column; /* Cambiar a columna para que cada contenedor apile las imágenes */
   padding: 10px;
-}
-
-.album .img-cont {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 33.3%;
-  margin: 0;
+  max-width: 350px; /* Controlar el ancho máximo del contenedor */
+  margin: 0; /* Eliminar el margen para mantener alineado */
 }
 
 .album .img {
-  width: 100%;
-  object-fit: cover; /* Ajusta la imagen sin perder proporción */
-  margin-bottom: 20px;
+  flex: 0 0 22%; /* Ajustar el tamaño para un mejor espaciado */
+  margin-bottom: 10px; /* Espaciado entre imágenes */
+  max-width: 100%; /* Mantener el ancho máximo al 100% */
+  height: auto; /* Mantener la altura automática */
+  aspect-ratio: 3 / 2; /* Cambiar a una proporción más ancha (rectangular) */
+  object-fit: cover; /* Ajustar la imagen sin perder proporción */
 }
 
-/* Imágenes más grandes en el centro */
-.album .img-big {
-  height: 360px; /* Puedes ajustar esta altura a lo que necesites */
-}
-
+/* Media Queries para responsividad */
 @media (max-width: 768px) {
-  .album .img-cont {
-    flex-basis: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .album .img-big {
-    height: 200px; /* Ajusta la altura en pantallas más pequeñas */
+  .album .img {
+    flex: 0 0 22%; /* 2 imágenes por fila en pantallas medianas */
   }
 }
 
 @media (max-width: 500px) {
   .album .img {
-    width: 94%;
-  }
-
-  .album .img-big {
-    height: 150px; /* Ajusta para pantallas móviles */
+    flex: 0 0 100%; /* 1 imagen por fila en pantallas pequeñas */
   }
 }
 
+
+
+
+
+
+
+
+.skills-section {
+  width: 100%;
+  padding: 2rem 10em; /* Espaciado */
+  text-align: center; /* Centrar texto */
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias líneas */
+  justify-content: center; /* Centrar los elementos */
+  list-style: none;
+  width: 100%;
+  padding-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px; /* Espacio entre iconos */
+  width: 80px; /* Tamaño del icono */
+  height: 80px; /* Tamaño del icono */
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon img {
+  width: 40px;  /* Tamaño de la imagen dentro del icono */
+  height: 40px; /* Tamaño de la imagen dentro del icono */
+  object-fit: contain; /* Mantiene la relación de aspecto */
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #333; /* Texto del tooltip */
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores específicos para cada software, puedes personalizar según el software */
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+  }

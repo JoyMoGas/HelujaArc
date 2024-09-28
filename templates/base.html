@@ -15,23 +15,26 @@
             
             <nav>
                 <ul>
-                    <li class="{% if current_page == 'home' %}active{% endif %}"><a href="{{ url_for('index') }}" class="home-navbar">INICIO</a></li>
-                    <li class="{% if current_page == 'about' %}active{% endif %}"><a href="{{ url_for('about_page') }}">ACERCA DE</a></li>
-                    <li class="{% if current_page == 'projects' %}active{% endif %}"><a href="{{ url_for('projects_page') }}">PROYECTOS</a></li>
-                    <li class="{% if current_page == 'contact' %}active{% endif %}"><a href="{{ url_for('contact_page') }}">CONTACTO</a></li>
+                    <li class="{% if current_page == 'home' %}active{% endif %}"><a href="/" class="home-navbar">INICIO</a></li>
+                    <li class="{% if current_page == 'projects' %}active{% endif %}"><a href="#proyectos">PROYECTOS</a></li>
+                    <li class="{% if current_page == 'about' %}active{% endif %}"><a href="#about">ACERCA DE</a></li>
+                    
+                    <li class="{% if current_page == 'contact' %}active{% endif %}"><a href="#contacto">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
     {% block body %}
-
     {% endblock %}
 
+    {% block footer %}
+    
     <footer>
         <p>Author: Heluja Arquitectura</p>
         <p><a href="mailto:hege@example.com">helujaarq@example.com</a></p>
     </footer>
+    {% endblock %}
     <script src="{{url_for('static', filename='scripts.js')}}"></script>
 </body>
 </html>

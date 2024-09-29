@@ -121,3 +121,45 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  let animatedSections = new Set(); // Usamos un Set para almacenar las secciones animadas
+
+  const fadeInOnScroll = () => {
+      sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top < window.innerHeight && !animatedSections.has(section)) {
+              // Si la sección está visible y no ha sido animada
+              section.style.opacity = "1";
+              section.style.transform = "translateY(0)";
+              animatedSections.add(section); // Agregamos la sección al Set
+          }
+      });
+  };
+
+  window.addEventListener("scroll", fadeInOnScroll);
+  fadeInOnScroll(); // Llamamos la función para verificar las secciones al cargar la página
+});
+
+const sections: NodeListOf<HTMLElement> = document.querySelectorAll('section');
+const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach((sec: HTMLElement) => {
+        const top: number = window.scrollY;
+        const offset: number = sec.offsetTop - 150;
+        const height: number = sec.offsetHeight;
+        const id: string | null = sec.getAttribute('id');
+        
+        if (id && top >= offset && top < offset + height) {
+            navLinks.forEach((link: HTMLAnchorElement) => {
+                link.classList.remove('active');
+                const activeLink: HTMLAnchorElement | null = document.querySelector(`header nav a[href*=${id}]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            });
+        }
+    });
+};
+

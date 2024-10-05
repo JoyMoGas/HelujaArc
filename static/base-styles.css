@@ -346,3 +346,176 @@ html {
   }
 
 }
+
+/* Overlay con animación */
+#overlay {
+  font-family: 'Nonito', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  z-index: 9998; /* Justo debajo del formulario */
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Comienza oculto */
+  transition: opacity 0.5s ease; /* Transición en la opacidad */
+}
+
+#overlay.active {
+  visibility: visible;
+  opacity: 1; /* Mostrar con opacidad completa */
+  background-color: rgba(0, 0, 0, 0.5); /* Aplica el filtro de opacidad */
+}
+
+#overlay.inactive {
+  visibility: hidden;
+  opacity: 0; /* Ocultar con opacidad */
+  background-color: rgba(0, 0, 0, 0); /* Volver a transparente */
+  transition: opacity 0.5s ease, visibility 0s ease 0.5s; /* Retardo en visibility para coincidir con la opacidad */
+}
+
+#contactForm {
+  font-family: 'Nonito', sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Comienza oculto */
+  transition: opacity 0.5s ease; /* Transición en la opacidad */
+  min-height: 400px; /* Ajustar la altura mínima del formulario */
+}
+
+#contactForm.visible {
+  visibility: visible;
+  opacity: 1; /* Mostrar cuando se añade la clase visible */
+}
+
+#contactForm.hidden {
+  visibility: hidden;
+  opacity: 0; /* Oculto cuando se añade la clase hidden */
+}
+
+/* Contenedor del formulario */
+.form-container {
+  width: 400px; /* Ancho fijo */
+  max-width: 90%; /* Para que sea responsivo en pantallas pequeñas */
+}
+
+/* Botón de cerrar */
+#closeForm {
+  background: none;
+  border: none;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+/* Estilos para los campos del formulario */
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%; /* Ajustar el ancho según sea necesario */
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #2c3e50; /* color gray */
+  outline: 0;
+  font-size: 1rem;
+  color: #2c3e50; /* color gray */
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #2c3e50; /* color gray */
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #1877f2; /* color primary */
+    font-weight: 700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-bottom: 2px solid #1877f2; /* Cambiar el color de la línea al enfocar */
+}
+
+/* Reset input */
+.form__field {
+  &:required,
+  &:invalid { 
+    box-shadow: none; 
+  }
+}
+
+/* Estilos específicos para el textarea */
+textarea.form__field {
+  min-height: 100px; /* Aumentar la altura del textarea */
+  resize: vertical; /* Permitir que el usuario ajuste la altura */
+}
+
+.submit-btn {
+  margin-top:  2em;
+  margin-left: 40%;
+  font-size: 20px;
+  background: #2c3e50;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.submit-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #384e63;
+}
+
+#emailButton {
+  text-decoration: none;
+}

@@ -8,6 +8,8 @@
 
 {% block body %}
 
+
+
 <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
 <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
 
@@ -33,6 +35,19 @@
               <div class="gallery-item-text">
                 <h2>{{ project.title }}</h2>
                 <p>Detalles del proyecto</p>
+                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
+              </div>
+              
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="{{ url_for('project_detail', project_id=project_id) }}">
+              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+              <div class="gallery-item-text">
+                <h2>{{ project.title }}</h2>
+                <p>Detalles del proyecto</p>
+                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
               </div>
             </a>
           </div>
@@ -43,16 +58,7 @@
               <div class="gallery-item-text">
                 <h2>{{ project.title }}</h2>
                 <p>Detalles del proyecto</p>
-              </div>
-            </a>
-          </div>
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
+                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
               </div>
             </a>
           </div>

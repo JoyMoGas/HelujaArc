@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% block head %}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     {% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}" />
-</head>
-<body>
-    <div class="navbar">
-        <div class="navbar-content">
-            <nav>
-                <ul>
-                    <li class="{% if current_page == 'home' %}active{% endif %}">
-                        <a href="/" class="home-navbar">INICIO</a>
-                    </li>
-                    <li class="scroll-link">
-                        <a href="#proyectos">PROYECTOS</a>
-                    </li>
-                    <li class="scroll-link">
-                        <a href="#acerca-de">ACERCA DE</a>
-                    </li>
-                    <li class="{% if current_page == 'contact' %}active{% endif %}">
-                        <a href="#contacto">CONTACTO</a>
-                    </li>
-                </ul>
-            </nav>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='base-styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Formulario flotante -->
+ <!-- Formulario flotante -->
+<div id="contactForm" class="hidden">
+    <div class="form-container">
+        <button id="closeForm" class="close-button" aria-label="Cerrar formulario">
+            <i class="fa-solid fa-x " style="color: #2c3e50;"></i>
+        </button>
+      <h2>Contacto</h2>
+      <form>
+        <div class="form__group field">
+          <input type="text" class="form__field" placeholder="Nombre" name="name" id="name" required />
+          <label for="name" class="form__label">Nombre</label>
         </div>
+        
+        <div class="form__group field">
+          <input type="email" class="form__field" placeholder="Correo electrónico" name="email" id="email" required />
+          <label for="email" class="form__label">Correo electrónico</label>
+        </div>
+        
+        <div class="form__group field">
+          <textarea class="form__field" placeholder="Mensaje" name="message" id="message" required></textarea>
+          <label for="message" class="form__label">Mensaje</label>
+        </div>
+        
+        <button class="submit-btn" type="submit"><span>Enviar</span></button>
+      </form>
+    </div>
+  </div>
+  
+
+    <div class="navbar">
+      <div class="navbar-content">
+        <nav>
+          <ul>
+            <li class="{% if current_page == 'home' %}active{% endif %}">
+              <a href="/" class="home-navbar">INICIO</a>
+            </li>
+            <li class="scroll-link">
+              <a href="#proyectos">PROYECTOS</a>
+            </li>
+            <li class="scroll-link">
+              <a href="#acerca-de">ACERCA DE</a>
+            </li>
+            <li class="{% if current_page == 'contact' %}active{% endif %}">
+              <a href="#contacto" id="contactLink">CONTACTO</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     {% block body %} {% endblock %}
 
     <footer class="footer-distributed">
-        <div class="footer-left">
-            <p class="footer-links">
-                <a href="#" class="link-1">Inicio</a>
-                <a href="#">Proyectos</a>
-                <a href="#">Acerca de</a>
-                <a href="#">Contacto</a>
-            </p>
-            <div id="info">
-                <i class="fa-solid fa-location-dot" style="color: #5dade2;"></i>
-                <p><span>179 Bacerac Ave</span> Hermosillo, Sonora, Mx</p>
-            </div>
-            <div id="info">
-                <i class="fa-solid fa-phone" style="color: #5dade2;"></i>
-                <p>+52 66-24-20-38-27</p>
-            </div>
-            <div id="info">
-                <i class="fa-solid fa-envelope" style="color: #5dade2;"></i>
-                <p><a href="mailto:hectorgastelum.99@gmail.com">hectorgastelum.99@gmail.com</a></p>
-            </div>
+      <div class="footer-left">
+        <p class="footer-links">
+          <a href="/" class="link-1">Inicio</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#acerca-de">Acerca de</a>
+          <a href="#contacto" id="footerContactLink">Contacto</a>
+        </p>
+        <div id="info">
+          <i class="fa-solid fa-location-dot" style="color: #5dade2"></i>
+          <p><span>179 Bacerac Ave</span> Hermosillo, Sonora, Mx</p>
         </div>
+        <div id="info">
+          <i class="fa-solid fa-phone" style="color: #5dade2"></i>
+          <p>+52 66-24-20-38-27</p>
+        </div>
+        <div id="info">
+          <i class="fa-solid fa-envelope" style="color: #5dade2"></i>
+          <p>
+            <a href="mailto:hectorgastelum.99@gmail.com" target="_blank"
+              >hectorgastelum.99@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
 
-        <div class="footer-center">
-            <img src="static/images/FINE 2.png" alt="Logotipo" class="firma-personal">
-            <p style="padding-top: 1em;" class="footer-company-name">Heluja Arquitectura © 2024</p>
-        </div>
+      <div class="footer-center">
+        <img
+          src="static/images/FINE 2.png"
+          alt="Logotipo"
+          class="firma-personal"
+        />
+        <p style="padding-top: 1em" class="footer-company-name">
+          Heluja Arquitectura © 2024
+        </p>
+      </div>
 
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>Sigueme en:</span>
-            </p>
-            <div class="footer-icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-            <p class="footer-quote">"La arquitectura es el arte de ordenar el espacio".</p>
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>Sigueme en:</span>
+        </p>
+        <div class="footer-icons">
+          <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+        <p class="footer-quote">
+          "La arquitectura es el arte de ordenar el espacio".
+        </p>
+      </div>
     </footer>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
-    
-    <script>
-        // Smooth Scroll Script
-        document.querySelectorAll('a.scroll-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault(); // Evitar el comportamiento por defecto del enlace
-                const targetId = this.getAttribute('href'); // Obtener el ID del objetivo
-                const targetElement = document.querySelector(targetId); // Seleccionar el elemento objetivo
-                
-                // Desplazamiento suave
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
-</body>
+  </body>
 </html>

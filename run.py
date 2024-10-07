@@ -1,13 +1,16 @@
 import os
 from flask import Flask, render_template, url_for
 
-
-
 app = Flask(__name__)
 
 # Ruta hacia la carpeta donde se almacenan los proyectos
 PROJECTS_PATH = os.path.abspath('static/images/')
-
+# Lista que define el orden de los proyectos
+ORDERED_PROJECTS = [
+    'the-f-house',
+    'zoe-center',
+    'los-mezquites'
+]
 
 def load_projects():
     projects = {}
@@ -17,51 +20,66 @@ def load_projects():
         if os.path.isdir(project_path):
             images = os.listdir(project_path)
             main_image = None
-            detail_images = []
+            detail_text = ""  # Inicializamos el texto de detalle
 
-            # Buscamos la imagen principal y las imágenes de detalles
+            # Buscamos la imagen principal y el archivo de texto
             for image in images:
-                if image.startswith('imagen01'):  # La imagen principal
+                if image.startswith('Picture1'):  # La imagen principal
                     main_image = f'images/{project_folder}/{image}'  # Ruta relativa a 'static/images/'
-                else:
-                    detail_images.append(f'images/{project_folder}/{image}')  # Rutas relativas a 'static/images/'
+                elif image == 'detalles.txt':  # Archivo de detalle
+                    with open(os.path.join(project_path, image), 'r') as f:
+                        detail_text = f.read().strip()  # Leemos el contenido del archivo
 
             if main_image:
                 projects[project_folder] = {
                     'title': project_folder.replace('-', ' ').title(),  # Convertimos el nombre del folder a título
                     'main_image': main_image,
-                    'detail_images': detail_images
+                    'detail_text': detail_text  # Añadimos el texto de detalle
                 }
-    return projects
+
+    return dict(list(projects.items())[:8])  # Retorna solo los primeros 3 proyectos
+
+def load_projects_index():
+    projects = {}
+    # Recorremos las carpetas dentro de 'static/images/'
+    for project_folder in os.listdir(PROJECTS_PATH):
+        project_path = os.path.join(PROJECTS_PATH, project_folder)
+        if os.path.isdir(project_path):
+            images = os.listdir(project_path)
+            main_image = None
+            detail_text = ""
+
+            # Buscamos la imagen principal y el archivo de texto
+            for image in images:
+                if image.startswith('Picture1'):  # La imagen principal
+                    main_image = f'images/{project_folder}/{image}'  # Ruta relativa a 'static/images/'
+                elif image == 'detalles.txt':  # Archivo de detalle
+                    with open(os.path.join(project_path, image), 'r') as f:
+                        detail_text = f.read().strip()  # Leemos el contenido del archivo
+
+            if main_image:
+                projects[project_folder] = {
+                    'title': project_folder.replace('-', ' ').title(),
+                    'main_image': main_image,
+                    'detail_text': detail_text
+                }
+
+    # Ordenamos los proyectos según la lista de orden
+    ordered_projects = {k: projects[k] for k in ORDERED_PROJECTS if k in projects}
+
+    return ordered_projects  # Retorna los proyectos en el orden especificado
+
+
 
 @app.route('/')
 def index():
-    projects = load_projects()  # Cargamos los proyectos
+    projects = load_projects_index()  # Cargamos los proyectos
     return render_template('index.html', projects=projects, current_page='home')
 
-@app.route('/projects')
-def projects_page():
-    projects = load_projects()  # Cargamos los proyectos
-    return render_template('projects.html', projects=projects, current_page='projects')
-
-@app.route('/project/<project_id>')
-def project_detail(project_id):
+@app.route('/project')
+def project_detail():
     projects = load_projects()
-    project = projects.get(project_id)
-    if project:
-        return render_template('project_detail.html', project=project)
-    else:
-        return render_template('404.html'), 404  # Usar una plantilla 404 personalizada
-
-
-@app.route('/')
-def contact_page():
-    return render_template('contact.html', current_page='contact')
-
-
-@app.route('/about')
-def about_page():
-    return render_template('about.html', current_page='about')
+    return render_template('project_detail.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

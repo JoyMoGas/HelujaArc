@@ -25,47 +25,23 @@
   </section>
 
   <section class="gallery-container">
-      <h1 id="titulo">PROYECTOS MAS RECIENTES</h1>
-      <div class="gallery">
+    <h1 id="titulo">PROYECTOS MÁS RECIENTES</h1>
+    <div class="gallery">
         {% for project_id, project in projects.items() %}
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-              
-            </a>
-          </div>
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-            </a>
-          </div>
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-            </a>
-          </div>
-          
+            <div class="gallery-item">
+                <a href="{{ url_for('project_detail', project_id=project_id) }}">
+                    <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
+                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+                    <div class="gallery-item-text">
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.detail_text }}</p>
+                        <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
+                    </div>
+                </a>
+            </div>
         {% endfor %}
-      </div>
-  </section>
+    </div>
+</section>
 
   <section id="proyectos">
     <h1 id="titulo" style="padding-bottom: 1.5em;">PROYECTOS</h1>
@@ -73,21 +49,7 @@
       {% for project_id, project in projects.items() %}
         <div class="responsive-container-block">
           <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
         </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        
       {% endfor %}
     </div>
 </section>

@@ -229,29 +229,32 @@ body {
 .album {
   display: flex;
   flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
-  padding: 5px 15px 5px 15px;
+  padding: 5px 15px; /* Añadido padding para el contenedor principal */
   justify-content: space-between; /* Espacio entre las imágenes */
 }
 
 .album .responsive-container-block {
   position: relative; /* Permite que el efecto de hover se aplique correctamente */
   overflow: hidden; /* Asegura que no haya desbordamiento */
-  max-width: 350px; /* Controlar el ancho máximo del contenedor */
-  margin: 0; /* Eliminar el margen para mantener alineado */
+  width: 22em; /* Ancho fijo para el contenedor */
+  height: 15em; /* Altura fija para mantener el tamaño uniforme */
+  margin-top: 1em;
+  border-radius: 5px; /* Bordes redondeados */
+  background: #fff; /* Color de fondo para el contenedor */
+  aspect-ratio: 3 / 2;
 }
 
 .album .img {
   width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
-  height: 22em; /* Altura fija para mantener el tamaño uniforme */
-  border-radius: 5px;
+  height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
   object-fit: cover; /* Ajustar la imagen sin perder proporción */
   transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para el zoom y gris */
-  filter: grayscale(60%); /* Aplicar filtro gris por defecto */
+  filter: grayscale(0); /* Aplicar filtro gris por defecto */
 }
 
 .album .responsive-container-block:hover .img {
   transform: scale(1.05); /* Efecto de zoom al hacer hover */
-  filter: grayscale(0); /* Remover filtro gris al hacer hover */
+  filter: grayscale(70%); /* Remover filtro gris al hacer hover */
 }
 
 .album-item-text {
@@ -261,10 +264,11 @@ body {
   right: 10px; /* Espacio a la derecha */
   color: white; /* Color del texto */
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+  background: rgba(0, 0, 0, 0.258); /* Fondo oscuro con opacidad */
   opacity: 0; /* Inicialmente oculto */
   transition: opacity 0.3s ease; /* Transición para la aparición */
   text-align: center; /* Centrar texto */
+  width: 100%;
 }
 
 .album .responsive-container-block:hover .album-item-text {
@@ -275,6 +279,7 @@ body {
   font-size: 1.5rem; /* Tamaño del título */
   margin: 0; /* Sin margen para mejor alineación */
 }
+
 
 /* Media Queries para responsividad */
 @media (max-width: 768px) {
@@ -295,7 +300,7 @@ body {
   margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
   text-align: left; /* Cambiar a izquierda para alinear el texto */
   text-decoration: none;
-  padding-bottom: 1.5em;
+  padding-bottom: 0.5em;
   color: #333;
   font-size: 1em;
   transition: all 0.3s ease-in-out;

@@ -16,7 +16,7 @@
 
 <div id="demoBox"></div>
   <!-- Contenido aquí -->
-  <section id="inicio" class="mainInfo">
+  <section id="inicio" class="mainInfo fade-in-up">
     <h1 style="padding-top: 1em; padding-bottom: 1em;"> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
     <p>
       Mi nombre es HECTOR R. MONTAÑO GASTELUM, soy un joven arquitecto con experiencia en la coordinación y desarrollo de proyectos arquitectónicos, desde viviendas unifamiliares hasta inmuebles industriales. Me apasiona materializar ideas arquitectónicas y busco constantemente aprender nuevas habilidades que me permitan ofrecer mejores resultados a la sociedad. Me considero curioso, creativo y comprometido, dispuesto a enfrentar nuevos retos.
@@ -24,14 +24,15 @@
     </p>
   </section>
 
-  <section class="gallery-container">
+
+  <section class="gallery-container fade-in-up">
     <h1 id="titulo">PROYECTOS MÁS RECIENTES</h1>
     <div class="gallery">
         {% for project_id, project in projects.items() %}
             <div class="gallery-item">
                 <a href="{{ url_for('project_detail', project_id=project_id) }}">
                     <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}" loading="lazy">
                     <div class="gallery-item-text">
                         <h2>{{ project.title }}</h2>
                         <p>{{ project.detail_text }}</p>
@@ -43,41 +44,47 @@
     </div>
 </section>
 
-  <section id="proyectos">
-    <h1 id="titulo" style="padding-bottom: 1.5em;">PROYECTOS</h1>
-    <div class="album">
-      {% for project_id, project in projects.items() %}
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-      {% endfor %}
-    </div>
+<section id="proyectos" class="fade-in-up">
+  <h1 id="titulo" style="padding-bottom: 0.1em;">PROYECTOS</h1>
+  <a href="/projects" class="projects-link">Ir a proyectos<i class="fa-solid fa-arrow-right fa-sm album-item-icon"></i></a>
+  <div class="album">
+    {% for project_id, project in all_projects.items() %}
+      <div class="responsive-container-block">
+        <a href="{{ url_for('project_detail', project_id=project_id) }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+          <div class="album-item-text">
+            <h2>{{ project.title }}</h2>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 </section>
 
 
 
 
 
-  <section id="acerca-de">
+  <section id="acerca-de" class="fade-in-up">
     <div class="gallery-container">
       <h1 id="titulo" style="padding-top: 1.5em;">MIS SERVICIOS</h1>
       <div class="gallery">
         <div class="gallery-item">
-          <img src="static/images/renders/Ejecucion.jpg" alt="">
+          <img src="static/images/renders/Ejecucion.webp" alt="" loading="lazy">
             <div class="gallery-item-text">
               <h2>EJECUCION DE OBRA</h2>
               <p>Detalles del servicio</p>
             </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/anteproyecto.jpeg" alt="">
+          <img src="static/images/renders/anteproyecto.webp" alt="" loading="lazy">
           <div class="gallery-item-text">
             <h2>PROYECTO EJECUTIVO</h2>
             <p>Detalles del servicio</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/proyecto-ejecutivo.jpeg" alt="">
+          <img src="static/images/renders/proyecto-ejecutivo.webp" alt="" loading="lazy">
           <div class="gallery-item-text">
             <h2>ANTEPROYECTO</h2>
             <p>Detalles del servicio</p>
@@ -87,7 +94,7 @@
     </div>
   </section>
 
-  <section id="skills" class="skills-section">
+  <section id="skills" class="skills-section fade-in-up">
     <h1 id="titulo">HABILIDADES DE SOFTWARE</h1>
     <div class="wrapper">
       <div class="icon">

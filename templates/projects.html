@@ -9,87 +9,16 @@
 {% block body %}
 
 
-
-<img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
-<img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
-
-
-<div id="demoBox"></div>
-  <!-- Contenido aquí -->
-  <section id="inicio" class="mainInfo">
-    <h1 style="padding-top: 1em; padding-bottom: 1em;"> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
-    <p>
-      Mi nombre es HECTOR R. MONTAÑO GASTELUM, soy un joven arquitecto con experiencia en la coordinación y desarrollo de proyectos arquitectónicos, desde viviendas unifamiliares hasta inmuebles industriales. Me apasiona materializar ideas arquitectónicas y busco constantemente aprender nuevas habilidades que me permitan ofrecer mejores resultados a la sociedad. Me considero curioso, creativo y comprometido, dispuesto a enfrentar nuevos retos.
-      Mi enfoque profesional se basa en la filosofía "Yes is More" (Bjarke Ingels), donde veo las limitantes de cada proyecto como oportunidades para crear espacios distintivos y beneficiosos tanto para los usuarios como para el entorno.
-    </p>
-  </section>
-
-  <section class="gallery-container">
-      <h1 id="titulo">PROYECTOS MAS RECIENTES</h1>
-      <div class="gallery">
-        {% for project_id, project in projects.items() %}
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-              
-            </a>
-          </div>
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-            </a>
-          </div>
-          <div class="gallery-item">
-            <a href="{{ url_for('project_detail', project_id=project_id) }}">
-              <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-              <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-              <div class="gallery-item-text">
-                <h2>{{ project.title }}</h2>
-                <p>Detalles del proyecto</p>
-                <i class="fa-solid fa-arrow-right gallery-item-icon" style="color: black;"></i>
-              </div>
-            </a>
-          </div>
-          
-        {% endfor %}
+<section id="proyectos" class="fade-in-up">
+  <h1 id="titulo" style="padding-bottom: 1.5em;">PROYECTOS</h1>
+  <div class="album">
+    {% for project_id, project in projects.items() %}
+      <div class="responsive-container-block">
+        <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
       </div>
-  </section>
-
-  <section id="proyectos">
-    <h1 id="titulo" style="padding-bottom: 1.5em;">PROYECTOS</h1>
-    <div class="album">
-      {% for project_id, project in projects.items() %}
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        <div class="responsive-container-block">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
-        </div>
-        
-      {% endfor %}
-    </div>
+    {% endfor %}
+  </div>
 </section>
+  
 
 {% endblock %}

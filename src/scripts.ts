@@ -121,25 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
-  let animatedSections = new Set(); // Usamos un Set para almacenar las secciones animadas
-
-  const fadeInOnScroll = () => {
-      sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top < window.innerHeight && !animatedSections.has(section)) {
-              // Si la sección está visible y no ha sido animada
-              section.style.opacity = "1";
-              section.style.transform = "translateY(0)";
-              animatedSections.add(section); // Agregamos la sección al Set
-          }
-      });
-  };
-
-  window.addEventListener("scroll", fadeInOnScroll);
-  fadeInOnScroll(); // Llamamos la función para verificar las secciones al cargar la página
-});
 
 const sections: NodeListOf<HTMLElement> = document.querySelectorAll('section');
 const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('header nav a');
@@ -223,3 +204,28 @@ if (closeFormButton) {
 
 // Manejar el clic en el overlay para cerrar el formulario
 overlay.addEventListener('click', closeForm);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('section');
+
+  // Configuración del Intersection Observer
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1 // Inicia la animación cuando el 10% del elemento es visible
+  };
+
+  const fadeInUpObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Añadir la clase 'visible' cuando sea visible
+        observer.unobserve(entry.target); // Deja de observar el elemento una vez visible
+      }
+    });
+  }, observerOptions);
+
+  // Aplicar el observer a cada sección
+  sections.forEach(section => {
+    fadeInUpObserver.observe(section); // Observar la sección
+  });
+});

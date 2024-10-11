@@ -121,18 +121,8 @@ body {
   color: #2c3e50;
 }
 
-section {
-  color: #2c3e50;
-  opacity: 0; /* Ocultas al inicio */
-  transform: translateY(20px); /* Mueve hacia abajo al inicio */
-  transition: opacity 0.6s ease-out, transform 0.6s; /* Transiciones para el efecto */
-}
 
 
-section.section--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .mainInfo p {
   text-align: justify;
@@ -161,8 +151,8 @@ section.section--visible {
   position: relative;
   width: 29em;
   height: 35em;
-  overflow: hidden;
   transition: transform 0.3s ease;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
 }
@@ -184,7 +174,7 @@ section.section--visible {
 
 .gallery-item-text {
   position: absolute;
-  bottom: 60%;
+  bottom: 70%;
   left: 20px;
   width: 100%;
   color: black;
@@ -235,27 +225,55 @@ section.section--visible {
   transform: translateY(2em);
 }
 
+
 .album {
   display: flex;
   flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+  padding: 5px 15px 5px 15px;
   justify-content: space-between; /* Espacio entre las imágenes */
 }
 
 .album .responsive-container-block {
-  display: flex;
-  flex-direction: column; /* Cambiar a columna para que cada contenedor apile las imágenes */
-  padding: 10px;
+  position: relative; /* Permite que el efecto de hover se aplique correctamente */
+  overflow: hidden; /* Asegura que no haya desbordamiento */
   max-width: 350px; /* Controlar el ancho máximo del contenedor */
   margin: 0; /* Eliminar el margen para mantener alineado */
 }
 
 .album .img {
-  flex: 0 0 22%; /* Ajustar el tamaño para un mejor espaciado */
-  margin-bottom: 10px; /* Espaciado entre imágenes */
-  max-width: 100%; /* Mantener el ancho máximo al 100% */
-  height: auto; /* Mantener la altura automática */
-  aspect-ratio: 3 / 2; /* Cambiar a una proporción más ancha (rectangular) */
+  width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+  height: 22em; /* Altura fija para mantener el tamaño uniforme */
+  border-radius: 5px;
   object-fit: cover; /* Ajustar la imagen sin perder proporción */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para el zoom y gris */
+  filter: grayscale(60%); /* Aplicar filtro gris por defecto */
+}
+
+.album .responsive-container-block:hover .img {
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  filter: grayscale(0); /* Remover filtro gris al hacer hover */
+}
+
+.album-item-text {
+  position: absolute;
+  bottom: 10%; /* Ajustar según sea necesario */
+  left: 10px; /* Espacio a la izquierda */
+  right: 10px; /* Espacio a la derecha */
+  color: white; /* Color del texto */
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.3s ease; /* Transición para la aparición */
+  text-align: center; /* Centrar texto */
+}
+
+.album .responsive-container-block:hover .album-item-text {
+  opacity: 1; /* Mostrar el texto al hacer hover */
+}
+
+.album-item-text h2 {
+  font-size: 1.5rem; /* Tamaño del título */
+  margin: 0; /* Sin margen para mejor alineación */
 }
 
 /* Media Queries para responsividad */
@@ -272,9 +290,40 @@ section.section--visible {
 }
 
 
+.projects-link {
+  display: inline-block;
+  margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
+  text-align: left; /* Cambiar a izquierda para alinear el texto */
+  text-decoration: none;
+  padding-bottom: 1.5em;
+  color: #333;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+}
 
+.projects-link i {
+  margin-left: 10px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
 
+.projects-link:hover {
+  transform: translateX(-15px); /* Desplazar un poco a la izquierda al hacer hover */
+}
 
+.projects-link:hover i {
+  opacity: 1; /* Mostrar el ícono al hacer hover */
+  transform: translateX(50px); /* Mover el ícono hacia la derecha */
+}
+
+.album-item-icon {
+  position: relative;
+  left: -50px;  /* Coloca el ícono fuera de la vista inicial, a la izquierda del título */
+  opacity: 0;  /* Oculta el ícono inicialmente */
+  bottom: 40%;
+  font-size: 0.5rem;
+  transition: left 0.5s ease, opacity 0.5s ease;  /* Anima el desplazamiento y la aparición */
+}
 
 
 
@@ -376,3 +425,13 @@ section.section--visible {
     background: #e4405f;
   }
 
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

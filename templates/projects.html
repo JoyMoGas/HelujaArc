@@ -1,24 +1,31 @@
-{% extends "base.html" %}
+{% extends "base-2.html" %}
 {% block title %}HELUJAArq{% endblock %}
 {% block head %}
 <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='project-style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 {% endblock %}
 
 {% block body %}
 
 
+
 <section id="proyectos" class="fade-in-up">
-  <h1 id="titulo" style="padding-bottom: 1.5em;">PROYECTOS</h1>
+  <h1 id="titulo">Proyectos</h1>
+  
   <div class="album">
     {% for project_id, project in projects.items() %}
-      <div class="responsive-container-block">
-        <img class="img" src="{{ url_for('static', filename=project.main_image) }}">
+      <div class="project-card">
+        <a href="{{ url_for('project_detail', project_id=project_id) }}">
+          <div class="image-wrapper">
+            <img class="project-img" src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+          </div>
+          <div class="overlay">
+            <h2 class="project-title">{{ project.title }}</h2>
+          </div>
+        </a>
       </div>
     {% endfor %}
   </div>
 </section>
-  
-
 {% endblock %}

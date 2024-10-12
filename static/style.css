@@ -248,27 +248,26 @@ body {
   width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
   height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
   object-fit: cover; /* Ajustar la imagen sin perder proporción */
-  transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves para el zoom y gris */
-  filter: grayscale(0); /* Aplicar filtro gris por defecto */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .album .responsive-container-block:hover .img {
-  transform: scale(1.05); /* Efecto de zoom al hacer hover */
-  filter: grayscale(70%); /* Remover filtro gris al hacer hover */
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .album-item-text {
   position: absolute;
-  bottom: 10%; /* Ajustar según sea necesario */
-  left: 10px; /* Espacio a la izquierda */
-  right: 10px; /* Espacio a la derecha */
-  color: white; /* Color del texto */
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.258); /* Fondo oscuro con opacidad */
-  opacity: 0; /* Inicialmente oculto */
-  transition: opacity 0.3s ease; /* Transición para la aparición */
-  text-align: center; /* Centrar texto */
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .album .responsive-container-block:hover .album-item-text {
@@ -276,8 +275,10 @@ body {
 }
 
 .album-item-text h2 {
-  font-size: 1.5rem; /* Tamaño del título */
-  margin: 0; /* Sin margen para mejor alineación */
+  color: #fff;
+  font-size: 1.8em;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 

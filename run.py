@@ -70,6 +70,38 @@ def load_projects():
 
     return projects  # Retorna los proyectos en el orden alfabético de la lista
 
+def load_project_details(project_folder):
+    project_path = os.path.join(PROJECTS_PATH, project_folder)
+    if os.path.isdir(project_path):
+        images = sorted([img for img in os.listdir(project_path) if img.endswith('.webp')])
+        main_image = None
+        additional_images = []
+        detail_text = ""
+
+        # Buscamos las imágenes y el archivo de texto
+        for image in images:
+            if image.startswith('Picture1'):  # Imagen principal
+                main_image = f'images/{project_folder}/{image}'
+            else:  # Imágenes adicionales
+                additional_images.append(f'images/{project_folder}/{image}')
+        
+        # Detalles en texto
+        detail_text_path = os.path.join(project_path, 'texto.txt')
+        if os.path.exists(detail_text_path):
+            with open(detail_text_path, 'r') as f:
+                detail_text = f.read().strip()
+
+        # Devolver la información del proyecto
+        if main_image:
+            return {
+                'title': project_folder.replace('-', ' ').title(),
+                'main_image': main_image,
+                'additional_images': additional_images,
+                'detail_text': detail_text
+            }
+    return None  # Si el proyecto no existe
+
+
 def load_all_projects_gallery():
     projects = {}
     # Recorremos las carpetas dentro de 'static/images/'
@@ -99,6 +131,7 @@ def load_all_projects_gallery():
     return dict(list(projects.items()))
 
 @app.route('/')
+@app.route('/inicio')
 def index():
     projects = load_projects()  # Cargamos los proyectos específicos en orden
 
@@ -107,19 +140,19 @@ def index():
     return render_template('index.html', projects=projects, all_projects=all_projects, current_page='home')
 
 
-@app.route('/projects')
+@app.route('/proyectos')
 def projects_page():
     projects = load_all_projects_gallery()  # Cargamos los proyectos
     return render_template('projects.html', projects=projects, current_page='projects')
 
-@app.route('/project/<project_id>')
+@app.route('/proyecto/<project_id>')
 def project_detail(project_id):
-    projects = load_projects()
-    project = projects.get(project_id)
+    project = load_project_details(project_id)
     if project:
         return render_template('project_detail.html', project=project)
     else:
         return render_template('404.html'), 404  # Usar una plantilla 404 personalizada
+
 
 
 if __name__ == '__main__':

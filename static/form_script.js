@@ -1,4 +1,4 @@
-
+"use strict";
 // Selección de elementos
 const contactLink = document.getElementById('contactLink');
 const footerContactLink = document.getElementById('footerContactLink'); // Enlace del footer
@@ -50,3 +50,5 @@ if (footerContactLink) {
 if (closeFormButton) {
     closeFormButton.addEventListener('click', closeForm);
 }
+// Manejar el clic en el overlay para cerrar el formulario
+overlay.addEventListener('click', closeForm);

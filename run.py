@@ -81,8 +81,10 @@ def load_projects():
 
     return projects  # Retorna los proyectos en el orden alfabético de la lista
 
+
 def load_project_details(project_folder):
     project_path = os.path.join(PROJECTS_PATH, project_folder)
+    
     if os.path.isdir(project_path):
         images = sorted([img for img in os.listdir(project_path) if img.endswith('.webp')])
         main_image = None
@@ -92,11 +94,21 @@ def load_project_details(project_folder):
 
         # Buscamos las imágenes y el archivo de texto
         for image in images:
+            is_big = '-big' in image  # Verificamos si la imagen contiene "-big"
+
             if image.startswith('Picture1'):  # Imagen principal
                 main_image = f'images/{project_folder}/{image}'
-            else:  # Imágenes adicionales
-                additional_images.append(f'images/{project_folder}/{image}')
-        
+                # También agregamos la imagen principal a las adicionales
+                additional_images.append({
+                    'url': main_image,
+                    'is_big': is_big
+                })
+            else:  # Otras imágenes
+                additional_images.append({
+                    'url': f'images/{project_folder}/{image}',
+                    'is_big': is_big
+                })
+
         # Detalles en texto
         detail_text_path = os.path.join(project_path, 'texto.txt')
         if os.path.exists(detail_text_path):
@@ -117,7 +129,10 @@ def load_project_details(project_folder):
                 'detail_text': detail_text,
                 'location_text': location_text
             }
-    return None  # Si el proyecto no existe
+
+    return None  # Si el directorio del proyecto no existe
+
+
 
 
 def load_all_projects_gallery():

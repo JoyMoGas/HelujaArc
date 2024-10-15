@@ -122,7 +122,16 @@ body {
   object-position: center; /* Centrar la imagen en el contenedor */
 }
 
+/* Estilos para imágenes grandes */
+.gallery-image.big-image {
+  width: 95%;   /* La imagen ocupará todo el ancho de su contenedor */
+  height: auto;  /* Ajustar la altura automáticamente */
+  max-width: 100%;
+}
 
+.gallery-image.big-image img {
+  object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
+}
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {

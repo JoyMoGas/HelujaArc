@@ -2,6 +2,7 @@
 {% block title %}{{ project.title }}{% endblock %}
 
 {% block head %}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='details-style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 {% endblock %}
@@ -26,16 +27,12 @@
   <!-- Galería de imágenes adicionales -->
   {% if project.additional_images %}
   <div class="gallery">
-    <div class="gallery-image">
-      <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-    </div>
     {% for image in project.additional_images %}
-    <div class="gallery-image">
-      <img src="{{ url_for('static', filename=image) }}" alt="{{ project.title }}">
+    <div class="gallery-image {% if image.is_big %}big-image{% endif %}">
+      <img src="{{ url_for('static', filename=image.url) }}" alt="{{ project.title }}">
     </div>
     {% endfor %}
   </div>
-  
   {% endif %}
 </section>
 

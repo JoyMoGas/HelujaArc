@@ -9,15 +9,22 @@ app = Flask(__name__)
 PROJECTS_PATH = os.path.abspath('static/images/')
 
 
-def load_all_projects(limit=8):
+def load_all_projects():
+
+    project_names = ['duo-padel-store', 'lb-santa-anita', 'los-mezquites', 'nomenclatura-municipal', 'plaza-9Q', 'plaza-manto', 'villa-solciego', 'truck-stop']
+
+    project_names = sorted(project_names)
+
     projects = {}
+
     # Recorremos las carpetas dentro de 'static/images/'
-    for project_folder in os.listdir(PROJECTS_PATH):
+    for project_folder in project_names:
         project_path = os.path.join(PROJECTS_PATH, project_folder)
         if os.path.isdir(project_path):
             images = os.listdir(project_path)
             main_image = None
             detail_text = ""
+            location_text = ""
 
             # Buscamos la imagen principal y el archivo de texto
             for image in images:
@@ -26,16 +33,20 @@ def load_all_projects(limit=8):
                 elif image == 'detalles.txt':  # Archivo de detalle
                     with open(os.path.join(project_path, image), 'r') as f:
                         detail_text = f.read().strip()
+                elif image == 'location.txt':
+                    with open(os.path.join(project_path, image), 'r') as f:
+                        location_text = f.read().strip()
 
             if main_image:
                 projects[project_folder] = {
                     'title': project_folder.replace('-', ' ').title(),
                     'main_image': main_image,
-                    'detail_text': detail_text
+                    'detail_text': detail_text,
+                    'location_text': location_text
                 }
     
     # Retorna solo los primeros 'limit' proyectos
-    return dict(list(projects.items())[:limit])
+    return projects
 
 
 def load_projects():
@@ -77,6 +88,7 @@ def load_project_details(project_folder):
         main_image = None
         additional_images = []
         detail_text = ""
+        location_text = ""
 
         # Buscamos las imágenes y el archivo de texto
         for image in images:
@@ -91,13 +103,19 @@ def load_project_details(project_folder):
             with open(detail_text_path, 'r') as f:
                 detail_text = f.read().strip()
 
+        location_text_path = os.path.join(project_path, 'location.txt')
+        if os.path.exists(location_text_path):
+            with open(location_text_path, 'r') as f:
+                location_text = f.read().strip()
+
         # Devolver la información del proyecto
         if main_image:
             return {
                 'title': project_folder.replace('-', ' ').title(),
                 'main_image': main_image,
                 'additional_images': additional_images,
-                'detail_text': detail_text
+                'detail_text': detail_text,
+                'location_text': location_text
             }
     return None  # Si el proyecto no existe
 
@@ -135,7 +153,7 @@ def load_all_projects_gallery():
 def index():
     projects = load_projects()  # Cargamos los proyectos específicos en orden
 
-    all_projects = load_all_projects(limit=8)
+    all_projects = load_all_projects()
 
     return render_template('index.html', projects=projects, all_projects=all_projects, current_page='home')
 

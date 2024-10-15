@@ -1,29 +1,41 @@
 {% extends "base-2.html" %}
 {% block title %}{{ project.title }}{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='details-style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+{% endblock %}
+
 {% block body %}
+
+<!-- Contenedor de la imagen principal con el título superpuesto -->
+<div id="demoBox" class="with-title">
+  <h1 class="image-title">{{ project.title }}</h1>
+  <h3 class="image-location"> <i class="fa-solid fa-location-dot" style="color: #ECF0F1"></i> {{ project.location_text }}</h3>
+  <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+</div>
+
+<!-- Sección de detalles del proyecto -->
 <section id="project-detail" class="fade-in-up">
-  <h1>{{ project.title }}</h1>
 
   <!-- Descripción del proyecto -->
   <div class="project-description">
     <p>{{ project.detail_text }}</p>
   </div>
 
-  <!-- Imagen principal -->
-  <div class="main-image">
-    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
-  </div>
-
   <!-- Galería de imágenes adicionales -->
   {% if project.additional_images %}
   <div class="gallery">
+    <div class="gallery-image">
+      <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+    </div>
     {% for image in project.additional_images %}
-      <div class="gallery-image">
-        <img src="{{ url_for('static', filename=image) }}" alt="{{ project.title }}">
-      </div>
+    <div class="gallery-image">
+      <img src="{{ url_for('static', filename=image) }}" alt="{{ project.title }}">
+    </div>
     {% endfor %}
   </div>
+  
   {% endif %}
 </section>
 

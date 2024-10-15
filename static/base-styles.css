@@ -148,7 +148,8 @@ html {
 }
 
 .firma-personal {
-  height: 200px; /* Ajusta el tamaño según sea necesario */
+  height: 125px;
+  top: 0;
 }
 
 .footer-distributed .footer-left,
@@ -198,6 +199,7 @@ html {
   font-size: 14px;
   font-weight: normal;
   margin: 0;
+  padding-top: 5em;
 }
 
 /* Footer Center */
@@ -298,6 +300,14 @@ html {
   margin-bottom: 20px;
 }
 
+.footer-icons h2 {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .footer-distributed .footer-icons{
   margin-top: 25px;
 }
@@ -316,12 +326,12 @@ html {
 }
 
 .footer-icons i {
-  color: #5dade2;
+  color: #ECF0F1;
   transition: color 0.5s;
 }
 
 .footer-icons i:hover {
-  color: #dadede;
+  color: #5dade2;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */

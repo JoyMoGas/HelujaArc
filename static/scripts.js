@@ -45,64 +45,6 @@ window.addEventListener('scroll', () => {
 window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
 });
-/*
-document.addEventListener('DOMContentLoaded', () => {
-  window.scrollTo(0, 0);
-  const logo = document.getElementById('logo') as HTMLImageElement;
-  const title = document.getElementById('title') as HTMLElement;
-  const titleSpan = document.querySelector('#title span') as HTMLElement;
-
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      logo.style.position = 'fixed';
-      logo.style.top = '-12px';
-      logo.style.left = '90px';
-      logo.style.height = '100px';
-      logo.style.transform = 'translateX(0) scale(0.6)';
-
-      title.style.position = 'fixed';
-      title.style.top = '3px';
-      title.style.left = '155px';
-      title.style.height = '100px';
-      title.style.transform = 'translateX(0) scale(0.6)';
-      title.style.cursor = 'pointer';
-      title.style.color = '#fff';
-    } else {
-      logo.style.position = 'absolute';
-      logo.style.top = '220px';
-      logo.style.left = '50%';
-      logo.style.transform = 'translateX(-50%) scale(1)';
-      logo.style.height = '250px';
-
-      title.style.position = 'absolute';
-      title.style.top = '500px';
-      title.style.left = '50%';
-      title.style.height = '500px';
-      title.style.transform = 'translateX(-50%) scale(1)';
-      title.style.cursor = 'default';
-      title.style.color = '#fff';
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-
-  // Inicializa el estado del logotipo
-  handleScroll();
-});
-
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar') as HTMLElement;
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0);
-});
-*/
 window.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.navbar ul li a');
     const currentURL = window.location.pathname;
@@ -119,23 +61,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
-window.onscroll = () => {
-    sections.forEach((sec) => {
-        const top = window.scrollY;
-        const offset = sec.offsetTop - 150;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        if (id && top >= offset && top < offset + height) {
-            navLinks.forEach((link) => {
-                link.classList.remove('active');
-                const activeLink = document.querySelector(`header nav a[href*=${id}]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            });
-        }
-    });
-};
 // Selección de elementos
 const contactLink = document.getElementById('contactLink');
 const footerContactLink = document.getElementById('footerContactLink'); // Enlace del footer
@@ -189,24 +114,3 @@ if (closeFormButton) {
 }
 // Manejar el clic en el overlay para cerrar el formulario
 overlay.addEventListener('click', closeForm);
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('section');
-    // Configuración del Intersection Observer
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1 // Inicia la animación cuando el 10% del elemento es visible
-    };
-    const fadeInUpObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Añadir la clase 'visible' cuando sea visible
-                observer.unobserve(entry.target); // Deja de observar el elemento una vez visible
-            }
-        });
-    }, observerOptions);
-    // Aplicar el observer a cada sección
-    sections.forEach(section => {
-        fadeInUpObserver.observe(section); // Observar la sección
-    });
-});

@@ -46,9 +46,6 @@
                     <li class="scroll-link">
                         <a href="/proyectos">PROYECTOS</a>
                     </li>
-                    <li class="scroll-link">
-                        <a href="javascript:void(0);" onclick="scrollToSection('acerca-de');">ACERCA DE</a>
-                    </li>
                     <li class="{% if current_page == 'contact' %}active{% endif %}">
                         <a href="#contacto" id="contactLink">CONTACTO</a>
                     </li>
@@ -57,52 +54,52 @@
         </div>
     </div>
 
-    {% block body %} 
-        <!-- Asegúrate de tener tu sección aquí -->
-        <section id="acerca-de">
-            <h2>Acerca de</h2>
-            <p>Información sobre nosotros...</p>
-        </section>
+    {% block body %}
     {% endblock %}
 
     <footer class="footer-distributed">
         <div class="footer-left">
-            <p class="footer-links">
-                <a href="/inicio" class="link-1">Inicio</a>
-                <a href="/proyectos">Proyectos</a>
-                <a href="javascript:void(0);" onclick="scrollToSection('acerca-de');">ACERCA DE</a>
-                <a href="#contacto" id="footerContactLink">Contacto</a>
+          <div id="info">
+            <i class="fa-solid fa-location-dot" style="color: #ECF0F1"></i>
+            <p>Hermosillo, Sonora, Mx</p>
+          </div>
+          <div id="info">
+            <i class="fa-solid fa-phone" style="color: #ECF0F1"></i>
+            <p>+52 66-24-20-38-27</p>
+          </div>
+          <div id="info">
+            <i class="fa-solid fa-envelope" style="color: #ECF0F1"></i>
+            <p>
+              <a href="mailto:hectorgastelum.99@gmail.com" target="_blank"
+                >hectorgastelum.99@gmail.com</a
+              >
             </p>
-            <div id="info">
-                <i class="fa-solid fa-location-dot" style="color: #5dade2"></i>
-                <p><span>179 Bacerac Ave</span> Hermosillo, Sonora, Mx</p>
-            </div>
-            <div id="info">
-                <i class="fa-solid fa-phone" style="color: #5dade2"></i>
-                <p>+52 66-24-20-38-27</p>
-            </div>
-            <div id="info">
-                <i class="fa-solid fa-envelope" style="color: #5dade2"></i>
-                <p><a href="mailto:hectorgastelum.99@gmail.com" target="_blank">hectorgastelum.99@gmail.com</a></p>
-            </div>
-        </div>
-        <div class="footer-center">
-            <img src="{{ url_for('static', filename='images/FINE 2.png') }}" alt="Logotipo" class="firma-personal" />
-            <p style="padding-top: 1em" class="footer-company-name">Heluja Arquitectura © 2024</p>
-        </div>
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>Sígueme en:</span>
-            </p>
+            
             <div class="footer-icons">
-                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              <h2>Sigueme en:</h2>
+              <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
-            <p class="footer-quote">"La arquitectura es el arte de ordenar el espacio".</p>
+          </div>
+          
         </div>
-    </footer>
+
+        <div class="footer-center">
+          
+          
+        </div>
+
+        <div class="footer-right">
+          <p class="footer-company-about">
+            
+          </p>
+          <div class="footer-icons">
+            <img src="{{ url_for('static', filename='images/FINE 2.png') }}" alt="Logotipo" class="firma-personal" />
+          </div>
+          <p style="padding-top: 1em" class="footer-company-name">
+            Heluja Arquitectura © 2024
+          </p>
+        </div>
+      </footer>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {

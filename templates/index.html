@@ -32,7 +32,7 @@
             <div class="gallery-item">
                 <a href="{{ url_for('project_detail', project_id=project_id) }}">
                     <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}" loading="lazy">
+                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
                     <div class="gallery-item-text">
                         <h2>{{ project.title }}</h2>
                         <p>{{ project.detail_text }}</p>
@@ -70,21 +70,21 @@
       <h1 id="titulo" style="padding-top: 1.5em;">MIS SERVICIOS</h1>
       <div class="gallery">
         <div class="gallery-item">
-          <img src="static/images/renders/Ejecucion.webp" alt="" loading="lazy">
+          <img src="static/images/renders/Ejecucion.webp" alt="">
             <div class="gallery-item-text">
               <h2>EJECUCION DE OBRA</h2>
               <p>Detalles del servicio</p>
             </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/anteproyecto.webp" alt="" loading="lazy">
+          <img src="static/images/renders/close-up-drafting-tools-blueprints.webp" alt=""">
           <div class="gallery-item-text">
             <h2>PROYECTO EJECUTIVO</h2>
             <p>Detalles del servicio</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/proyecto-ejecutivo.webp" alt="" loading="lazy">
+          <img src="static/images/renders/architecture-plan-blueprint-layout-work-concept (1).webp">
           <div class="gallery-item-text">
             <h2>ANTEPROYECTO</h2>
             <p>Detalles del servicio</p>

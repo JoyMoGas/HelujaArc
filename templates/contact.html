@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+{% block head %}
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="/static/contact-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+{% endblock %}
+
+{% block body %}
+
+<img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
+<img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
+
+<div class="content">
+  <div id="image-container">
+    <img src="static/images/projects/Picture2.jpg" alt="">
+  </div>
+    <div class="right-container ">
+      <h1>Contacto</h1>
+      <p>Creamos tu futuro</p>
+    </div>
+    <div class="left-container">
+      <p id="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et neque deleniti aspernatur, ullam suscipit voluptates magnam facere officiis cum aperiam.</p>
+      <p id="subtitle">Solicitud Comercial</p>
+      <div class="input-container">
+        <input class="input-field" type="text" placeholder="Nombre Completo">
+        <label for="input-field" class="input-label">Escribre tu nombre</label>
+        <span class="input-highlight"></span>
+      </div>
+      <div class="input-container">
+        <input class="input-field" type="email" placeholder="Correo Electronico">
+        <label for="input-field" class="input-label">Escribe tu correo electronico</label>
+        <span class="input-highlight"></span>
+      </div>
+      <div class="input-container">
+        <textarea class="input-field" placeholder="Tu Mensaje..."></textarea>
+        <label for="input-field" class="input-label">Escribe tu mensaje</label>
+        <span class="input-highlight"></span>
+      </div>
+      <button class="btn">Enviar</button>
+    </div>
+</div>
+
+{% block footer %}{% endblock %}
+
+<!--
+<div id="image-container" class="side-one">
+  <img src="static/images/projects/Picture7.jpg" alt="">
+</div>
+  <div class="side-two">
+    <h1>Contacto</h1>
+    <p>Comienza a crear</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et neque deleniti aspernatur, ullam suscipit voluptates magnam facere officiis cum aperiam.</p>
+    <form>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email">
+      <textarea rows="5" placeholder="Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+-->
+{% endblock %}

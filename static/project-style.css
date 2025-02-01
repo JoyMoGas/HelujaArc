@@ -99,7 +99,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Responsiveness */
+/* Responsiveness 
 @media (max-width: 768px) {
   #titulo {
     font-size: 2.5em;
@@ -114,6 +114,7 @@ body {
   }
 
   .album {
-    grid-template-columns: 1fr; /* Para pantallas más pequeñas, usar una columna */
+    grid-template-columns: 1fr; /* Para pantallas más pequeñas, usar una columna *
   }
 }
+*/

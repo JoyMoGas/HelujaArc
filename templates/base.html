@@ -11,46 +11,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}" />
 </head>
 <body>
-    <!-- Formulario flotante -->
-    <div id="contactForm" class="hidden">
-        <div class="form-container">
-            <button id="closeForm" class="close-button" aria-label="Cerrar formulario">
-                <i class="fa-solid fa-x" style="color: #2c3e50;"></i>
-            </button>
-            <h2>Contacto</h2>
-            <form>
-                <div class="form__group field">
-                    <input type="text" class="form__field" placeholder="Nombre" name="name" id="name" required />
-                    <label for="name" class="form__label">Nombre</label>
-                </div>
-                <div class="form__group field">
-                    <input type="email" class="form__field" placeholder="Correo electrónico" name="email" id="email" required />
-                    <label for="email" class="form__label">Correo electrónico</label>
-                </div>
-                <div class="form__group field">
-                    <textarea class="form__field" placeholder="Mensaje" name="message" id="message" required></textarea>
-                    <label for="message" class="form__label">Mensaje</label>
-                </div>
-                <button class="submit-btn" type="submit"><span>Enviar</span></button>
-            </form>
-        </div>
-    </div>
-
+  <img id="logo-nav" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
+  <img id="logo-title-nav" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
     <div class="navbar">
-        <div class="navbar-content">
-            <nav>
-                <ul>
-                    <li class="{% if current_page == 'home' %}active{% endif %}">
-                        <a href="/inicio" class="home-navbar">INICIO</a>
-                    </li>
-                    <li class="scroll-link">
-                        <a href="/proyectos">PROYECTOS</a>
-                    </li>
-                    <li class="{% if current_page == 'contact' %}active{% endif %}">
-                        <a href="#contacto" id="contactLink">CONTACTO</a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="nav_items" id="_items">
+          <a class="home_navbar" id="inicio" href="/inicio">INICIO</a>
+          <a class="home_navbar" id="proyectos" href="/proyectos">PROYECTOS</a>
+          <a class="home_navbar" id="contacto" href="/contacto">CONTACTO</a>
+        </div>
+        <div class="nav_toggle" id="_toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
     </div>
 
@@ -100,7 +72,9 @@
           </p>
         </div>
       </footer>
+    <script src="{{ url_for('static', filename='responsive.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='navbar.js') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Obtiene los parámetros de la URL

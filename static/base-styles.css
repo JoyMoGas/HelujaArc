@@ -1,58 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Londrina+Outline&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
 
 html {
   scroll-behavior: smooth;
   scroll-padding: 1em;
 }
 
-/* Estilo para la navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 10px;
-  padding-left: 20px; /* Añade espacio a la izquierda de la navbar */
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-start; /* Alinea los elementos a la izquierda */
-  transition: background-color 0.8s ease, padding-top 0.5s;
-  z-index: 999;
-  box-sizing: border-box;
-}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
 
-.navbar .home-navbar {
-  padding-bottom: 8px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  width: fit-content;
-}
+  50% {
+    transform: scale(0.95);
+  }
 
-.navbar.scrolled a:hover {
-  color: #5DADE2;
-}
-
-.navbar a:hover {
-  color: #D0D3D4;
-}
-
-/* Estilo para cuando se hace scroll */
-.navbar.scrolled .home-navbar {
-  animation: lineCollapseIn 0.5s forwards;
-}
-
-/* Estilo para la navbar cuando se hace scroll */
-.navbar.scrolled {
-  padding-top: 0px;
-  background-color:#2c3e50e4;
-  backdrop-filter: blur(8px);
-}
-
-/* Estilo para los enlaces de la navbar cuando se hace scroll */
-.navbar.scrolled a {
-  color: #ECF0F1;
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Animación para la línea al entrar */
@@ -88,444 +55,680 @@ html {
   }
 }
 
-/* Aplica la animación de salida cuando se quita la clase `scrolled` */
-.navbar:not(.scrolled) .home-navbar {
-  animation: lineCollapseOut 0.5s forwards;
-}
+/* Laptops (1024px - 1440px) */
+@media screen and (min-width: 1440px) {
+    /* Navbar Styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    transition: background-color 0.8s ease, padding-top 0.5s;
+    z-index: 999;
+    box-sizing: border-box;
+  }
 
-.navbar-content {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 1200px;
-  box-sizing: border-box;
-  transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
-}
+  .navbar .home-navbar {
+    padding-bottom: 8px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+  }
 
-/* Estilo cuando se ha hecho scroll y el logo está en la navbar */
-.navbar.scrolled .navbar-content {
-  padding: 0px; /* Reduce el padding cuando se hace scroll */
-  padding-left: 0px; /* Elimina el padding en la izquierda */
-}
+  .navbar.scrolled a:hover {
+    color: #5DADE2;
+  }
 
-/* Estilo para los enlaces de la navbar */
-.navbar nav ul {
-  user-select: none;
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  gap: 60px;
-}
+  .navbar a:hover {
+    color: #D0D3D4;
+  }
 
-/* Estilo general para los enlaces de la navbar */
-.navbar nav ul li a {
-  color: #f5f5f7;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  transition: color 0.3s;
-}
+  /* Estilo para cuando se hace scroll */
+  .navbar.scrolled .home-navbar {
+    animation: lineCollapseIn 0.5s forwards;
+  }
 
+  /* Estilo para la navbar cuando se hace scroll */
+  .navbar.scrolled {
+    padding-top: 0px;
+    background-color:#2c3e50e4;
+    backdrop-filter: blur(8px);
+  }
 
+  /* Estilo para los enlaces de la navbar cuando se hace scroll */
+  .navbar.scrolled a {
+    color: #ECF0F1;
+  }
 
+  /* Aplica la animación de salida cuando se quita la clase `scrolled` */
+  .navbar:not(.scrolled) .home-navbar {
+    animation: lineCollapseOut 0.5s forwards;
+  }
 
+  .nav_items {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
+  }
 
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
-
-
-.footer-distributed{
-  background: #2c3e50;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  font: bold 16px sans-serif;
-  padding: 55px 50px;
-  padding-bottom: 15px;
-}
-
-.firma-personal {
-  height: 125px;
-  top: 0;
-}
-
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-  display: inline-block;
-  vertical-align: top;
-}
-
-/* Footer left */
-
-.footer-distributed .footer-left{
-  width: 40%;
-}
-
-/* The company logo */
-
-.footer-distributed h3{
-  color:  #ffffff;
-  font: normal 36px 'Open Sans', cursive;
-  margin: 0;
-}
-
-.footer-distributed h3 span{
-  color:  lightseagreen;
-}
-
-/* Footer links */
-
-.footer-distributed .footer-links{
-  color:  #ffffff;
-  margin: 20px 0 12px;
-  padding: 0;
-  padding-bottom: 2em;
-}
-
-.footer-distributed .footer-links a{
-  display:inline-block;
-  line-height: 1.8;
-  font-weight:400;
-  text-decoration: none;
-  color:  inherit;
-}
-
-.footer-distributed .footer-company-name{
-  color:  #ffffff;
-  font-size: 14px;
-  font-weight: normal;
-  margin: 0;
-  padding-top: 5em;
-}
-
-/* Footer Center */
-
-.footer-distributed .footer-center{
-  width: 35%;
-}
-
-.footer-distributed .footer-center i{
-  background-color:  #33383b;
-  color: #ffffff;
-  font-size: 25px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 42px;
-  margin: 10px 15px;
-  vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope{
-  font-size: 17px;
-  line-height: 38px;
-}
-
-.footer-distributed .footer-left p{
-  display: inline-block;
-  color: #ffffff;
-  font-weight:400;
-  vertical-align: middle;
-  margin:0;
-}
-
-.footer-distributed .footer-left p span{
-  display:block;
-  font-weight: normal;
-  font-size:14px;
-  line-height:2;
-}
-
-.footer-distributed .footer-left p a{
-  color:#ECF0F1;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-
-#info p {
-  padding-left: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
+  /* Estilo cuando se ha hecho scroll y el logo está en la navbar */
 
 
+  /* Estilo para los enlaces de la navbar */
+  .navbar .nav_items {
+    user-select: none;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 60px;
+  }
 
-.footer-distributed .footer-left p a:hover{
-  color:#5DADE2;
-}
+  /* Estilo general para los enlaces de la navbar */
+  .navbar .nav_items a {
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
 
-.footer-distributed .footer-links a:before {
-  content: "|";
-  font-weight:300;
-  font-size: 20px;
-  left: 0;
-  color: #ECF0F1;
-  display: inline-block;
-  padding-right: 5px;
-}
+  #logo-nav {
+    visibility: hidden;
+    position: fixed;
+    top: 8px;
+    left: 116px;
+    height: 45px;
+    scale: 1;
+    z-index: 1000;
+  }
 
-.footer-distributed .footer-links .link-1:before {
-  content: none;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right{
-  width: 20%;
-}
-
-.footer-quote {
-  padding-top: 2em;
-  color: #dadede;
-}
-
-.footer-distributed .footer-company-about{
-  line-height: 20px;
-  color:  #92999f;
-  font-size: 13px;
-  font-weight: normal;
-  margin: 0;
-}
-
-.footer-distributed .footer-company-about span{
-  display: block;
-  color:  #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.footer-icons h2 {
-  display: block;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.footer-distributed .footer-icons{
-  margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  border-radius: 2px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 35px;
-  margin-right: 8px;
-  margin-bottom: 5px;
-}
-
-.footer-icons i {
-  color: #ECF0F1;
-  transition: color 0.5s;
-}
-
-.footer-icons i:hover {
-  color: #5dade2;
-}
-
-/* If you don't want the footer to be responsive, remove these media queries */
-
-@media (max-width: 880px) {
+  #logo-title-nav {
+    visibility: hidden;
+    position: fixed;
+    top: 13px;
+    left: 210px;
+    height: 35px;
+    scale: 1;
+    z-index: 1000;
+  }
 
   .footer-distributed{
-    font: bold 14px sans-serif;
+    background: #2c3e50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    padding-bottom: 15px;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
   }
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right{
-    display: block;
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 40%;
+  }
+
+  /* The company logo */
+
+  .footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+  }
+
+  .footer-distributed h3 span{
+    color:  lightseagreen;
+  }
+
+  /* Footer links */
+
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+    padding-bottom: 2em;
+  }
+
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+
+  .footer-distributed .footer-company-name{
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 5em;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    width: 35%;
   }
 
   .footer-distributed .footer-center i{
-    margin-left: 0;
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
   }
 
-}
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
 
-/* Overlay con animación */
-#overlay {
-  font-family: 'Nonito', sans-serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
-  z-index: 9998; /* Justo debajo del formulario */
-  visibility: hidden; /* Oculto por defecto */
-  opacity: 0; /* Comienza oculto */
-  transition: opacity 0.5s ease; /* Transición en la opacidad */
-}
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
 
-#overlay.active {
-  visibility: visible;
-  opacity: 1; /* Mostrar con opacidad completa */
-  background-color: rgba(0, 0, 0, 0.5); /* Aplica el filtro de opacidad */
-}
+  .footer-distributed .footer-left p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
 
-#overlay.inactive {
-  visibility: hidden;
-  opacity: 0; /* Ocultar con opacidad */
-  background-color: rgba(0, 0, 0, 0); /* Volver a transparente */
-  transition: opacity 0.5s ease, visibility 0s ease 0.5s; /* Retardo en visibility para coincidir con la opacidad */
-}
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
 
-#contactForm {
-  font-family: 'Nonito', sans-serif;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  visibility: hidden; /* Oculto por defecto */
-  opacity: 0; /* Comienza oculto */
-  transition: opacity 0.5s ease; /* Transición en la opacidad */
-  min-height: 400px; /* Ajustar la altura mínima del formulario */
-}
+  #info p {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
-#contactForm.visible {
-  visibility: visible;
-  opacity: 1; /* Mostrar cuando se añade la clase visible */
-}
 
-#contactForm.hidden {
-  visibility: hidden;
-  opacity: 0; /* Oculto cuando se añade la clase hidden */
-}
 
-/* Contenedor del formulario */
-.form-container {
-  width: 400px; /* Ancho fijo */
-  max-width: 90%; /* Para que sea responsivo en pantallas pequeñas */
-}
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
 
-/* Botón de cerrar */
-#closeForm {
-  background: none;
-  border: none;
-  font-size: 18px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  transition: opacity 1s ease;
-}
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #ECF0F1;
+    display: inline-block;
+    padding-right: 5px;
+  }
 
-/* Estilos para los campos del formulario */
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 100%; /* Ajustar el ancho según sea necesario */
-}
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
 
-.form__field {
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid #2c3e50; /* color gray */
-  outline: 0;
-  font-size: 1rem;
-  color: #2c3e50; /* color gray */
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
+  /* Footer Right */
 
-.form__field::placeholder {
-  color: transparent;
-}
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
 
-.form__field:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
-  cursor: text;
-  top: 20px;
-}
+  .footer-quote {
+    padding-top: 2em;
+    color: #dadede;
+  }
 
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #2c3e50; /* color gray */
-}
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
 
-.form__field:focus {
-  ~ .form__label {
-    position: absolute;
-    top: 0;
+  .footer-distributed .footer-company-about span{
     display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #1877f2; /* color primary */
-    font-weight: 700;    
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
-  padding-bottom: 6px;  
-  font-weight: 700;
-  border-bottom: 2px solid #1877f2; /* Cambiar el color de la línea al enfocar */
+
+  .footer-icons h2 {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+  }
+
+  .footer-icons i {
+    color: #ECF0F1;
+    transition: color 0.5s;
+  }
+
+  .footer-icons i:hover {
+    color: #5dade2;
+  }
+  .footer-distributed{
+    background: #2c3e50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    padding-bottom: 15px;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 40%;
+  }
+
+  /* The company logo */
+
+  .footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+  }
+
+  .footer-distributed h3 span{
+    color:  lightseagreen;
+  }
+
+  /* Footer links */
+
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+    padding-bottom: 2em;
+  }
+
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+
+  .footer-distributed .footer-company-name{
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 5em;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+
+  .footer-distributed .footer-left p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  #info p {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+
+
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
+
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #ECF0F1;
+    display: inline-block;
+    padding-right: 5px;
+  }
+
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+
+  /* Footer Right */
+
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+
+  .footer-quote {
+    padding-top: 2em;
+    color: #dadede;
+  }
+
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .footer-icons h2 {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+  }
+
+  .footer-icons i {
+    color: #ECF0F1;
+    transition: color 0.5s;
+  }
+
+  .footer-icons i:hover {
+    color: #5dade2;
+  }
+
+  
 }
 
-/* Reset input */
-.form__field {
-  &:required,
-  &:invalid { 
-    box-shadow: none; 
+
+
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
-/* Estilos específicos para el textarea */
-textarea.form__field {
-  min-height: 100px; /* Aumentar la altura del textarea */
-  resize: vertical; /* Permitir que el usuario ajuste la altura */
+
+@media screen and (max-width: 480px) {
+  /* Animación de fade-in */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Navbar Ajustada */
+  .navbar {
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10px;  /* Ajustamos el padding para que se vea mejor en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding-top 0.3s ease;
+  }
+
+  .navbar.scrolled {
+    background-color: #2c3e50e4;
+    padding-top: 2px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar.scrolled a {
+    color: #ECF0F1;
+  }
+
+  /* Navbar links y logo */
+  .nav_items {
+    display: flex;
+    gap: 20px;  /* Reducimos el espacio entre los enlaces */
+    justify-content: flex-end;
+    width: 100%;
+    transition: 0.3s ease all;
+    padding-top: 5px;
+  }
+
+  .nav_items.scrolled {
+    background-color: #2c3e50e4;
+    backdrop-filter: blur(8px);
+  }
+
+  .nav_logo {
+    font-weight: bold;
+    font-size: 20px;  /* Ajustamos el tamaño del logo */
+    color: var(--icons);
+    transition: color 0.3s ease;
+  }
+
+  .nav_logo span {
+    font-size: 18px; /* Ajustamos el tamaño del logo en pantallas pequeñas */
+    margin: 10px 0;
+    color: var(--icons);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav_logo.scrolled span {
+    transform: translateX(-50px); /* Desplazar hacia la izquierda */
+    opacity: 0; /* Desaparecer */
+  }
+
+  /* Cambiar el tamaño y el comportamiento de los enlaces */
+  .navbar .nav_items a {
+    color: #f5f5f7;
+    font-size: 14px; /* Ajuste de tamaño de fuente en pantallas pequeñas */
+    font-weight: 400;
+    transition: color 0.3s;
+    padding: 5px 0;
+  }
+
+  /* Asegura que el fondo de la navbar se vea correctamente */
+  .navbar.scrolled .nav_items a {
+    color: #ECF0F1;
+  }
+
+  /* Asegura que los elementos estén bien alineados */
+  .right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-distributed {
+    padding: 25px 10px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+  }
+
+  .footer-distributed .footer-left {
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center {
+    margin-top: 15px;
+  }
+
+  .footer-distributed .footer-right {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  /* Footer icons */
+  .footer-distributed .footer-icons {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-icons a {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .footer-icons i {
+    color: #ECF0F1;
+  }
+
+  .footer-icons i:hover {
+    color: #5dade2;
+  }
+
+  /* Ajustes de espacio para otros elementos */
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+    margin-top: 15px;
+  }
 }
 
-.submit-btn {
-  margin-top:  2em;
-  margin-left: 40%;
-  font-size: 20px;
-  background: #2c3e50;
-  color: white;
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
-  display: flex;
-  align-items: center;
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.2s;
-  cursor: pointer;
-}
+/* Animación de fade-in */
 
-.submit-btn span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
 
-.submit-btn:hover {
-  background-color: #384e63;
-}
-
-#emailButton {
-  text-decoration: none;
-}
+  
+    

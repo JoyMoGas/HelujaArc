@@ -17,38 +17,9 @@
       />
     </head>
     <body>
-      
+      {% block navbar %}
       <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.png') }}" alt="Logotipo" />
       <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).png') }}" alt="Logotipo" />
-      
-  <!-- Formulario flotante -->
-  <div id="contactForm" class="hidden">
-      <div class="form-container">
-          <button id="closeForm" class="close-button" aria-label="Cerrar formulario">
-              <i class="fa-solid fa-x " style="color: #2c3e50;"></i>
-          </button>
-        <h2>Contacto</h2>
-        <form>
-          <div class="form__group field">
-            <input type="text" class="form__field" placeholder="Nombre" name="name" id="name" required />
-            <label for="name" class="form__label">Nombre</label>
-          </div>
-          
-          <div class="form__group field">
-            <input type="email" class="form__field" placeholder="Correo electrónico" name="email" id="email" required />
-            <label for="email" class="form__label">Correo electrónico</label>
-          </div>
-          
-          <div class="form__group field">
-            <textarea class="form__field" placeholder="Mensaje" name="message" id="message" required></textarea>
-            <label for="message" class="form__label">Mensaje</label>
-          </div>
-          
-          <button class="submit-btn" type="submit"><span>Enviar</span></button>
-        </form>
-      </div>
-    </div>
-    
 
       <div class="navbar">
         <div class="navbar-content">
@@ -61,15 +32,17 @@
                 <a href="/proyectos"  class="home-navbar">PROYECTOS</a>
               </li>
               <li class="{% if current_page == 'contact' %}active{% endif %}">
-                <a href="#contacto" id="contactLink">CONTACTO</a>
+                <a href="/contacto">CONTACTO</a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
+      {% endblock %}
 
       {% block body %} {% endblock %}
 
+      {% block footer %}
       <footer class="footer-distributed">
         <div class="footer-left" style="margin-left: 2.5em;">
           <div id="info">
@@ -113,6 +86,7 @@
           </p>
         </div>
       </footer>
+      {% endblock %}
       <script src="{{ url_for('static', filename='popo.js') }}"></script>
       <script>
         document.addEventListener("DOMContentLoaded", function() {

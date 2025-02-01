@@ -186,6 +186,9 @@ def project_detail(project_id):
     else:
         return render_template('404.html'), 404  # Usar una plantilla 404 personalizada
 
+@app.route('/contacto')
+def contact_page():
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':

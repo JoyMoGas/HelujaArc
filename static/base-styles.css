@@ -22,38 +22,6 @@ html {
   }
 }
 
-/* Animación para la línea al entrar */
-@keyframes lineCollapseIn {
-  0% {
-    border-bottom-width: 2px;
-    transform: scaleX(1);
-    padding-bottom: 8px;
-  }
-  50% {
-    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
-  }
-  100% {
-    transform: scaleX(0.5); /* Termina la animación con la línea más corta */
-    padding-bottom: 2px;
-  }
-}
-
-/* Animación para la línea al salir */
-@keyframes lineCollapseOut {
-  0% {
-    border-bottom-width: 2px;
-    transform: scaleX(0.5); /* Línea más corta cuando empieza a salir */
-    padding-bottom: 2px;
-  }
-  50% {
-    transform: scaleX(0.7); /* Escala la línea para crear un efecto de encogimiento */
-  }
-  100% {
-    border-bottom-width: 2px;
-    transform: scaleX(1); /* Línea completa cuando termina la animación de salida */
-    padding-bottom: 8px;
-  }
-}
 
 /* Laptops (1024px - 1440px) */
 @media screen and (min-width: 1440px) {
@@ -88,11 +56,6 @@ html {
     color: #D0D3D4;
   }
 
-  /* Estilo para cuando se hace scroll */
-  .navbar.scrolled .home-navbar {
-    animation: lineCollapseIn 0.5s forwards;
-  }
-
   /* Estilo para la navbar cuando se hace scroll */
   .navbar.scrolled {
     padding-top: 0px;
@@ -119,6 +82,7 @@ html {
     transition: padding 0.3s ease; /* Transición para suavizar el cambio de padding */
   }
 
+  
   /* Estilo cuando se ha hecho scroll y el logo está en la navbar */
 
 
@@ -143,7 +107,7 @@ html {
   }
 
   #logo-nav {
-    visibility: hidden;
+    visibility: visible;
     position: fixed;
     top: 8px;
     left: 116px;
@@ -153,10 +117,10 @@ html {
   }
 
   #logo-title-nav {
-    visibility: hidden;
+    visibility: visible;
     position: fixed;
     top: 13px;
-    left: 210px;
+    left: 175px;
     height: 35px;
     scale: 1;
     z-index: 1000;

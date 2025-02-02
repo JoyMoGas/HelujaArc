@@ -23,6 +23,68 @@ body {
   height: 100%;
 }
 
+.right-container .sub {
+  font-size: 1.3em;
+  padding-bottom: 2em;
+}
+
+
+.right-container p {
+  display: inline-block;
+  color: #2c3e50;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+}
+
+.elements-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#info {
+  padding: 0 4.99em;
+  text-align: left;
+}
+
+#info p {
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+p a{
+  color:#2c3e50;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+p a:hover{
+  color:#5DADE2;
+}
+
+.contact-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+.contact-icons i {
+  color: #2c3e50;
+  transition: color 0.5s;
+}
+
+.contact-icons i:hover {
+  color: #5dade2;
+}
+
 /*
 #image-container img{
   flex: 1;
@@ -78,11 +140,11 @@ body {
 
 #subtitle {
   font-weight: bold;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   margin-bottom: 20px;
 }
 
@@ -98,6 +160,7 @@ p {
 
 .input-container {
   position: relative;
+  width: 50%;
   margin: 20px;
 }
 

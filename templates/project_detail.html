@@ -1,4 +1,4 @@
-{% extends "base-2.html" %}
+{% extends "base.html" %}
 {% block title %}{{ project.title }}{% endblock %}
 
 {% block head %}
@@ -11,6 +11,7 @@
 
 <!-- Contenedor de la imagen principal con el título superpuesto -->
 <div id="demoBox" class="with-title">
+  <h3 class="float-btn">Regresar</h3>
   <h1 class="image-title">{{ project.title }}</h1>
   <h3 class="image-location"> <i class="fa-solid fa-location-dot" style="color: #ECF0F1"></i> {{ project.location_text }}</h3>
   <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">

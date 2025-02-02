@@ -190,6 +190,9 @@ def project_detail(project_id):
 def contact_page():
     return render_template('contact.html')
 
+@app.route('/not-found')
+def not_found_page():
+    return render_template('404.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

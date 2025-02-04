@@ -7,10 +7,11 @@ const logoTitleNav = document.getElementById('logo-title-nav');
 const inicioLink = document.getElementById("inicio");
 const proyectosLink = document.getElementById("proyectos");
 const contactoLink = document.getElementById("contacto");
+const poyectoDetallesLink = document.getElementById("project-link");
 function scrollAnimation() {
     if (!logo || !logoTitle)
         return;
-    const scrolled = window.scrollY > 20;
+    const scrolled = window.scrollY > 50;
     if (scrolled) {
         logo.style.animation = "slideOut 1s forwards ease-in-out";
         logoTitle.style.animation = "slideOut 1s forwards ease-in-out";
@@ -33,26 +34,52 @@ function scrollAnimation() {
     }
 }
 function detectScroll() {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY > 50;
+        navbar.classList.toggle("scrolled", scrolled);
+        if (window.scrollY === 0) {
+            navbar.classList.remove("scrolled");
+        }
         scrollAnimation();
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        // ✅ Aplicar solo en /proyecto/
+        if (window.location.pathname.includes("/proyecto/")) {
+            if (scrolled) {
+                logoNav.style.top = "5px"; // Se mueve hacia arriba suavemente
+                logoTitleNav.style.top = "10px";
+            }
+            else {
+                logoNav.style.top = "10px"; // Se mueve hacia abajo suavemente
+                logoTitleNav.style.top = "15px";
+            }
+        }
     });
 }
 function checkLink() {
     const currentPath = window.location.pathname;
-    const currentUrl = window.location.href;
-    const keyword = '/proyecto/';
     inicioLink === null || inicioLink === void 0 ? void 0 : inicioLink.classList.toggle("home_navbar", currentPath === "/inicio");
     proyectosLink === null || proyectosLink === void 0 ? void 0 : proyectosLink.classList.toggle("home_navbar", currentPath === "/proyectos");
-    contactoLink === null || contactoLink === void 0 ? void 0 : contactoLink.classList.toggle("home_navbar", currentPath !== "/inicio" && currentPath !== "/proyectos");
-    if (currentPath === "/inicio" || (currentPath != "/proyectos" && currentPath != "/contacto")) {
+    contactoLink === null || contactoLink === void 0 ? void 0 : contactoLink.classList.toggle("home_navbar", currentPath === "/contacto");
+    poyectoDetallesLink === null || poyectoDetallesLink === void 0 ? void 0 : poyectoDetallesLink.classList.toggle("home_navbar", currentPath.includes("/proyecto/"));
+    if (currentPath === "/inicio") {
         detectScroll();
         logoNav.style.visibility = "hidden";
         logoTitleNav.style.visibility = "hidden";
         logo.style.visibility = "visible";
         logoTitle.style.visibility = "visible";
         logoTitleNav.style.left = "215px";
-        // Aplica la animación fadeIn solo en /proyectos y /contacto
+    }
+    else if (currentPath.includes("/proyecto/")) {
+        detectScroll();
+        // Hacer que logoNav y logoTitleNav siempre sean visibles
+        logoNav.style.visibility = "visible";
+        logoTitleNav.style.visibility = "visible";
+        logo.style.visibility = "hidden";
+        logoTitle.style.visibility = "hidden";
+        // Opcional: Asegurar posición
+        logoNav.style.opacity = "1";
+        logoTitleNav.style.opacity = "1";
+        logoNav.style.animation = "none"; // Evita animaciones innecesarias
+        logoTitleNav.style.animation = "none";
     }
     else if (currentPath === "/proyectos" || currentPath === "/contacto") {
         if (currentPath === "/proyectos") {
@@ -64,7 +91,6 @@ function checkLink() {
             contactoLink.style.color = "#5DADE2";
         }
         navbar.classList.add('scrolled');
-        // Asegura que el logo esté visible en cualquier página que no sea /inicio
         Object.assign(logo.style, {
             visibility: "visible",
             userSelect: "none",
@@ -85,9 +111,6 @@ function checkLink() {
             scale: "1",
             zIndex: "1000"
         });
-    }
-    if (currentPath.includes(keyword)) {
-        console.log("HOLA");
     }
 }
 checkLink();

@@ -99,6 +99,12 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+#logo-nav, #logo-title-nav {
+  position: fixed;
+  transition: top 0.5s ease-in-out; /* Animación suave */
+}
+
+
 /* Responsiveness 
 @media (max-width: 768px) {
   #titulo {

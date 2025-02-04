@@ -30,7 +30,7 @@
     <div class="gallery">
         {% for project_id, project in projects.items() %}
             <div class="gallery-item">
-                <a href="{{ url_for('project_detail', project_id=project_id) }}">
+                <a href="{{ url_for('project_detail', project_id=project_id) }}" id="project-link">
                     <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
                     <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
                     <div class="gallery-item-text">
@@ -50,7 +50,7 @@
   <div class="album">
     {% for project_id, project in all_projects.items() %}
       <div class="responsive-container-block">
-        <a href="{{ url_for('project_detail', project_id=project_id) }}">
+        <a href="{{ url_for('project_detail', project_id=project_id) }}" id="project-link">
           <img class="img" src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
           <div class="album-item-text">
             <h2>{{ project.title }}</h2>
@@ -137,6 +137,7 @@
   </section>
 
   <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+  <script src="{{ url_for('static', filename='navbar.js') }}"></script>
   <script src="{{ url_for('static', filename='responsive.js') }}"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {

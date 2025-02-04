@@ -243,7 +243,10 @@ html {
     padding-bottom: 0.5em;
   }
 
-
+  #logo-nav, #logo-title-nav {
+    position: fixed;
+    transition: top 0.3s ease-in-out; /* Animación suave */
+  }
 
   .footer-distributed .footer-left p a:hover{
     color:#5DADE2;

@@ -78,7 +78,7 @@ function checkLink() {
     logoTitleNav.style.left = "215px";
   } else if (currentPath.includes("/proyecto/")) {
     detectScroll();
-    
+    proyectosLink.style.color = "#5DADE2";
     // Hacer que logoNav y logoTitleNav siempre sean visibles
     logoNav.style.visibility = "visible";
     logoTitleNav.style.visibility = "visible";

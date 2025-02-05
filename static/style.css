@@ -79,33 +79,6 @@ body {
   z-index: 1000;
 }
 
-
-
-/* Animación para el logo */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-/* Animación para el logo */
-@keyframes slideOut {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50px);
-  }
-}
-}
-
 #titulo{
   padding-bottom: 2em;
   padding-top: 2em;
@@ -125,10 +98,6 @@ body {
   font-size: 2em;
   color: #2c3e50;
 }
-
-
-
-
 #prese {
   text-align: justify;
   padding: 1em 15em 1em 15em;
@@ -419,6 +388,37 @@ body {
   .wrapper .instagram:hover .tooltip::before {
     background: #e4405f;
   }
+}
+
+
+
+/* Animación para el logo */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  
+}
+
+/* Animación para el logo */
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+}
+
+
+
 
 
 
@@ -427,31 +427,39 @@ body {
 
 /* Media Queries para responsividad */
 @media screen and (min-width: 480px) {
+  body {
+    overflow-x: hidden;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100vh;
+    height: 100%;
+  }
 
-  #logo, #logo-title {
+  #logo-nav, #logo-title-nav, #logo, #logo-title{
     visibility: hidden;
   }
 
-  #demobox {
-    width: 50%;
-    height: 50vh;
+  #demoBox {
+    width: 100vh;
+    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
-  url("images/renders/01.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: filter 0.5s ease; /* Smooth transition */
-  }
+        url("images/renders/01.png");
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
 
-  .mainInfo p {
-    align-items: center;
-    justify-content: center;
-    padding: 0.5em 2em 0.5em 2em;
-    font-size: 25px;
+  #titulo{
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-size: 24px;
   }
-
-  .album .img {
-    flex: 0 0 22%; /* 2 imágenes por fila en pantallas medianas */
+  
+  #titles{
+    padding-top: 2em;
+    color: #2c3e50; 
+    font-size: 2.5em;
   }
 }
 

@@ -60,7 +60,7 @@ function checkLink() {
     proyectosLink === null || proyectosLink === void 0 ? void 0 : proyectosLink.classList.toggle("home_navbar", currentPath === "/proyectos");
     contactoLink === null || contactoLink === void 0 ? void 0 : contactoLink.classList.toggle("home_navbar", currentPath === "/contacto");
     poyectoDetallesLink === null || poyectoDetallesLink === void 0 ? void 0 : poyectoDetallesLink.classList.toggle("home_navbar", currentPath.includes("/proyecto/"));
-    if (currentPath === "/inicio") {
+    if (currentPath === "/inicio" || currentPath === "/") {
         detectScroll();
         logoNav.style.visibility = "hidden";
         logoTitleNav.style.visibility = "hidden";
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("scroll", () => {
         var _a;
         if (window.location.pathname === "/inicio") {
-            const scrolled = window.scrollY > 20;
+            const scrolled = window.scrollY > 50;
             navbar.classList.toggle("scrolled", scrolled);
             (_a = document.querySelector(".nav_logo")) === null || _a === void 0 ? void 0 : _a.classList.toggle("scrolled", scrolled);
         }

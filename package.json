@@ -16,6 +16,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "emailjs-com": "^3.2.0",
     "smooth-scrollbar": "^8.8.4"
   }
 }

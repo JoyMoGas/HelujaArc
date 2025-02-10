@@ -69,7 +69,7 @@ function checkLink() {
   contactoLink?.classList.toggle("home_navbar", currentPath === "/contacto");
   poyectoDetallesLink?.classList.toggle("home_navbar", currentPath.includes("/proyecto/"));
 
-  if (currentPath === "/inicio") {
+  if (currentPath === "/inicio" || currentPath === "/") {
     detectScroll();
     logoNav.style.visibility = "hidden";
     logoTitleNav.style.visibility = "hidden";
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener("scroll", () => {
     if (window.location.pathname === "/inicio") {
-      const scrolled = window.scrollY > 20;
+      const scrolled = window.scrollY > 50;
       navbar.classList.toggle("scrolled", scrolled);
       document.querySelector(".nav_logo")?.classList.toggle("scrolled", scrolled);
     } else {

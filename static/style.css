@@ -417,50 +417,9 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
 /* Media Queries para responsividad */
 @media screen and (min-width: 480px) {
-  body {
-    overflow-x: hidden;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 100vh;
-    height: 100%;
-  }
 
-  #logo-nav, #logo-title-nav, #logo, #logo-title{
-    visibility: hidden;
-  }
-
-  #demoBox {
-    width: 100vh;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
-        url("images/renders/01.png");
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-  #titulo{
-    padding-bottom: 2em;
-    padding-top: 2em;
-    font-size: 24px;
-  }
-  
-  #titles{
-    padding-top: 2em;
-    color: #2c3e50; 
-    font-size: 2.5em;
-  }
 }
 
 @media (max-width: 500px) {
@@ -468,5 +427,3 @@ body {
     flex: 0 0 100%; /* 1 imagen por fila en pantallas pequeñas */
   }
 }
-
-

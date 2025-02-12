@@ -54,7 +54,8 @@
             {% endfor %}
         {% endif %}
       {% endwith %}
-      <form method="POST">
+
+      <form class="form-container" method="POST">
         {{ form.hidden_tag() }}
         
         <div class="input-container">
@@ -70,7 +71,7 @@
         </div>
     
         <div class="input-container">
-            {{ form.message(class="input-field", placeholder="Tu Mensaje...") }}
+            {{ form.message(class="input-field", id="text-area", placeholder="Tu Mensaje...") }}
             <label class="input-label">Escribe tu mensaje</label>
             <span class="input-highlight"></span>
         </div>

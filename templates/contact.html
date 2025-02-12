@@ -54,21 +54,32 @@
             {% endfor %}
         {% endif %}
       {% endwith %}
-      <form id="contactForm" method="POST">
+      <form method="POST">
         {{ form.hidden_tag() }}
-        <div>
-            {{ form.name.label }} {{ form.name() }}
+        
+        <div class="input-container">
+            {{ form.name(class="input-field", placeholder="Nombre Completo") }}
+            <label class="input-label">Escribe tu nombre</label>
+            <span class="input-highlight"></span>
         </div>
-        <div>
-            {{ form.email.label }} {{ form.email() }}
+    
+        <div class="input-container">
+            {{ form.email(class="input-field", placeholder="Correo Electrónico") }}
+            <label class="input-label">Escribe tu correo electrónico</label>
+            <span class="input-highlight"></span>
         </div>
-        <div>
-            {{ form.message.label }} {{ form.message() }}
+    
+        <div class="input-container">
+            {{ form.message(class="input-field", placeholder="Tu Mensaje...") }}
+            <label class="input-label">Escribe tu mensaje</label>
+            <span class="input-highlight"></span>
         </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-        <p id="statusMessage"></p>
+    
+        <button type="submit" class="btn">{{ form.submit.label }}</button>
+    </form>
+    
+
+    
     </form>
     </div>
   </div>

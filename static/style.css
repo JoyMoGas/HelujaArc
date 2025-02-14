@@ -37,8 +37,11 @@ body {
   scroll-padding: 1em;
 }
 
-/* Laptops (1024px - 1440px) */
-@media screen and (min-width: 1440px) {
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Oculta el scroll lateral */
+}
+
   /* Background Image Styles */
 #demoBox {
   width: 100%;
@@ -388,7 +391,6 @@ body {
   .wrapper .instagram:hover .tooltip::before {
     background: #e4405f;
   }
-}
 
 
 
@@ -417,13 +419,116 @@ body {
   }
 }
 
-/* Media Queries para responsividad */
-@media screen and (min-width: 480px) {
 
-}
+/* Tablets (Máximo 1024px) */
+@media screen and (max-width: 1024px) {
+  #logo {
+    height: 500px;
+    top: 25%;
+  }
 
-@media (max-width: 500px) {
-  .album .img {
-    flex: 0 0 100%; /* 1 imagen por fila en pantallas pequeñas */
+  #logo-title {
+    top: 56%;
+    height: 160px;
+  }
+
+  #prese {
+    padding: 1em 5em;
+    font-size: 16px;
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+
+  .gallery-item {
+    width: 20em;
+    height: 25em;
+  }
+
+  .album .responsive-container-block {
+    width: 18em;
+    height: 12em;
+  }
+
+  .skills-section {
+    padding: 2rem 5em;
   }
 }
+
+/* Móviles (Máximo 768px) */
+@media screen and (max-width: 768px) {
+  #logo {
+    height: 150px;
+    top: 50px;
+  }
+
+  #logo-title {
+    top: 250px;
+    height: 60px;
+  }
+
+  #prese {
+    padding: 1em 2em;
+    font-size: 14px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 90%;
+    height: auto;
+  }
+
+  .album {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album .responsive-container-block {
+    width: 90%;
+    height: auto;
+  }
+
+  .skills-section {
+    padding: 2rem 2em;
+  }
+}
+
+/* Móviles pequeños (Máximo 480px) */
+@media screen and (max-width: 480px) {
+  #logo {
+    height: 500px;
+    top: 20%;
+  }
+
+  #logo-title {
+    top: 45%;
+    height: 160px;
+  }
+
+  #prese {
+    padding: 1em;
+    font-size: 12px;
+  }
+
+  .gallery-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .album-item-text h2 {
+    font-size: 1.5em;
+  }
+
+  .projects-link {
+    font-size: 0.9em;
+  }
+
+  .skills-section {
+    padding: 2rem 1em;
+  }
+}
+

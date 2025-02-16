@@ -7,6 +7,7 @@ const inicioLink = document.getElementById("inicio") as HTMLElement;
 const proyectosLink = document.getElementById("proyectos") as HTMLElement;
 const contactoLink = document.getElementById("contacto") as HTMLElement;
 const poyectoDetallesLink = document.getElementById("project-link") as HTMLElement;
+const mediaQueryList: MediaQueryList = window.matchMedia("(max-width: 480px)");
 
 function scrollAnimation() {
   if (!logo || !logoTitle) return;
@@ -14,6 +15,9 @@ function scrollAnimation() {
   const scrolled = window.scrollY > 50;
 
   if (scrolled) {
+    if (mediaQueryList.matches) {
+      logoTitleNav.style.visibility = "hidden";
+    } 
     logo.style.animation = "slideOut 1s forwards ease-in-out";
     logoTitle.style.animation = "slideOut 1s forwards ease-in-out";
     inicioLink.style.color = "#5DADE2";

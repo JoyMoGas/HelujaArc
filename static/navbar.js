@@ -8,11 +8,15 @@ const inicioLink = document.getElementById("inicio");
 const proyectosLink = document.getElementById("proyectos");
 const contactoLink = document.getElementById("contacto");
 const poyectoDetallesLink = document.getElementById("project-link");
+const mediaQueryList = window.matchMedia("(max-width: 480px)");
 function scrollAnimation() {
     if (!logo || !logoTitle)
         return;
     const scrolled = window.scrollY > 50;
     if (scrolled) {
+        if (mediaQueryList.matches) {
+            logoTitleNav.style.visibility = "hidden";
+        }
         logo.style.animation = "slideOut 1s forwards ease-in-out";
         logoTitle.style.animation = "slideOut 1s forwards ease-in-out";
         inicioLink.style.color = "#5DADE2";

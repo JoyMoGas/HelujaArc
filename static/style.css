@@ -59,11 +59,9 @@ html, body {
   top: 110px;
   left: 50%;
   height: 250px;
-  transform: translateX(-50%);
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: slideIn 2s forwards ease-in-out;
-  transition: all 1s ease;
+  opacity: 1;
+  animation: slideIn 0.7s forwards ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   z-index: 1000;
 }
 
@@ -73,11 +71,9 @@ html, body {
   top: 380px;
   left: 50%;
   height: 85px;
-  transform: translateX(-50%);
-  opacity: 0;
-  transform: translateY(-50px); 
-  animation: slideIn 2s forwards ease-in-out;
-  transition: all 1.5s ease;
+  opacity: 1; 
+  animation: slideIn 0.7s forwards ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   z-index: 1000;
 }
 
@@ -91,10 +87,8 @@ html, body {
     opacity: 1;
     transform: translate(-50%, 0);
   }
-  
 }
 
-/* Animación para el logo */
 @keyframes slideOut {
   0% {
     opacity: 1;

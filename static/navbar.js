@@ -10,38 +10,88 @@ const contactoLink = document.getElementById("contacto");
 const poyectoDetallesLink = document.getElementById("project-link");
 const mediaQueryList = window.matchMedia("(max-width: 480px)");
 function scrollAnimation() {
-    if (!logo || !logoTitle || !logoTitleNav || !logoNav || !inicioLink)
+    if (!logo || !logoTitle || !logoTitleNav || !logoNav)
         return;
-    const scrolled = window.scrollY > 50;
+    const scrolled = window.scrollY > 20;
     // Si la pantalla cumple el media query, ocultamos logoTitleNav SIEMPRE
     if (mediaQueryList.matches) {
-        logoTitleNav.style.visibility = "hidden";
-    }
-    // Las animaciones de logo, logoTitle y logoNav deben ejecutarse SIEMPRE
-    if (scrolled) {
-        logo.style.animation = "slideOut 1s forwards ease-in-out";
-        logoTitle.style.animation = "slideOut 1s forwards ease-in-out";
-        inicioLink.style.color = "#5DADE2";
-        setTimeout(() => {
-            logoNav.style.visibility = "visible";
-            if (!mediaQueryList.matches) {
-                // Solo mostramos logoTitleNav si el media query NO se cumple
-                logoTitleNav.style.visibility = "visible";
-                logoTitleNav.style.animation = "slideIn 1s forwards ease-in-out";
-            }
-            logoNav.style.animation = "slideIn 1s forwards ease-in-out";
-        }, 500);
+        logoTitleNav.style.opacity = "0"; // Lo mantenemos invisible
+        logoTitleNav.style.visibility = "hidden"; // Lo ocultamos
+        // Animaciones de los otros elementos, sin afectar la visibilidad de logoNav y logo
+        logoNav.style.transform = "translateX(-100px)";
+        if (scrolled) {
+            // Animación de salida para los elementos del body
+            logo.style.animation = "slideOut 0.7s forwards ease-in-out";
+            logoTitle.style.animation = "slideOut 0.7s forwards ease-in-out";
+            setTimeout(() => {
+                logo.style.opacity = "0";
+                logo.style.visibility = "hidden";
+                logoTitle.style.opacity = "0";
+                logoTitle.style.visibility = "hidden";
+                // Mostrar los elementos de la navbar
+                logoNav.style.opacity = "1";
+                logoNav.style.visibility = "visible";
+                logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
+                // Aquí mantenemos la animación de logoNav, que seguirá animándose
+                logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
+            }, 1000); // Esperamos a que termine la animación antes de ocultarlos
+        }
+        else {
+            // Animación de salida para los elementos de la navbar
+            logoNav.style.animation = "slideOut 0.7s forwards ease-in-out";
+            logoTitleNav.style.animation = "slideOut 0.7s forwards ease-in-out";
+            setTimeout(() => {
+                logoNav.style.opacity = "0";
+                logoNav.style.visibility = "hidden";
+                logoTitleNav.style.opacity = "0";
+                logoTitleNav.style.visibility = "hidden";
+                // Mostrar los elementos del body
+                logo.style.opacity = "1";
+                logo.style.visibility = "visible";
+                logoTitle.style.opacity = "1";
+                logoTitle.style.visibility = "visible";
+                logo.style.animation = "slideIn 0.7s forwards ease-in-out";
+                logoTitle.style.animation = "slideIn 0.7s forwards ease-in-out";
+            }, 1000);
+        }
     }
     else {
-        inicioLink.style.color = "#ECF0F1";
-        setTimeout(() => {
-            logoNav.style.animation = "slideOut 1s forwards ease-in-out";
-            if (!mediaQueryList.matches) {
-                logoTitleNav.style.animation = "slideOut 1s forwards ease-in-out";
-            }
-            logo.style.animation = "slideIn 1s forwards ease-in-out";
-            logoTitle.style.animation = "slideIn 1s forwards ease-in-out";
-        }, 500);
+        if (scrolled) {
+            // Animación de salida para los elementos del body
+            logo.style.animation = "slideOut 0.7s forwards ease-in-out";
+            logoTitle.style.animation = "slideOut 0.7s forwards ease-in-out";
+            setTimeout(() => {
+                logo.style.opacity = "0";
+                logo.style.visibility = "hidden";
+                logoTitle.style.opacity = "0";
+                logoTitle.style.visibility = "hidden";
+                // Mostrar los elementos de la navbar
+                logoNav.style.opacity = "1";
+                logoNav.style.visibility = "visible";
+                logoTitleNav.style.opacity = "1";
+                logoTitleNav.style.visibility = "visible";
+                logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
+                logoTitleNav.style.animation = "slideIn 0.7s forwards ease-in-out";
+            }, 1000); // Esperamos a que termine la animación antes de ocultarlos
+        }
+        else {
+            // Animación de salida para los elementos de la navbar
+            logoNav.style.animation = "slideOut 0.7s forwards ease-in-out";
+            logoTitleNav.style.animation = "slideOut 0.7s forwards ease-in-out";
+            setTimeout(() => {
+                logoNav.style.opacity = "0";
+                logoNav.style.visibility = "hidden";
+                logoTitleNav.style.opacity = "0";
+                logoTitleNav.style.visibility = "hidden";
+                // Mostrar los elementos del body
+                logo.style.opacity = "1";
+                logo.style.visibility = "visible";
+                logoTitle.style.opacity = "1";
+                logoTitle.style.visibility = "visible";
+                logo.style.animation = "slideIn 0.7s forwards ease-in-out";
+                logoTitle.style.animation = "slideIn 0.7s forwards ease-in-out";
+            }, 1000);
+        }
     }
 }
 function detectScroll() {

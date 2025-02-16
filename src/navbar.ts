@@ -10,33 +10,49 @@ const poyectoDetallesLink = document.getElementById("project-link") as HTMLEleme
 const mediaQueryList: MediaQueryList = window.matchMedia("(max-width: 480px)");
 
 function scrollAnimation() {
-  if (!logo || !logoTitle) return;
+  if (!logo || !logoTitle || !logoTitleNav || !logoNav || !inicioLink) return;
 
   const scrolled = window.scrollY > 50;
 
+  // Si la pantalla cumple el media query, ocultamos logoTitleNav SIEMPRE
+  if (mediaQueryList.matches) {
+    logoTitleNav.style.visibility = "hidden";
+  }
+
+  // Las animaciones de logo, logoTitle y logoNav deben ejecutarse SIEMPRE
   if (scrolled) {
-    if (mediaQueryList.matches) {
-      logoTitleNav.style.visibility = "hidden";
-    } 
     logo.style.animation = "slideOut 1s forwards ease-in-out";
     logoTitle.style.animation = "slideOut 1s forwards ease-in-out";
     inicioLink.style.color = "#5DADE2";
+
     setTimeout(() => {
       logoNav.style.visibility = "visible";
-      logoTitleNav.style.visibility = "visible";
+
+      if (!mediaQueryList.matches) {
+        // Solo mostramos logoTitleNav si el media query NO se cumple
+        logoTitleNav.style.visibility = "visible";
+        logoTitleNav.style.animation = "slideIn 1s forwards ease-in-out";
+      }
+
       logoNav.style.animation = "slideIn 1s forwards ease-in-out";
-      logoTitleNav.style.animation = "slideIn 1s forwards ease-in-out";
     }, 500);
   } else {
     inicioLink.style.color = "#ECF0F1";
+
     setTimeout(() => {
       logoNav.style.animation = "slideOut 1s forwards ease-in-out";
-      logoTitleNav.style.animation = "slideOut 1s forwards ease-in-out";
+
+      if (!mediaQueryList.matches) {
+        logoTitleNav.style.animation = "slideOut 1s forwards ease-in-out";
+      }
+
       logo.style.animation = "slideIn 1s forwards ease-in-out";
       logoTitle.style.animation = "slideIn 1s forwards ease-in-out";
     }, 500);
   }
 }
+
+
 
 function detectScroll() {
   window.addEventListener("scroll", () => {

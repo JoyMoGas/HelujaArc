@@ -11,24 +11,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}" />
 </head>
 <body>
+  {% block navbar %}
   <img id="logo-nav" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
   <img id="logo-title-nav" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
+  
+  
     <div class="navbar">
         <div class="nav_items" id="_items">
-          <a class="home_navbar" id="inicio" href="/inicio">INICIO</a>
-          <a class="home_navbar" id="proyectos" href="/proyectos">PROYECTOS</a>
-          <a class="home_navbar" id="contacto" href="/contacto">CONTACTO</a>
+          <a id="inicio" href="/inicio">INICIO</a>
+          <a id="proyectos" href="/proyectos">PROYECTOS</a>
+          <a id="contacto" href="/contacto">CONTACTO</a>
         </div>
-        <div class="nav_toggle" id="_toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="hamburguer">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="menubar">
+          <a id="inicio" href="/inicio">INICIO</a>
+          <a id="proyectos" href="/proyectos">PROYECTOS</a>
+          <a id="contacto" href="/contacto">CONTACTO</a>
         </div>
     </div>
+    {% endblock %}
 
     {% block body %}
     {% endblock %}
 
+    {% block footer %}
+    
     <footer class="footer-distributed">
         <div class="footer-left">
           <div id="info">
@@ -72,7 +83,7 @@
           </p>
         </div>
       </footer>
-    <script src="{{ url_for('static', filename='responsive.js') }}"></script>
+      {% endblock %}
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
     <script src="{{ url_for('static', filename='navbar.js') }}"></script>
     <script>

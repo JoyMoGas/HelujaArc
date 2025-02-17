@@ -35,15 +35,47 @@ body {
   margin-bottom: 1em;
 }
 
+.contenedor-flecha {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #43617f;
+  box-shadow: 0px 0px 6px  0px rgba(0, 0, 0, 0.5);
+  display: flex; /* Añadir flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: background-color 0.5s ease-in-out;
+}
+
+.contenedor-flecha > i {
+  font-size: 20px; /* Ajustar el tamaño del icono */
+  color: #FFFFFF; /* Cambiar el color del icono */
+}
+
+.contenedor-flecha:hover {
+  background-color: #5DADE2; /* Cambiar el color del icono */
+}
+
 /* Contenedor de la descripción */
 .project-description {
+  
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding: 1em 2em;
+  padding: 4em 2em 2em 2em;
   line-height: 1.6;
   font-size: 1.2em;
   color: #666;
+}
+
+.project-description p {
+  text-align: justify;
 }
 /* Estilo para el contenedor con imagen y título superpuesto */
 #demoBox.with-title {

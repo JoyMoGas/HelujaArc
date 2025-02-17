@@ -15,6 +15,9 @@
   <h1 class="image-title">{{ project.title }}</h1>
   <h3 class="image-location"> <i class="fa-solid fa-location-dot" style="color: #ECF0F1"></i> {{ project.location_text }}</h3>
   <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+  <a href="#project-detail" class="contenedor-flecha">
+    <i class="fa-solid fa-arrow-down"></i>
+</a>
 </div>
 
 <!-- Sección de detalles del proyecto -->
@@ -36,5 +39,5 @@
   </div>
   {% endif %}
 </section>
-
+<script src="{{ url_for('static', filename='scrollTo.js') }}"></script>
 {% endblock %}

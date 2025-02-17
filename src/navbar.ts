@@ -8,6 +8,8 @@ const proyectosLink = document.getElementById("proyectos") as HTMLElement;
 const contactoLink = document.getElementById("contacto") as HTMLElement;
 const poyectoDetallesLink = document.getElementById("project-link") as HTMLElement;
 const mediaQueryList: MediaQueryList = window.matchMedia("(max-width: 480px)");
+const mobileNav = document.querySelector(".hamburger") as HTMLElement;
+const menuBar = document.querySelector(".menubar") as HTMLElement;
 
 function scrollAnimation() {
   if (!logo || !logoTitle || !logoTitleNav || !logoNav) return;
@@ -19,11 +21,19 @@ function scrollAnimation() {
     logoTitleNav.style.opacity = "0"; // Lo mantenemos invisible
     logoTitleNav.style.visibility = "hidden"; // Lo ocultamos
     // Animaciones de los otros elementos, sin afectar la visibilidad de logoNav y logo
-    logoNav.style.transform = "translateX(-100px)";
-    if (scrolled) {
+    logoNav.style.left = "40px";
+    logoNav.style.height = "35px";
+    if (scrolled && mediaQueryList.matches) {
+      navbar.style.padding = "25px";
       // Animación de salida para los elementos del body
       logo.style.animation = "slideOut 0.7s forwards ease-in-out";
       logoTitle.style.animation = "slideOut 0.7s forwards ease-in-out";
+      // Selecciona el botón de hamburguesa y el menú
+      const toggleNav = () => {
+        menuBar.classList.toggle("active");
+        mobileNav.classList.toggle("hamburger-active");
+      };
+      mobileNav.addEventListener("click", () => toggleNav());
 
       setTimeout(() => {
         logo.style.opacity = "0";

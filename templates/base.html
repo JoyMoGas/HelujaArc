@@ -15,24 +15,40 @@
   <img id="logo-nav" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
   <img id="logo-title-nav" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
   
-  
-    <div class="navbar">
+    <nav class="navbar">
         <div class="nav_items" id="_items">
-          <a id="inicio" href="/inicio">INICIO</a>
-          <a id="proyectos" href="/proyectos">PROYECTOS</a>
-          <a id="contacto" href="/contacto">CONTACTO</a>
+          <ul>
+            <li>
+              <a id="inicio" href="/inicio">INICIO</a>
+            </li>
+            <li>
+              <a id="proyectos" href="/proyectos">PROYECTOS</a>
+            </li>
+            <li>
+              <a id="contacto" href="/contacto">CONTACTO</a>
+            </li>
+          </ul>
         </div>
-        <div class="hamburguer">
+        <div class="hamburger" id="hamburger">
           <span class="line"></span>
           <span class="line"></span>
           <span class="line"></span>
         </div>
-        <div class="menubar">
-          <a id="inicio" href="/inicio">INICIO</a>
-          <a id="proyectos" href="/proyectos">PROYECTOS</a>
-          <a id="contacto" href="/contacto">CONTACTO</a>
-        </div>
-    </div>
+        
+      </nav>
+      <div class="menubar">
+        <ul>
+          <li>
+            <a id="inicio" href="/inicio">INICIO</a>
+          </li>
+          <li>
+            <a id="proyectos" href="/proyectos">PROYECTOS</a>
+          </li>
+          <li>
+            <a id="contacto" href="/contacto">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
     {% endblock %}
 
     {% block body %}

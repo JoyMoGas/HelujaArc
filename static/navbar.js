@@ -18,6 +18,7 @@ function scrollAnimation() {
         logoTitleNav.style.opacity = "0"; // Lo mantenemos invisible
         logoTitleNav.style.visibility = "hidden"; // Lo ocultamos
         // Animaciones de los otros elementos, sin afectar la visibilidad de logoNav y logo
+        logoNav.style.transform = "translateX(-100px)";
         if (scrolled) {
             // Animación de salida para los elementos del body
             logo.style.animation = "slideOut 0.7s forwards ease-in-out";
@@ -208,14 +209,4 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.add("scrolled");
         }
     });
-});
-window.addEventListener('resize', () => {
-    const menubar = document.querySelector('.menubar');
-    const hamburguer = document.querySelector('.hamburguer');
-    if (menubar && hamburguer) {
-        if (window.innerWidth > 480) {
-            menubar.classList.remove('active');
-            hamburguer.classList.remove('hamburger-active');
-        }
-    }
 });

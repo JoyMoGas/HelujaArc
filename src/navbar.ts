@@ -116,7 +116,6 @@ function scrollAnimation() {
 }
 
 
-
 function detectScroll() {
   window.addEventListener("scroll", () => {
     const scrolled = window.scrollY > 50;
@@ -140,9 +139,6 @@ function detectScroll() {
     }
   });
 }
-
-
-
 
 function checkLink() {
   const currentPath = window.location.pathname;
@@ -208,10 +204,7 @@ function checkLink() {
   }
 }
 
-
-
 checkLink();
-
 
 window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
 

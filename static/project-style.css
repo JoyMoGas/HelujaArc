@@ -20,85 +20,6 @@ body {
   color: #333;
 }
 
-
-
-
-#titulo {
-  padding-top: 2em;
-  font-size: 3em;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-}
-
-.album {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  gap: 2em;
-  padding: 2em;
-  max-width: 1200px; /* Tamaño máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor */
-}
-
-/* Project card */
-.project-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 50%; /* Ajusta según sea necesario */
-  overflow: hidden;
-}
-
-.project-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-  filter: brightness(0.85);
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* Overlay and title */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.project-card:hover .overlay {
-  opacity: 1;
-}
-
-.project-title {
-  color: #fff;
-  font-size: 1.8em;
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
 #logo-nav, #logo-title-nav {
   position: fixed;
   transition: top 0.5s ease-in-out; /* Animación suave */
@@ -124,3 +45,103 @@ body {
   }
 }
 */
+
+@media screen and (max-width: 480px) {
+  #logo {
+    display: none;
+  }
+
+  #logo-title {
+    display: none;
+  }
+
+  #logo-title-nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) {
+  #titulo {
+    padding-top: 2em;
+    font-size: 3em;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+  }
+  
+  .album {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 2em;
+    padding: 2em;
+    max-width: 1200px; /* Tamaño máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  /* Project card */
+  .project-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%; /* Ajusta según sea necesario */
+    overflow: hidden;
+  }
+  
+  .project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: brightness(0.85);
+  }
+  
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  /* Overlay and title */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .project-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .project-title {
+    color: #fff;
+    font-size: 1.8em;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+}

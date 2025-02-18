@@ -24,7 +24,7 @@ html, body {
   display: flex;
   justify-content: flex-start;
   transition: background-color 0.8s ease, padding-top 0.5s;
-  z-index: 999;
+  z-index: 998;
   box-sizing: border-box;
 }
 
@@ -77,6 +77,7 @@ nav ul li a {
 .hamburger {
   display: none;
   cursor: pointer;
+  z-index: 999;
 }
 
 .hamburger .line {
@@ -86,11 +87,13 @@ nav ul li a {
   display: block;
   margin: 7px auto;
   transition: all 0.3s ease-in-out;
+  z-index: 999;
 }
 .hamburger-active {
   transition: all 0.3s ease-in-out;
   transition-delay: 0.6s;
   transform: rotate(45deg);
+  z-index: 999;
 }
 
 .hamburger-active .line:nth-child(2) {

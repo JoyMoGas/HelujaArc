@@ -10,6 +10,8 @@ const poyectoDetallesLink = document.getElementById("project-link") as HTMLEleme
 const mediaQueryList: MediaQueryList = window.matchMedia("(max-width: 480px)");
 const mobileNav = document.querySelector(".hamburger") as HTMLElement;
 const menuBar = document.querySelector(".menubar") as HTMLElement;
+const slideOut = "slideOut 0.7s forwards ease-in-out";
+const slideIn = "slideIn 0.7s forwards ease-in-out";
 
 function scrollAnimation() {
   if (!logo || !logoTitle || !logoTitleNav || !logoNav) return;
@@ -26,8 +28,8 @@ function scrollAnimation() {
     if (scrolled && mediaQueryList.matches) {
       navbar.style.padding = "25px";
       // Animación de salida para los elementos del body
-      logo.style.animation = "slideOut 0.7s forwards ease-in-out";
-      logoTitle.style.animation = "slideOut 0.7s forwards ease-in-out";
+      logo.style.animation = slideOut;
+      logoTitle.style.animation = slideOut;
       // Selecciona el botón de hamburguesa y el menú
       const toggleNav = () => {
         menuBar.classList.toggle("active");
@@ -35,84 +37,64 @@ function scrollAnimation() {
       };
       mobileNav.addEventListener("click", () => toggleNav());
 
-      setTimeout(() => {
-        logo.style.opacity = "0";
-        logo.style.visibility = "hidden";
-        logoTitle.style.opacity = "0";
-        logoTitle.style.visibility = "hidden";
-
-        // Mostrar los elementos de la navbar
-        logoNav.style.opacity = "1";
-        logoNav.style.visibility = "visible";
-        logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
-
-        // Aquí mantenemos la animación de logoNav, que seguirá animándose
-        logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
-      }, 1000); // Esperamos a que termine la animación antes de ocultarlos
+      timeToWaitFirst(); // Esperamos a que termine la animación antes de ocultarlos
     } else {
       // Animación de salida para los elementos de la navbar
-      logoNav.style.animation = "slideOut 0.7s forwards ease-in-out";
-      logoTitleNav.style.animation = "slideOut 0.7s forwards ease-in-out";
+      logoNav.style.animation = slideOut;
+      logoTitleNav.style.animation = slideOut;
 
-      setTimeout(() => {
-        logoNav.style.opacity = "0";
-        logoNav.style.visibility = "hidden";
-        logoTitleNav.style.opacity = "0";
-        logoTitleNav.style.visibility = "hidden";
-
-        // Mostrar los elementos del body
-        logo.style.opacity = "1";
-        logo.style.visibility = "visible";
-        logoTitle.style.opacity = "1";
-        logoTitle.style.visibility = "visible";
-
-        logo.style.animation = "slideIn 0.7s forwards ease-in-out";
-        logoTitle.style.animation = "slideIn 0.7s forwards ease-in-out";
-      }, 1000);
+      timeToWaitSecond();
     }
   } else {
     if (scrolled) {
       // Animación de salida para los elementos del body
-      logo.style.animation = "slideOut 0.7s forwards ease-in-out";
-      logoTitle.style.animation = "slideOut 0.7s forwards ease-in-out";
-
-      setTimeout(() => {
-        logo.style.opacity = "0";
-        logo.style.visibility = "hidden";
-        logoTitle.style.opacity = "0";
-        logoTitle.style.visibility = "hidden";
-
-        // Mostrar los elementos de la navbar
-        logoNav.style.opacity = "1";
-        logoNav.style.visibility = "visible";
-        logoTitleNav.style.opacity = "1";
-        logoTitleNav.style.visibility = "visible";
-
-        logoNav.style.animation = "slideIn 0.7s forwards ease-in-out";
-        logoTitleNav.style.animation = "slideIn 0.7s forwards ease-in-out";
-      }, 1000); // Esperamos a que termine la animación antes de ocultarlos
+      logo.style.animation = slideOut;
+      logoTitle.style.animation = slideOut;
+      timeToWaitFirst();
+      
     } else {
       // Animación de salida para los elementos de la navbar
-      logoNav.style.animation = "slideOut 0.7s forwards ease-in-out";
-      logoTitleNav.style.animation = "slideOut 0.7s forwards ease-in-out";
-
-      setTimeout(() => {
-        logoNav.style.opacity = "0";
-        logoNav.style.visibility = "hidden";
-        logoTitleNav.style.opacity = "0";
-        logoTitleNav.style.visibility = "hidden";
-
-        // Mostrar los elementos del body
-        logo.style.opacity = "1";
-        logo.style.visibility = "visible";
-        logoTitle.style.opacity = "1";
-        logoTitle.style.visibility = "visible";
-
-        logo.style.animation = "slideIn 0.7s forwards ease-in-out";
-        logoTitle.style.animation = "slideIn 0.7s forwards ease-in-out";
-      }, 1000);
+      logoNav.style.animation = slideOut;
+      logoTitleNav.style.animation = slideOut;
+      timeToWaitSecond();
+      
     }
   }
+}
+
+function timeToWaitFirst() {
+  setTimeout(() => {
+    logo.style.opacity = "0";
+    logo.style.visibility = "hidden";
+    logoTitle.style.opacity = "0";
+    logoTitle.style.visibility = "hidden";
+
+    // Mostrar los elementos de la navbar
+    logoNav.style.opacity = "1";
+    logoNav.style.visibility = "visible";
+    logoTitleNav.style.opacity = "1";
+    logoTitleNav.style.visibility = "visible";
+
+    logoNav.style.animation = slideIn;
+    logoTitleNav.style.animation = slideIn;
+  }, 1000); // Esperamos a que termine la animación antes de ocultarlos
+}
+
+function timeToWaitSecond() {
+  setTimeout(() => {
+    logoNav.style.opacity = "0";
+    logoNav.style.visibility = "hidden";
+    logoTitleNav.style.opacity = "0";
+    logoTitleNav.style.visibility = "hidden";
+    // Mostrar los elementos del body
+    logo.style.opacity = "1";
+    logo.style.visibility = "visible";
+    logoTitle.style.opacity = "1";
+    logoTitle.style.visibility = "visible";
+
+    logo.style.animation = slideIn;
+    logoTitle.style.animation = slideIn;
+  }, 1000);
 }
 
 

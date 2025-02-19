@@ -152,6 +152,17 @@
             targetSection.scrollIntoView({ behavior: 'smooth' });
         }
     }
-});
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 20;
+      navbar.classList.toggle('scrolled', scrolled);
+
+      if (window.scrollY === 0) {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  });
   </script>
 {% endblock %}

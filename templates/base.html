@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     {% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}" />
+    <style>
+      .hamburger {
+        z-index: 1001; /* Ensure the hamburger menu is always on top */
+      }
+    </style>
 </head>
 <body>
   {% block navbar %}

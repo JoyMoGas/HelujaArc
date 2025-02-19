@@ -20,7 +20,7 @@ function scrollAnimation() {
     // Si la pantalla cumple el media query, ocultamos logoTitleNav SIEMPRE
     if (mediaQueryList.matches) {
         logoTitleNav.style.opacity = "0"; // Lo mantenemos invisible
-        logoTitleNav.style.visibility = "hidden"; // Lo ocultamos
+        logoTitleNav.style.display = "none"; // Lo ocultamos
         // Animaciones de los otros elementos, sin afectar la visibilidad de logoNav y logo
         logoNav.style.left = "40px";
         logoNav.style.height = "35px";
@@ -29,12 +29,6 @@ function scrollAnimation() {
             // Animación de salida para los elementos del body
             logo.style.animation = slideOut;
             logoTitle.style.animation = slideOut;
-            // Selecciona el botón de hamburguesa y el menú
-            const toggleNav = () => {
-                menuBar.classList.toggle("active");
-                mobileNav.classList.toggle("hamburger-active");
-            };
-            mobileNav.addEventListener("click", () => toggleNav());
             timeToWaitFirst(); // Esperamos a que termine la animación antes de ocultarlos
         }
         else {
@@ -147,18 +141,20 @@ function checkLink() {
         else {
             contactoLink.style.color = "#5DADE2";
         }
+        // Ensure navbar is always in scrolled state
         navbar.classList.add('scrolled');
-        Object.assign(logo.style, {
+        navbar.style.backgroundColor = "#2c3e50e4"; // Ensure background color is applied
+        Object.assign(logoNav.style, {
             visibility: "visible",
             userSelect: "none",
             position: "fixed",
             top: "8px",
-            left: "116px",
+            left: "50px", // Adjusted position
             height: "45px",
             scale: "1",
             zIndex: "1000"
         });
-        Object.assign(logoTitle.style, {
+        Object.assign(logoTitleNav.style, {
             visibility: "visible",
             userSelect: "none",
             position: "fixed",
@@ -168,6 +164,11 @@ function checkLink() {
             scale: "1",
             zIndex: "1000"
         });
+        // Ensure navbar transitions from transparent to solid on scroll for responsive design
+        if (mediaQueryList.matches) {
+            navbar.classList.add('scrolled');
+            navbar.style.backgroundColor = "#2c3e50e4"; // Ensure background color is applied
+        }
     }
 }
 checkLink();
@@ -203,5 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             navbar.classList.add("scrolled");
         }
+    });
+    const hamburger = document.getElementById("hamburger");
+    const menubar = document.querySelector(".menubar");
+    hamburger.addEventListener("click", function () {
+        menubar.classList.toggle("active");
+        hamburger.classList.toggle("hamburger-active");
     });
 });

@@ -20,8 +20,13 @@ body {
   color: #333;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 #titulo {
-  padding-top: 2em;
+  padding-top: 1em;
   font-size: 3em;
   font-weight: 700;
   color: #333;
@@ -121,6 +126,13 @@ body {
 
   #logo-title-nav {
     display: none;
+  }
+
+  #logo-nav {
+    top: 8px;
+    left: 116px;
+    height: 45px;
+    scale: 1;
   }
 
   #titulo {

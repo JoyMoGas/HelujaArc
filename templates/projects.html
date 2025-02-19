@@ -8,8 +8,6 @@
 {% endblock %}
 
 {% block body %}
-
-
 <section id="proyectos" class="fade-in-up">
   <h1 id="titulo">Proyectos</h1>
   
@@ -29,22 +27,7 @@
   </div>
 </section>
 
-  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
-  <script src="{{ url_for('static', filename='navbar.js') }}"></script>
-  <script src="{{ url_for('static', filename='responsive.js') }}"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    // Obtiene los parámetros de la URL
-    const params = new URLSearchParams(window.location.search);
-    const section = params.get('section'); // Obtiene el parámetro 'section'
-
-    if (section) {
-        const targetSection = document.getElementById(section);
-        if (targetSection) {
-            // Desplazarse a la sección correspondiente
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-});
-  </script>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='navbar.js') }}"></script>
+<script src="{{ url_for('static', filename='responsive.js') }}"></script>
 {% endblock %}

@@ -26,7 +26,7 @@
 
 
   <section class="gallery-container fade-in-up">
-    <h1 id="titulo">PROYECTOS MÁS RECIENTES</h1>
+    <h1 id="titulo"><span id="title-span">PROYECTOS</span><span id="title-span"> MÁS RECIENTES</span></h1>
     <div class="gallery">
         {% for project_id, project in projects.items() %}
             <div class="gallery-item">
@@ -46,7 +46,7 @@
 
 <section id="proyectos" class="fade-in-up">
   <h1 id="titulo" style="padding-bottom: 0.1em;">PROYECTOS</h1>
-  <a href="/proyectos" class="projects-link">Ir a proyectos<i class="fa-solid fa-arrow-right fa-sm album-item-icon"></i></a>
+  <a href="/proyectos" class="projects-link">Ir a proyectos<i class="fa-solid fa-arrow-right fa-sm album-item-icon" id="pj-arrow"></i></a>
   <div class="album">
     {% for project_id, project in all_projects.items() %}
       <div class="responsive-container-block">
@@ -60,10 +60,6 @@
     {% endfor %}
   </div>
 </section>
-
-
-
-
 
   <section id="acerca-de" class="fade-in-up">
     <div class="gallery-container">
@@ -95,7 +91,7 @@
   </section>
 
   <section id="skills" class="skills-section fade-in-up">
-    <h1 id="titulo">HABILIDADES DE SOFTWARE</h1>
+    <h1 id="titulo"><span id="title-span">HABILIDADES</span><span id="title-span">DE SOFTWARE</span> </h1>
     <div class="wrapper">
       <div class="icon">
         <img src="static/images/icons/software/ac.png" alt="Software 1" class="skill-logo">

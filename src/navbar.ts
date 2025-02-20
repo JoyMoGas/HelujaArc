@@ -25,6 +25,7 @@ function scrollAnimation() {
     // Animaciones de los otros elementos, sin afectar la visibilidad de logoNav y logo
     logoNav.style.left = "40px";
     logoNav.style.height = "35px";
+    
     if (scrolled && mediaQueryList.matches) {
       navbar.style.padding = "25px";
       // Animación de salida para los elementos del body
@@ -148,6 +149,10 @@ function checkLink() {
       logoNav.style.visibility = "visible";
       logoTitleNav.style.visibility = "visible";
       proyectosLink.style.color = "#5DADE2";
+      if (mediaQueryList.matches) {
+        navbar.style.padding = "25px";
+        logoNav.style.height = "35px";
+      }
     } else {
       contactoLink.style.color = "#5DADE2";
     }
@@ -178,11 +183,8 @@ function checkLink() {
       zIndex: "1000"
     });
 
-    // Ensure navbar transitions from transparent to solid on scroll for responsive design
-    if (mediaQueryList.matches) {
-      navbar.classList.add('scrolled');
-      navbar.style.backgroundColor = "#2c3e50e4"; // Ensure background color is applied
-    }
+    // Ensure navbar is solid and scrolled for responsive design
+    
   }
 }
 

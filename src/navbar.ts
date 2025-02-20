@@ -154,7 +154,12 @@ function checkLink() {
         logoNav.style.height = "35px";
       }
     } else {
-      contactoLink.style.color = "#5DADE2";
+      navbar.classList.add('scrolled');
+      navbar.style.backgroundColor = "#2c3e50e4";
+      if (mediaQueryList.matches) {
+        navbar.style.padding = "25px";
+        logoNav.style.height = "35px";
+      }
     }
 
     // Ensure navbar is always in scrolled state

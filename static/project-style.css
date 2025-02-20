@@ -130,8 +130,8 @@ html, body {
 
   #logo-nav {
     top: 8px;
-    left: 116px;
-    height: 35px;
+    left: 20px; /* Adjusted position */
+    height: 35px; /* Adjusted size */
     scale: 1;
   }
 

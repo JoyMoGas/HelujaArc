@@ -88,4 +88,14 @@
   </div>
   {% block footer %}{% endblock %}
   <script src="{{ url_for('static', filename='navbar.js') }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Ensure logoNav is correctly positioned and sized for 480px
+      const logoNav = document.getElementById('logo-nav');
+      if (window.matchMedia("(max-width: 480px)").matches) {
+        logoNav.style.left = "20px"; // Adjusted position
+        logoNav.style.height = "35px"; // Adjusted size
+      }
+    });
+  </script>
 {% endblock %}

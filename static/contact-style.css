@@ -247,3 +247,21 @@ p {
 .btn:hover::before {
   width: 160%;
 }
+
+@media screen and (max-width: 480px) {
+  #logo-title-nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) {
+  
+}

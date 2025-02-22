@@ -16,28 +16,33 @@
 
   <div class="content">
     <div id="image-container">
+      <h1 id="titulo-image">Contacto</h1>
+      <p id="text-image">Transformamos tus ideas en realidad. Contáctanos para crear juntos el espacio perfecto</p>
       <img src="static/images/projects/Picture2.jpg" alt="">
     </div>
+    <div id="more-content">
     <div class="right-container">
-      <h1>Contacto</h1>
+      <h1 id="titulo">Contacto</h1>
       <p class="sub">Creamos tu futuro</p>
       <div class="elements-container">
+        <div class="right-flex">
         <div id="info">
-          <i class="fa-solid fa-location-dot" style="color: #2c3e50"></i>
+          <i class="fa-solid fa-location-dot"></i>
           <p>Hermosillo, Sonora, Mx</p>
         </div>
         <div id="info">
-          <i class="fa-solid fa-phone" style="color: #2c3e50"></i>
+          <i class="fa-solid fa-phone"></i>
           <p>+52 66-24-20-38-27</p>
         </div>
         <div id="info">
-          <i class="fa-solid fa-envelope" style="color: #2c3e50"></i>
+          <i class="fa-solid fa-envelope"></i>
           <p>
             <a href="mailto:hectorgastelum.99@gmail.com" target="_blank"
               >hectorgastelum.99@gmail.com</a
             >
           </p>
         </div>
+      </div>
         <div class="contact-icons">
           <h2>Sigueme en:</h2>
           <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -45,7 +50,7 @@
       </div>
     </div>
     <div class="left-container">
-      <p id="text">Estamos aquí para transformar tus ideas en realidad. Si tienes un proyecto en mente o deseas discutir cómo podemos trabajar juntos para crear el espacio perfecto, no dudes en ponerte en contacto con nosotros. Tu visión es nuestra inspiración.</p>
+      <p id="text">Estamos aquí para transformar tus ideas en realidad. Si tienes un proyecto en mente o quieres discutir cómo crearlo, contáctanos. Tu visión es nuestra inspiración.</p>
       <p id="subtitle">Solicitud Comercial</p>
       {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
@@ -57,7 +62,7 @@
         {% endif %}
       {% endwith %}
 
-      <form class="form-container" method="POST">
+      <form class="form-container" method="POST" id="contact-form">
         {{ form.hidden_tag() }}
         
         <div class="input-container">
@@ -86,16 +91,8 @@
     </form>
     </div>
   </div>
+  </div>
   {% block footer %}{% endblock %}
   <script src="{{ url_for('static', filename='navbar.js') }}"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Ensure logoNav is correctly positioned and sized for 480px
-      const logoNav = document.getElementById('logo-nav');
-      if (window.matchMedia("(max-width: 480px)").matches) {
-        logoNav.style.left = "20px"; // Adjusted position
-        logoNav.style.height = "35px"; // Adjusted size
-      }
-    });
-  </script>
+
 {% endblock %}

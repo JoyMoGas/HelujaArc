@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{ project.title }}{% endblock %}
-
 {% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='details-style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 {% endblock %}
 
@@ -39,5 +40,8 @@
   </div>
   {% endif %}
 </section>
-<script src="{{ url_for('static', filename='scrollTo.js') }}"></script>
+  
+
+<script src="{{ url_for('static', filename='navbar.js') }}"></script>
+
 {% endblock %}

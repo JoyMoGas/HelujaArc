@@ -120,6 +120,16 @@ function checkLink() {
     }
     else if (currentPath.includes("/proyecto/")) {
         detectScroll();
+        if (mediaQueryList.matches) {
+            // Ensure hamburger menu is clickable
+            mobileNav.addEventListener("click", function () {
+                menuBar.classList.toggle("active");
+                mobileNav.classList.toggle("hamburger-active");
+            });
+            logoNav.style.left = "20px";
+            navbar.style.padding = "25px";
+            logoNav.style.height = "35px";
+        }
         proyectosLink.style.color = "#5DADE2";
         // Hacer que logoNav y logoTitleNav siempre sean visibles
         logoNav.style.visibility = "visible";
@@ -138,42 +148,22 @@ function checkLink() {
             logoTitleNav.style.visibility = "visible";
             proyectosLink.style.color = "#5DADE2";
             if (mediaQueryList.matches) {
+                logoNav.style.left = "20px";
                 navbar.style.padding = "25px";
                 logoNav.style.height = "35px";
             }
         }
         else {
-            navbar.classList.add('scrolled');
-            navbar.style.backgroundColor = "#2c3e50e4";
+            logoNav.style.visibility = "visible";
+            logoTitleNav.style.visibility = "visible";
+            contactoLink.style.color = "#5DADE2";
             if (mediaQueryList.matches) {
-                navbar.style.padding = "25px";
+                logoNav.style.left = "20px";
+                navbar.style.color = "transparent";
                 logoNav.style.height = "35px";
             }
         }
-        // Ensure navbar is always in scrolled state
         navbar.classList.add('scrolled');
-        navbar.style.backgroundColor = "#2c3e50e4"; // Ensure background color is applied
-        Object.assign(logoNav.style, {
-            visibility: "visible",
-            userSelect: "none",
-            position: "fixed",
-            top: "8px",
-            left: "50px", // Adjusted position
-            height: "45px",
-            scale: "1",
-            zIndex: "1000"
-        });
-        Object.assign(logoTitleNav.style, {
-            visibility: "visible",
-            userSelect: "none",
-            position: "fixed",
-            top: "13px",
-            left: "175px",
-            height: "35px",
-            scale: "1",
-            zIndex: "1000"
-        });
-        // Ensure navbar is solid and scrolled for responsive design
     }
 }
 checkLink();

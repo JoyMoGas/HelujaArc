@@ -4,7 +4,7 @@ const toSection = document.querySelector('.contenedor-flecha');
 const toSectionIndex = document.querySelector('.contenedor-flecha-inicio');
 const targetSection = document.getElementById('project-detail');
 const targetSectionInicio = document.getElementById('first-section');
-if (toSection) {
+if (toSectionIndex && toSection) {
     toSection.addEventListener('click', (event) => {
         event.preventDefault(); // Evita que el enlace agregue #demoBox en la URL
         targetSection.scrollIntoView({ behavior: 'smooth' });

@@ -82,7 +82,7 @@ html, body {
 }
 */
 
-@media screen and (min-width: 320px) and (max-width: 390px) {
+@media screen and (min-width: 320px) and (max-width: 391px) {
   #logo-title-nav {
     display: none;
   }
@@ -204,11 +204,122 @@ html, body {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  #logo-title-nav {
+    display: none;
+  }
 
+  #logo-nav {
+    top: 8px;
+    left: 20px; /* Adjusted position */
+    height: 35px; /* Adjusted size */
+    scale: 1;
+  }
+
+  #titulo {
+    padding-top: 2em;
+    font-size: 3em;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+  }
+  
+  /* Project card */
+  .project-card {
+    margin: 5px;
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 21.5em; /* Ancho fijo para el contenedor */
+    height: 20em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+  
+  
+  .image-wrapper {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  #logo-title-nav {
+    display: none;
+  }
 
+  #logo-nav {
+    top: 8px;
+    left: 20px; /* Adjusted position */
+    height: 35px; /* Adjusted size */
+    scale: 1;
+  }
+
+  #titulo {
+    padding-top: 2em;
+    font-size: 3em;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    margin: 5px;
+  }
+  
+  /* Project card */
+  .project-card {
+    margin: 5px;
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 16em; /* Ancho fijo para el contenedor */
+    height: 15em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+  
+  
+  .image-wrapper {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
 }
 
 @media (min-width: 1025px) {

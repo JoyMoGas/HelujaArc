@@ -203,7 +203,6 @@ nav ul li a {
 }
 
 @media screen and (max-width: 480px) {
-
   #logo-nav {
     visibility: visible;
     position: fixed;
@@ -456,10 +455,509 @@ nav ul li a {
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
+  #logo-nav {
+    visibility: visible;
+    position: fixed;
+    top: 8px;
+    left: 80px;
+    height: 55px;
+    scale: 1;
+    z-index: 1000;
+  }
+
+  #logo-title-nav {
+    display: none;
+  }
+
+  .navbar.scrolled {
+    padding: 40px;
+  }
+
+  .hamburger {
+    display: block; /* Ensure the hamburger menu is displayed */
+    position: absolute; /* Opcional, puedes ajustar la posición según tus necesidades */
+    top: 20px;
+    right: 30px; /* Ajusta según la ubicación deseada */
+    z-index: 1001; /* Ensure the hamburger menu is always on top */
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .footer-distributed{
+    background: #2c3e50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 27px 10px;
+    padding-bottom: 15px;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: left;
+  }
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 20%;
+  }
+
+  .footer-distributed .footer-company-name{
+    color:  #ffffff;
+    font-size: 7px;
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    display: none;
+  }
+
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin:0;
+  }
+
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  #info p {
+    padding: 0 5px 5px 5px;
+  }
+
+  #info i {
+    margin-bottom: 25px;
+  }
+
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
+
+  /* Footer Right */
+
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+
+  .footer-icons h2 {
+    display: block;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+
+  .footer-icons i {
+    color: #ECF0F1;
+    transition: color 0.5s;
+  }
+
+  .footer-icons i:hover {
+    color: #5dade2;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
+  }
+
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 53%;
+  }
+
+  /* Footer links */
+
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+    padding-bottom: 2em;
+  }
+
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+
+  .footer-distributed .footer-left p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  .footer-distributed .footer-icons a{
+
+    font-size: 25px;
+  }
+
+  #info i {
+    height: 5px;
+  };
+
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
+
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #ECF0F1;
+    display: inline-block;
+    padding-right: 5px;
+  }
+
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+
+  .footer-right .footer-company-name{
+    display: none;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    text-align: center; /* Centrar el texto */
+    padding-top: 5px;
+    padding-bottom: 2px;
+    background: #2c3e50; /* Asegura que se mantenga el mismo fondo */
+  }
+  
+  .footer-bottom .footer-company-name {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap; /* Evita saltos de línea */
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
+  .btn-top {
+    width: 45px;
+    height: 45px;
+  }
+
+  #logo-nav {
+    visibility: visible;
+    position: fixed;
+    top: 8px;
+    left: 80px;
+    height: 55px;
+    scale: 1;
+    z-index: 1000;
+  }
+
+  .navbar.scrolled {
+    padding: 40px;
+  }
+
+  .hamburger {
+    display: block; /* Ensure the hamburger menu is displayed */
+    position: absolute; /* Opcional, puedes ajustar la posición según tus necesidades */
+    top: 20px;
+    right: 30px; /* Ajusta según la ubicación deseada */
+    z-index: 1001; /* Ensure the hamburger menu is always on top */
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .footer-distributed{
+    background: #2c3e50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 27px 10px;
+    padding-bottom: 15px;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: left;
+  }
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 20%;
+  }
+
+  .footer-distributed .footer-company-name{
+    color:  #ffffff;
+    font-size: 7px;
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    display: none;
+  }
+
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin:0;
+  }
+
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  #info p {
+    padding: 0 5px 5px 5px;
+  }
+
+  #info i {
+    margin-bottom: 25px;
+  }
+
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
+
+  /* Footer Right */
+
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+
+  .footer-icons h2 {
+    display: block;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+
+  .footer-icons i {
+    color: #ECF0F1;
+    transition: color 0.5s;
+  }
+
+  .footer-icons i:hover {
+    color: #5dade2;
+  }
+
+  .firma-personal {
+    height: 125px;
+    top: 0;
+  }
+
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+    width: 53%;
+  }
+
+  /* Footer links */
+
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+    padding-bottom: 2em;
+  }
+
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+
+  .footer-distributed .footer-left p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+
+  .footer-distributed .footer-left p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+
+  .footer-distributed .footer-left p a{
+    color:#ECF0F1;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  .footer-distributed .footer-icons a{
+
+    font-size: 25px;
+  }
+
+  #info i {
+    height: 5px;
+  };
+
+  .footer-distributed .footer-left p a:hover{
+    color:#5DADE2;
+  }
+
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #ECF0F1;
+    display: inline-block;
+    padding-right: 5px;
+  }
+
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+
+  .footer-right .footer-company-name{
+    display: none;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    text-align: center; /* Centrar el texto */
+    padding-top: 5px;
+    padding-bottom: 2px;
+    background: #2c3e50; /* Asegura que se mantenga el mismo fondo */
+  }
+  
+  .footer-bottom .footer-company-name {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap; /* Evita saltos de línea */
+  }
 }
 
 @media (min-width: 1025px) {

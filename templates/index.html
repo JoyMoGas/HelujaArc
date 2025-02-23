@@ -6,17 +6,23 @@
 <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css">
 {% endblock %}
 
 {% block body %}
-
 <img id="logo" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
 <img id="logo-title" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
 
 
-<div id="demoBox"></div>
+<div id="demoBox">
+  <a href="#first-section" class="contenedor-flecha-inicio">
+    <svg width="80" height="80" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+      <path d="M11.7547 20.9888C11.8923 21.1495 12.0966 21.2514 12.3247 21.2514L12.3264 21.2514C12.5188 21.2518 12.7113 21.1786 12.8581 21.0319L18.8583 15.0359C19.1513 14.7431 19.1514 14.2682 18.8586 13.9752C18.5659 13.6822 18.091 13.6821 17.798 13.9749L13.0747 18.6948L13.0747 4.5C13.0747 4.08579 12.7389 3.75 12.3247 3.75C11.9105 3.75 11.5747 4.08579 11.5747 4.5L11.5747 18.6883L6.85829 13.9749C6.5653 13.6821 6.09043 13.6822 5.79763 13.9752C5.50483 14.2682 5.50498 14.7431 5.79796 15.0359L11.7547 20.9888Z" fill="#f4f4f4"/>
+      </svg>  
+  </a>
+</div>
   <!-- Contenido aquí -->
-  <section id="inicio" class="mainInfo fade-in-up">
+  <section id="first-section" class="mainInfo fade-in-up">
     <h1 style="padding-top: 1em; padding-bottom: 1em;"> <span id="titles">HELUJA </span> <span class="subtitle">ARQUITECTURA</span> </h1>
     <p id="prese">
       Mi nombre es HECTOR R. MONTAÑO GASTELUM, soy un joven arquitecto con experiencia en la coordinación y desarrollo de proyectos arquitectónicos, desde viviendas unifamiliares hasta inmuebles industriales. Me apasiona materializar ideas arquitectónicas y busco constantemente aprender nuevas habilidades que me permitan ofrecer mejores resultados a la sociedad. Me considero curioso, creativo y comprometido, dispuesto a enfrentar nuevos retos.
@@ -133,6 +139,7 @@
   </section>
 
   <script src="{{ url_for('static', filename='navbar.js') }}"></script>
+  <script src="{{ url_for('static', filename='toTop.js') }}"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Obtiene los parámetros de la URL

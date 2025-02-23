@@ -82,11 +82,11 @@ nav ul li a {
 }
 
 .hamburger .line {
-  width: 25px;
-  height: 1px;
+  width: 28px;
+  height: 1.5px;
   background-color: #F7F7F7;
   display: block;
-  margin: 7px auto;
+  margin: 8.2px auto;
   transition: all 0.3s ease-in-out;
   z-index: 999;
 }
@@ -152,6 +152,40 @@ nav ul li a {
 
 .menubar ul li a:hover {
   color: #5DADE2;
+}
+
+.btn-top {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  width: 35px;
+  height: 35px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #43617fb9;
+  display: flex; /* Añadir flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  opacity: 0; /* Inicialmente oculto */
+  visibility: hidden; /* Evita que sea clickeable */
+  z-index: 999;
+}
+
+.btn-top svg {
+  fill: #F7F7F7; /* Cambiar el color del icono */
+}
+
+.btn-top:hover {
+  background-color: #5DADE2; /* Cambiar el color del icono */
+}
+
+/* Clase para mostrar el botón con efecto suave */
+.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes scaleUp {
@@ -429,6 +463,11 @@ nav ul li a {
 }
 
 @media (min-width: 1025px) {
+
+  .btn-top {
+    width: 45px;
+    height: 45px;
+  }
 
   .footer-bottom {
     display: none;

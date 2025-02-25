@@ -65,7 +65,7 @@ def load_projects():
                 if image.startswith('Picture1'):  # La imagen principal
                     main_image = f'images/{project_folder}/{image}'  # Ruta relativa a 'static/images/'
                 elif image == 'detalles.txt':  # Archivo de detalle
-                    with open(os.path.join(project_path, image), 'r') as f:
+                    with open(os.path.join(project_path, image), 'r', encoding='utf-8') as f:
                         detail_text = f.read().strip()  # Leemos el contenido del archivo
 
             if main_image:
@@ -106,13 +106,15 @@ def load_project_details(project_folder):
 
         # Detalles en texto
         detail_text_path = os.path.join(project_path, 'texto.txt')
+
         if os.path.exists(detail_text_path):
-            with open(detail_text_path, 'r') as f:
+            with open(detail_text_path, 'r', encoding='utf-8') as f:  # Especificar codificación
                 detail_text = f.read().strip()
+                detail_text = detail_text.replace("\n", "<br>")
 
         location_text_path = os.path.join(project_path, 'location.txt')
         if os.path.exists(location_text_path):
-            with open(location_text_path, 'r') as f:
+            with open(location_text_path, 'r', encoding='utf-8') as f:
                 location_text = f.read().strip()
 
         # Devolver la información del proyecto

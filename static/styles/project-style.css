@@ -362,7 +362,7 @@ html, body {
   }
 }
 
-@media screen and (min-width: 401px)  and (max-width: 480px) {
+@media screen and (min-width: 401px)  and (max-width: 420px) {
 
   #logo-title-nav {
     display: none;
@@ -395,6 +395,67 @@ html, body {
     position: relative; /* Permite que el efecto de hover se aplique correctamente */
     overflow: hidden; /* Asegura que no haya desbordamiento */
     width: 12.5em; /* Ancho fijo para el contenedor */
+    height: 10em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+  
+  
+  .image-wrapper {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+@media screen and (min-width: 421px)  and (max-width: 480px) {
+
+  #logo-title-nav {
+    display: none;
+  }
+
+  #logo-nav {
+    top: 8px;
+    left: 20px; /* Adjusted position */
+    height: 35px; /* Adjusted size */
+    scale: 1;
+  }
+
+  #titulo {
+    padding-top: 1.5em;
+    font-size: 3em;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    padding: 5px 3px; /* Añadido padding para el contenedor principal */
+    justify-content: space-between; /* Espacio entre las imágenes */
+  }
+  
+  /* Project card */
+  .project-card {
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 12.9em; /* Ancho fijo para el contenedor */
     height: 10em; /* Altura fija para mantener el tamaño uniforme */
     margin-top: 0.5em;
     border-radius: 5px; /* Bordes redondeados */

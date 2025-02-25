@@ -46,7 +46,7 @@ html, body {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
-  url("images/renders/01.png");
+  url("/static/images/renders/01.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -131,14 +131,14 @@ html, body {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 391px) {
+@media screen and (min-width: 320px) and (max-width: 361px) {
 
   #first-section {
     scroll-margin-top: 35px; /* Ajusta la cantidad de espacio */
   }
   
   #logo {
-    top: 28%;
+    top: 30%;
     height: 190px;
     transform: translateX(-50%);
     opacity: 0;
@@ -428,8 +428,1183 @@ html, body {
   }
 }
 
+@media screen and (min-width: 362px) and (max-width: 370px) {
+  #first-section {
+    scroll-margin-top: 35px; /* Ajusta la cantidad de espacio */
+  }
+  
+  #logo {
+    top: 25%;
+    height: 190px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  #logo-title {
+    top: 56%;
+    left: 50%;
+    height: 60px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+
+  #titles{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-top: 0.5em;
+    color: #2c3e50; 
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #2c3e50;
+  }
+
+  #prese {
+    text-align: justify;
+    padding: 1em 2.5em 0 2.5em;
+    font-size: 16px;
+  }
+
+  #titulo{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-size: 24px;
+  }
+
+  .gallery-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    border-radius: 5px;
+    position: relative;
+    width: 21.5em;
+    height: 28em;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.05); 
+  }
+
+  .gallery-item-text {
+    position: absolute;
+    bottom: 60%; /* Antes estaba en 70%, ahora lo bajamos */
+    left: 20px;
+    width: 100%;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column; /* Coloca h2 arriba y p debajo */
+    gap: 5px; /* Espaciado entre elementos */
+  }
+
+  .gallery-item h2 {
+    margin-top: 1em;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  .gallery-item-icon {
+    display: none;
+    visibility: hidden;
+  }
+
+  .gallery-item p {
+    font-size: 1em;
+    color: #2c3e50;
+    position: relative;
+    margin: 0;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    padding: 5px 8px; /* Añadido padding para el contenedor principal */
+    justify-content: space-between; /* Espacio entre las imágenes */
+  }
+
+  .album .responsive-container-block {
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 11em; /* Ancho fijo para el contenedor */
+    height: 8em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+
+  .album .img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .album .responsive-container-block:hover .img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .album-item-text {
+    display: none;
+  }
+
+  .projects-link {
+    display: inline-block;
+    margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
+    text-align: end; /* Cambiar a izquierda para alinear el texto */
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    color: #333;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link i {
+    margin-left: 10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link:hover {
+    transform: translateX(-15px); /* Desplazar un poco a la izquierda al hacer hover */
+  }
+
+  .projects-link:hover i {
+    opacity: 1; /* Mostrar el ícono al hacer hover */
+    transform: translateX(50px); /* Mover el ícono hacia la derecha */
+  }
+
+  .album-item-icon {
+    position: relative;
+    left: -50px;  /* Coloca el ícono fuera de la vista inicial, a la izquierda del título */
+    opacity: 0;  /* Oculta el ícono inicialmente */
+    bottom: 40%;
+    font-size: 0.5rem;
+    transition: left 0.5s ease, opacity 0.5s ease;  /* Anima el desplazamiento y la aparición */
+  }
+
+  .skills-section {
+    width: 100%;
+    padding: 2rem 2em; /* Espaciado */
+    text-align: center; /* Centrar texto */
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    grid-template-rows: repeat(3, auto);  /* Exactamente 3 filas */
+    gap: 50px; /* Espaciado uniforme entre los iconos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: fit-content; /* Ajusta el tamaño al contenido */
+    margin: auto; /* Centra el grid en la página */
+    padding-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  .wrapper .icon {
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon img {
+    width: 27px;  /* Tamaño de la imagen dentro del icono */
+    height: 27px; /* Tamaño de la imagen dentro del icono */
+    object-fit: contain; /* Mantiene la relación de aspecto */
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #333; /* Texto del tooltip */
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Colores específicos para cada software, puedes personalizar según el software */
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+    }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 380px) {
+
+  #logo {
+    top: 25%;
+    height: 190px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  #logo-title {
+    top: 56%;
+    left: 50%;
+    height: 60px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+
+  #titles{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-top: 0.5em;
+    color: #2c3e50; 
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #2c3e50;
+  }
+
+  #prese {
+    text-align: justify;
+    padding: 1em 2.5em 0 2.5em;
+    font-size: 16px;
+  }
+
+  #titulo{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-size: 24px;
+  }
+
+  .gallery-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    border-radius: 5px;
+    position: relative;
+    width: 21.5em;
+    height: 28em;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.05); 
+  }
+
+  .gallery-item-text {
+    position: absolute;
+    bottom: 60%; /* Antes estaba en 70%, ahora lo bajamos */
+    left: 20px;
+    width: 100%;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column; /* Coloca h2 arriba y p debajo */
+    gap: 5px; /* Espaciado entre elementos */
+  }
+
+  .gallery-item h2 {
+    margin-top: 1em;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  .gallery-item-icon {
+    display: none;
+    visibility: hidden;
+  }
+
+  .gallery-item p {
+    font-size: 1em;
+    color: #2c3e50;
+    position: relative;
+    margin: 0;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    padding: 5px 8px; /* Añadido padding para el contenedor principal */
+    justify-content: space-between; /* Espacio entre las imágenes */
+  }
+
+  .album .responsive-container-block {
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 11em; /* Ancho fijo para el contenedor */
+    height: 8em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+
+  .album .img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .album .responsive-container-block:hover .img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .album-item-text {
+    display: none;
+  }
+
+  .projects-link {
+    display: inline-block;
+    margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
+    text-align: end; /* Cambiar a izquierda para alinear el texto */
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    color: #333;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link i {
+    margin-left: 10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link:hover {
+    transform: translateX(-15px); /* Desplazar un poco a la izquierda al hacer hover */
+  }
+
+  .projects-link:hover i {
+    opacity: 1; /* Mostrar el ícono al hacer hover */
+    transform: translateX(50px); /* Mover el ícono hacia la derecha */
+  }
+
+  .album-item-icon {
+    position: relative;
+    left: -50px;  /* Coloca el ícono fuera de la vista inicial, a la izquierda del título */
+    opacity: 0;  /* Oculta el ícono inicialmente */
+    bottom: 40%;
+    font-size: 0.5rem;
+    transition: left 0.5s ease, opacity 0.5s ease;  /* Anima el desplazamiento y la aparición */
+  }
+
+  .skills-section {
+    width: 100%;
+    padding: 2rem 2em; /* Espaciado */
+    text-align: center; /* Centrar texto */
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    grid-template-rows: repeat(3, auto);  /* Exactamente 3 filas */
+    gap: 50px; /* Espaciado uniforme entre los iconos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: fit-content; /* Ajusta el tamaño al contenido */
+    margin: auto; /* Centra el grid en la página */
+    padding-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  .wrapper .icon {
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon img {
+    width: 27px;  /* Tamaño de la imagen dentro del icono */
+    height: 27px; /* Tamaño de la imagen dentro del icono */
+    object-fit: contain; /* Mantiene la relación de aspecto */
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #333; /* Texto del tooltip */
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Colores específicos para cada software, puedes personalizar según el software */
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+    }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 380px) and (min-height: 800px) and (max-height: 820px) {
+
+  #logo {
+    top: 30%;
+    height: 190px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  #logo-title {
+    top: 56%;
+    left: 50%;
+    height: 60px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+
+  #titles{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-top: 0.5em;
+    color: #2c3e50; 
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #2c3e50;
+  }
+
+  #prese {
+    text-align: justify;
+    padding: 1em 2.5em 0 2.5em;
+    font-size: 16px;
+  }
+
+  #titulo{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-size: 24px;
+  }
+
+  .gallery-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    border-radius: 5px;
+    position: relative;
+    width: 21.5em;
+    height: 28em;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.05); 
+  }
+
+  .gallery-item-text {
+    position: absolute;
+    bottom: 60%; /* Antes estaba en 70%, ahora lo bajamos */
+    left: 20px;
+    width: 100%;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column; /* Coloca h2 arriba y p debajo */
+    gap: 5px; /* Espaciado entre elementos */
+  }
+
+  .gallery-item h2 {
+    margin-top: 1em;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  .gallery-item-icon {
+    display: none;
+    visibility: hidden;
+  }
+
+  .gallery-item p {
+    font-size: 1em;
+    color: #2c3e50;
+    position: relative;
+    margin: 0;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    padding: 5px 8px; /* Añadido padding para el contenedor principal */
+    justify-content: space-between; /* Espacio entre las imágenes */
+  }
+
+  .album .responsive-container-block {
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 11em; /* Ancho fijo para el contenedor */
+    height: 8em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+
+  .album .img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .album .responsive-container-block:hover .img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .album-item-text {
+    display: none;
+  }
+
+  .projects-link {
+    display: inline-block;
+    margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
+    text-align: end; /* Cambiar a izquierda para alinear el texto */
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    color: #333;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link i {
+    margin-left: 10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link:hover {
+    transform: translateX(-15px); /* Desplazar un poco a la izquierda al hacer hover */
+  }
+
+  .projects-link:hover i {
+    opacity: 1; /* Mostrar el ícono al hacer hover */
+    transform: translateX(50px); /* Mover el ícono hacia la derecha */
+  }
+
+  .album-item-icon {
+    position: relative;
+    left: -50px;  /* Coloca el ícono fuera de la vista inicial, a la izquierda del título */
+    opacity: 0;  /* Oculta el ícono inicialmente */
+    bottom: 40%;
+    font-size: 0.5rem;
+    transition: left 0.5s ease, opacity 0.5s ease;  /* Anima el desplazamiento y la aparición */
+  }
+
+  .skills-section {
+    width: 100%;
+    padding: 2rem 2em; /* Espaciado */
+    text-align: center; /* Centrar texto */
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    grid-template-rows: repeat(3, auto);  /* Exactamente 3 filas */
+    gap: 50px; /* Espaciado uniforme entre los iconos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: fit-content; /* Ajusta el tamaño al contenido */
+    margin: auto; /* Centra el grid en la página */
+    padding-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  .wrapper .icon {
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon img {
+    width: 27px;  /* Tamaño de la imagen dentro del icono */
+    height: 27px; /* Tamaño de la imagen dentro del icono */
+    object-fit: contain; /* Mantiene la relación de aspecto */
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #333; /* Texto del tooltip */
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Colores específicos para cada software, puedes personalizar según el software */
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+    }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+  }
+}
+
+@media screen and (min-width: 381px) and (max-width: 391px) {
+
+  #logo {
+    top: 32%;
+    height: 185px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  #logo-title {
+    top: 56%;
+    left: 50%;
+    height: 60px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+
+  #titles{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-top: 0.5em;
+    color: #2c3e50; 
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #2c3e50;
+  }
+
+  #prese {
+    text-align: justify;
+    padding: 1em 2.5em 0 2.5em;
+    font-size: 16px;
+  }
+
+  #titulo{
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen */
+    align-items: center; 
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-size: 24px;
+  }
+
+  .gallery-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    border-radius: 5px;
+    position: relative;
+    width: 21.5em;
+    height: 28em;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.05); 
+  }
+
+  .gallery-item-text {
+    position: absolute;
+    bottom: 60%; /* Antes estaba en 70%, ahora lo bajamos */
+    left: 20px;
+    width: 100%;
+    color: black;
+    padding: 5px;
+    text-align: left;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column; /* Coloca h2 arriba y p debajo */
+    gap: 5px; /* Espaciado entre elementos */
+  }
+
+  .gallery-item h2 {
+    margin-top: 1em;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  .gallery-item-icon {
+    display: none;
+    visibility: hidden;
+  }
+
+  .gallery-item p {
+    font-size: 1em;
+    color: #2c3e50;
+    position: relative;
+    margin: 0;
+  }
+
+  .album {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
+    padding: 5px 8px; /* Añadido padding para el contenedor principal */
+    justify-content: space-between; /* Espacio entre las imágenes */
+  }
+
+  .album .responsive-container-block {
+    position: relative; /* Permite que el efecto de hover se aplique correctamente */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+    width: 11.2em; /* Ancho fijo para el contenedor */
+    height: 8em; /* Altura fija para mantener el tamaño uniforme */
+    margin-top: 0.5em;
+    border-radius: 5px; /* Bordes redondeados */
+    background: #fff; /* Color de fondo para el contenedor */
+    aspect-ratio: 3 / 2;
+  }
+
+  .album .img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    object-fit: cover; /* Ajustar la imagen sin perder proporción */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .album .responsive-container-block:hover .img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .album-item-text {
+    display: none;
+  }
+
+  .projects-link {
+    display: inline-block;
+    margin-top: 5px; /* Ajustar el espacio desde el contenido superior */
+    text-align: end; /* Cambiar a izquierda para alinear el texto */
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    color: #333;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link i {
+    margin-left: 10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .projects-link:hover {
+    transform: translateX(-15px); /* Desplazar un poco a la izquierda al hacer hover */
+  }
+
+  .projects-link:hover i {
+    opacity: 1; /* Mostrar el ícono al hacer hover */
+    transform: translateX(50px); /* Mover el ícono hacia la derecha */
+  }
+
+  .album-item-icon {
+    position: relative;
+    left: -50px;  /* Coloca el ícono fuera de la vista inicial, a la izquierda del título */
+    opacity: 0;  /* Oculta el ícono inicialmente */
+    bottom: 40%;
+    font-size: 0.5rem;
+    transition: left 0.5s ease, opacity 0.5s ease;  /* Anima el desplazamiento y la aparición */
+  }
+
+  .skills-section {
+    width: 100%;
+    padding: 2rem 2em; /* Espaciado */
+    text-align: center; /* Centrar texto */
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactamente 3 columnas */
+    grid-template-rows: repeat(3, auto);  /* Exactamente 3 filas */
+    gap: 50px; /* Espaciado uniforme entre los iconos */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: fit-content; /* Ajusta el tamaño al contenido */
+    margin: auto; /* Centra el grid en la página */
+    padding-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  .wrapper .icon {
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon img {
+    width: 27px;  /* Tamaño de la imagen dentro del icono */
+    height: 27px; /* Tamaño de la imagen dentro del icono */
+    object-fit: contain; /* Mantiene la relación de aspecto */
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #333; /* Texto del tooltip */
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Colores específicos para cada software, puedes personalizar según el software */
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+    }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+  }
+}
+
 /* Móviles pequeños (Máximo 480px) */
-@media screen and (min-width: 391px) and (max-width: 480px) {
+@media screen and (min-width: 392px) and (max-width: 480px) {
   #logo {
     top: 30%;
     height: 200px;
@@ -554,14 +1729,14 @@ html, body {
   .album {
     display: flex;
     flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples líneas */
-    padding: 5px 3px; /* Añadido padding para el contenedor principal */
+    padding: 5px 8px; /* Añadido padding para el contenedor principal */
     justify-content: space-between; /* Espacio entre las imágenes */
   }
 
   .album .responsive-container-block {
     position: relative; /* Permite que el efecto de hover se aplique correctamente */
     overflow: hidden; /* Asegura que no haya desbordamiento */
-    width: 12.5em; /* Ancho fijo para el contenedor */
+    width: 12.2em; /* Ancho fijo para el contenedor */
     height: 10em; /* Altura fija para mantener el tamaño uniforme */
     margin-top: 0.5em;
     border-radius: 5px; /* Bordes redondeados */
@@ -582,15 +1757,7 @@ html, body {
   }
 
   .album-item-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    transition: opacity 0.3s ease-in-out;
+    display: none;
   }
 
   .album-item-text h2 {
@@ -1047,7 +2214,7 @@ html, body {
 /* Tablets (Máximo 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   #logo {
-    top: 30%;
+    top: 28%;
     height: 250px;
     transform: translateX(-50%);
     opacity: 0;
@@ -1055,7 +2222,7 @@ html, body {
   }
 
   #logo-title {
-    top: 55%;
+    top: 58%;
     left: 50%;
     height: 80px;
     transform: translateX(-50%);

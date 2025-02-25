@@ -8,7 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     {% endblock %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='base-styles.css') }}" />
+    <link rel="stylesheet" href="/static/styles/base-styles.css" />
     <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css">
     <style>
       .hamburger {
@@ -18,8 +18,12 @@
 </head>
 <body>
   {% block navbar %}
-  <img id="logo-nav" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
-  <img id="logo-title-nav" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
+  <a href="/inicio">
+    <img id="logo-nav" src="{{ url_for('static', filename='images/Logo BLANCO.webp') }}" alt="Logotipo" />
+  </a>
+  <a href="/inicio">
+    <img id="logo-title-nav" src="{{ url_for('static', filename='images/Logo (text).webp') }}" alt="Logotipo"/>
+  </a>
   
     <nav class="navbar">
         <div class="nav_items" id="_items">
@@ -112,8 +116,8 @@
         </div>
       </footer>
       {% endblock %}
-    <script src="{{ url_for('static', filename='navbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='toTop.js') }}"></script>
+    <script src="/static/build/navbar.js"></script>
+    <script src="/static/build/toTop.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Obtiene los parámetros de la URL

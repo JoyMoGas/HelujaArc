@@ -218,7 +218,7 @@ body {
 
 /* * MEDIAQUERIES  */
 
-@media screen and (min-width: 320px) and (max-width: 390px) {
+@media screen and (min-width: 320px) and (max-width: 361px) {
   /* Contenedor de la descripción */
 
   .btn-back {

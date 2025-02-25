@@ -192,7 +192,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 700px;   /* Ajustar según sea necesario */
+     /* Ajustar según sea necesario */
   width: 100%;        /* Ancho completo del contenedor */
   height: 400px;      /* Ajustar la altura fija que desees */
   overflow: hidden;    /* Ocultar cualquier contenido que sobresalga */
@@ -335,7 +335,370 @@ body {
   }
 }
 
-@media screen and (min-width: 391px) and (max-width: 480px) {
+@media screen and (min-width: 362px) and (max-width: 370px) {
+  /* Contenedor de la descripción */
+
+  .btn-back {
+    position: fixed;
+    top: 12%;
+    left: 12%;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .btn-back > i {
+    font-size: 20px; /* Ajustar el tamaño del icono */
+  }
+
+  .project-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4em 2em 2em 2em;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #666;
+  }
+
+  .project-description p {
+    text-align: justify;
+  }
+  /* Estilo para el contenedor con imagen y título superpuesto */
+  #demoBox.with-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #demoBox {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    margin: 2em 0;
+  }
+
+  /* Aplicar el efecto de oscurecimiento directamente a la imagen */
+  #demoBox img {
+    width: 100%; /* La imagen tomará todo el ancho disponible */
+    height: 100vh; /* Mantiene la proporción correcta sin estirarse en la altura */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.5); /* Controla la cantidad de oscuridad */
+  }
+
+  .image-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .image-location {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .gallery-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22em;        /* Ancho completo del contenedor */
+    height: 18em;      /* Ajustar la altura fija que desees */
+    overflow: hidden;    /* Ocultar cualquier contenido que sobresalga */
+    box-sizing: border-box; /* Asegurarte de incluir padding y borde */
+  }
+
+  .gallery-image img {
+    width: 100%;        /* Asegurarse de que la imagen ocupe todo el ancho del contenedor */
+    height: 100%;       /* Asegurarse de que la imagen ocupe toda la altura del contenedor */
+    object-position: center; /* Centrar la imagen en el contenedor */
+    object-fit: cover;
+  }
+
+  /* Estilos para imágenes grandes */
+  .gallery-image.big-image {
+    width: 95%;   /* La imagen ocupará todo el ancho de su contenedor */
+    height: auto;  /* Ajustar la altura automáticamente */
+    max-width: 100%;
+  }
+
+  .gallery-image.big-image img {
+    object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 380px) {
+  /* Contenedor de la descripción */
+
+  .btn-back {
+    position: fixed;
+    top: 12%;
+    left: 12%;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .btn-back > i {
+    font-size: 20px; /* Ajustar el tamaño del icono */
+  }
+
+  .project-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4em 2em 2em 2em;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #666;
+  }
+
+  .project-description p {
+    text-align: justify;
+  }
+  /* Estilo para el contenedor con imagen y título superpuesto */
+  #demoBox.with-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #demoBox {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    margin: 2em 0;
+  }
+
+  /* Aplicar el efecto de oscurecimiento directamente a la imagen */
+  #demoBox img {
+    width: 100%; /* La imagen tomará todo el ancho disponible */
+    height: 100vh; /* Mantiene la proporción correcta sin estirarse en la altura */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.5); /* Controla la cantidad de oscuridad */
+  }
+
+  .image-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .image-location {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .gallery-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22em;        /* Ancho completo del contenedor */
+    height: 18em;      /* Ajustar la altura fija que desees */
+    overflow: hidden;    /* Ocultar cualquier contenido que sobresalga */
+    box-sizing: border-box; /* Asegurarte de incluir padding y borde */
+  }
+
+  .gallery-image img {
+    width: 100%;        /* Asegurarse de que la imagen ocupe todo el ancho del contenedor */
+    height: 100%;       /* Asegurarse de que la imagen ocupe toda la altura del contenedor */
+    object-position: center; /* Centrar la imagen en el contenedor */
+    object-fit: cover;
+  }
+
+  /* Estilos para imágenes grandes */
+  .gallery-image.big-image {
+    width: 95%;   /* La imagen ocupará todo el ancho de su contenedor */
+    height: auto;  /* Ajustar la altura automáticamente */
+    max-width: 100%;
+  }
+
+  .gallery-image.big-image img {
+    object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
+  }
+}
+
+@media screen and (min-width: 381px) and (max-width: 391px) {
+  /* Contenedor de la descripción */
+
+  .btn-back {
+    position: fixed;
+    top: 12%;
+    left: 12%;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .btn-back > i {
+    font-size: 20px; /* Ajustar el tamaño del icono */
+  }
+
+  .project-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4em 2em 2em 2em;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #666;
+  }
+
+  .project-description p {
+    text-align: justify;
+  }
+  /* Estilo para el contenedor con imagen y título superpuesto */
+  #demoBox.with-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #demoBox {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    margin: 2em 0;
+  }
+
+  /* Aplicar el efecto de oscurecimiento directamente a la imagen */
+  #demoBox img {
+    width: 100%; /* La imagen tomará todo el ancho disponible */
+    height: 100vh; /* Mantiene la proporción correcta sin estirarse en la altura */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.5); /* Controla la cantidad de oscuridad */
+  }
+
+  .image-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .image-location {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .gallery-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22em;        /* Ancho completo del contenedor */
+    height: 18em;      /* Ajustar la altura fija que desees */
+    overflow: hidden;    /* Ocultar cualquier contenido que sobresalga */
+    box-sizing: border-box; /* Asegurarte de incluir padding y borde */
+  }
+
+  .gallery-image img {
+    width: 100%;        /* Asegurarse de que la imagen ocupe todo el ancho del contenedor */
+    height: 100%;       /* Asegurarse de que la imagen ocupe toda la altura del contenedor */
+    object-position: center; /* Centrar la imagen en el contenedor */
+    object-fit: cover;
+  }
+
+  /* Estilos para imágenes grandes */
+  .gallery-image.big-image {
+    width: 95%;   /* La imagen ocupará todo el ancho de su contenedor */
+    height: auto;  /* Ajustar la altura automáticamente */
+    max-width: 100%;
+  }
+
+  .gallery-image.big-image img {
+    object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
+  }
+}
+
+@media screen and (min-width: 392px) and (max-width: 480px) {
+  .btn-back {
+    position: fixed;
+    top: 12%;
+    left: 12%;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .btn-back > i {
+    font-size: 20px; /* Ajustar el tamaño del icono */
+  }
+
   /* Contenedor de la descripción */
   .project-description {
     max-width: 800px;
@@ -439,7 +802,6 @@ body {
     object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
   }
 }
-
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
@@ -558,8 +920,124 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 
+  #logo-title-nav {
+    display: none;
+  }
+.btn-back {
+    position: fixed;
+    top: 15%;
+    left: 8%;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .btn-back > i {
+    font-size: 25px; /* Ajustar el tamaño del icono */
+  }
+  /* Contenedor de la descripción */
+  .project-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4em 4em 2em 4em;
+    line-height: 1.6;
+    font-size: 1.2em;
+    color: #666;
+  }
+
+  .project-description p {
+    text-align: justify;
+  }
+  /* Estilo para el contenedor con imagen y título superpuesto */
+  #demoBox.with-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #demoBox {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    margin: 2em 0;
+  }
+
+  /* Aplicar el efecto de oscurecimiento directamente a la imagen */
+  #demoBox img {
+    width: 100%; /* La imagen tomará todo el ancho disponible */
+    height: 100vh; /* Mantiene la proporción correcta sin estirarse en la altura */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.5); /* Controla la cantidad de oscuridad */
+  }
+
+  
+  .image-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .image-location {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .gallery-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 49em;        /* Ancho completo del contenedor */
+    height: 30em;      /* Ajustar la altura fija que desees */
+    overflow: hidden;    /* Ocultar cualquier contenido que sobresalga */
+    box-sizing: border-box; /* Asegurarte de incluir padding y borde */
+  }
+
+  .gallery-image img {
+    width: 100%;        /* Asegurarse de que la imagen ocupe todo el ancho del contenedor */
+    height: 100%;       /* Asegurarse de que la imagen ocupe toda la altura del contenedor */
+    object-position: center; /* Centrar la imagen en el contenedor */
+    object-fit: cover;
+  }
+
+  /* Estilos para imágenes grandes */
+  .gallery-image.big-image {
+    width: 95%;   /* La imagen ocupará todo el ancho de su contenedor */
+    height: auto;  /* Ajustar la altura automáticamente */
+    max-width: 100%;
+  }
+
+  .gallery-image.big-image img {
+    object-fit: cover;  /* Asegura que la imagen ocupe todo el espacio sin distorsionarse */
+  }
 }
 
 @media screen and (min-width: 1025px) {

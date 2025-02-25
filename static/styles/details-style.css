@@ -223,15 +223,7 @@ body {
   /* Contenedor de la descripción */
 
   .btn-back {
-    position: fixed;
-    top: 12%;
-    left: 12%;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .btn-back > i {
-    font-size: 20px; /* Ajustar el tamaño del icono */
+    display: none;
   }
 
   .project-description {
@@ -340,15 +332,7 @@ body {
   /* Contenedor de la descripción */
 
   .btn-back {
-    position: fixed;
-    top: 12%;
-    left: 12%;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .btn-back > i {
-    font-size: 20px; /* Ajustar el tamaño del icono */
+    display: none;
   }
 
   .project-description {
@@ -457,11 +441,7 @@ body {
   /* Contenedor de la descripción */
 
   .btn-back {
-    position: fixed;
-    top: 12%;
-    left: 12%;
-    width: 35px;
-    height: 35px;
+    display: none;
   }
   
   .btn-back > i {
@@ -574,15 +554,7 @@ body {
   /* Contenedor de la descripción */
 
   .btn-back {
-    position: fixed;
-    top: 12%;
-    left: 12%;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .btn-back > i {
-    font-size: 20px; /* Ajustar el tamaño del icono */
+    display: none;
   }
 
   .project-description {
@@ -689,15 +661,7 @@ body {
 
 @media screen and (min-width: 392px) and (max-width: 480px) {
   .btn-back {
-    position: fixed;
-    top: 12%;
-    left: 12%;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .btn-back > i {
-    font-size: 20px; /* Ajustar el tamaño del icono */
+    display: none;
   }
 
   /* Contenedor de la descripción */
@@ -807,16 +771,9 @@ body {
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
   .btn-back {
-    position: fixed;
-    top: 15%;
-    left: 8%;
-    width: 45px;
-    height: 45px;
+    display: none;
   }
   
-  .btn-back > i {
-    font-size: 25px; /* Ajustar el tamaño del icono */
-  }
   /* Contenedor de la descripción */
   .project-description {
     max-width: 800px;

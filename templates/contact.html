@@ -49,44 +49,40 @@
     <div class="left-container">
       <p id="text">Estamos aquí para transformar tus ideas en realidad. Si tienes un proyecto en mente o quieres discutir cómo crearlo, contáctanos. Tu visión es nuestra inspiración.</p>
       <p id="subtitle">Solicitud Comercial</p>
-      {% with messages = get_flashed_messages(with_categories=True) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-      {% endwith %}
 
-      <form class="form-container" method="POST" id="contact-form">
-        {{ form.hidden_tag() }}
-        
+      <form class="form-container" id="contact-form">
         <div class="input-container">
-            {{ form.name(class="input-field", placeholder="Nombre Completo") }}
+            <input type="text" id="name" class="input-field" placeholder="Nombre Completo" required>
             <label class="input-label">Escribe tu nombre</label>
             <span class="input-highlight"></span>
         </div>
-    
+
         <div class="input-container">
-            {{ form.email(class="input-field", placeholder="Correo Electrónico") }}
+            <input type="email" id="email" class="input-field" placeholder="Correo Electrónico" required>
             <label class="input-label">Escribe tu correo electrónico</label>
             <span class="input-highlight"></span>
         </div>
     
         <div class="input-container">
-            {{ form.message(class="input-field", id="text-area", placeholder="Tu Mensaje...") }}
+            <textarea id="text-area" class="input-field" placeholder="Tu mensaje" required></textarea>
             <label class="input-label">Escribe tu mensaje</label>
             <span class="input-highlight"></span>
         </div>
+
+        <input type="text" id="honeypot" style="display: none;">
     
-        <button type="submit" class="btn">{{ form.submit.label }}</button>
+        <button type="submit" class="btn">Enviar</button>
+        <p id="statusMessage"></p>
     </form>
 
     </form>
     </div>
   </div>
   </div>
+
   {% block footer %}{% endblock %}
-  <script src="/static/build/navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script src="/static/build/navbar.js"></script>
+<script src="/static/build/contact.js"></script>
 {% endblock %}

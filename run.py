@@ -34,32 +34,9 @@ def project_detail(project_id):
     else:
         return render_template('404.html'), 404  # Usar una plantilla 404 personalizada
 
-@app.route('/contacto', methods=["GET", "POST"])
+@app.route('/contacto', methods=["GET"])
 def contact_page():
-    form = ContactForm()  # Crear una instancia del formulario
-
-    if request.method == "POST" and form.validate_on_submit():
-        try:
-            name = form.name.data
-            email = form.email.data
-            message = form.message.data
-
-            msg = Message(
-                subject="Nuevo mensaje de contacto",
-                sender=email,
-                recipients=['destinatario@gmail.com'],
-                body=f"Nombre: {name}\nCorreo: {email}\nMensaje: {message}"
-            )
-
-            mail.send(msg)
-            flash("Mensaje enviado correctamente.", "success")  # Mensaje de éxito
-        except Exception as e:
-            print(f"Error al enviar correo: {str(e)}")
-            flash("Error al enviar el mensaje. Inténtalo de nuevo.", "danger")  # Mensaje de error
-
-        return redirect(url_for("contact_page"))  # Redirige a la misma página
-
-    return render_template("contact.html", form=form)  # Pasar el formulario a la plantilla
+    return render_template("contact.html")  # Pasar el formulario a la plantilla
 
 
 @app.route('/not-found')

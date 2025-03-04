@@ -1,39 +1,61 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
+console.log("Script contact.js cargado correctamente");
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Evento DOMContentLoaded detectado");
+
+    // Inicializar EmailJS con tu Public Key
+    emailjs.init("IqSSuQFUDh5PsTTkW"); // Reemplaza con tu Public Key de EmailJS
+
+    // Obtener los elementos del formulario
+    const form = document.getElementById("contact-form");
     const statusMessage = document.getElementById("statusMessage");
-    form.addEventListener("submit", (event) => __awaiter(void 0, void 0, void 0, function* () {
-        event.preventDefault(); // Evita el envío tradicional del formulario
-        const formData = new FormData(form);
-        try {
-            const response = yield fetch("/contacto", {
-                method: "POST",
-                body: formData
-            });
-            const result = yield response.json();
-            if (result.success) {
-                statusMessage.textContent = "✅ Mensaje enviado correctamente.";
-                statusMessage.style.color = "green";
-                form.reset(); // Limpia el formulario después de enviarlo
-            }
-            else {
-                statusMessage.textContent = "❌ Error al enviar el mensaje.";
-                statusMessage.style.color = "red";
-            }
+    const honeypot = document.getElementById("honeypot");
+
+    if (!form || !statusMessage) {
+        console.error("No se encontró el formulario o el mensaje de estado.");
+        return;
+    }
+
+    // Agregar evento de submit
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        console.log("Evento submit detectado");
+
+        if (honeypot.value) {
+            console.warn("Spam detectado.");
+            return;
         }
-        catch (error) {
-            console.error("Error al enviar la solicitud:", error);
-            statusMessage.textContent = "❌ Ocurrió un error inesperado.";
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("text-area").value.trim();
+
+        if (!name || !email || !message) {
+            console.warn("Formulario incompleto.");
+            statusMessage.textContent = "Por favor, completa todos los campos.";
             statusMessage.style.color = "red";
+            return;
         }
-    }));
+
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+
+        console.log("Enviando datos a EmailJS:", templateParams);
+
+        emailjs.send("service_gq8g2m6", "template_7gm00eo", templateParams)
+            .then(function () {
+                console.log("Mensaje enviado correctamente.");
+                statusMessage.textContent = "Mensaje enviado correctamente.";
+                statusMessage.style.color = "green";
+                form.reset();
+            })
+            .catch(function (error) {
+                console.error("Error al enviar el mensaje:", error);
+                statusMessage.textContent = "Error al enviar el mensaje. Inténtalo más tarde.";
+                statusMessage.style.color = "red";
+            });
+    });
 });

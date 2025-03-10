@@ -2,14 +2,10 @@ import os
 import re
 from flask import Flask, render_template, url_for, request, jsonify, flash, redirect
 from flask_mail import Mail, Message
-from forms import ContactForm  # Importar el formulario
-from config import Config
 from methods import load_all_projects, load_projects, load_project_details, load_all_projects_gallery, validar_email
 
 app = Flask(__name__)
-app.config.from_object(Config)
 mail = Mail(app)
-
 
 @app.route('/')
 @app.route('/inicio')
@@ -19,7 +15,6 @@ def index():
     all_projects = load_all_projects()
 
     return render_template('index.html', projects=projects, all_projects=all_projects, current_page='home')
-
 
 @app.route('/proyectos')
 def projects_page():
@@ -37,7 +32,6 @@ def project_detail(project_id):
 @app.route('/contacto', methods=["GET"])
 def contact_page():
     return render_template("contact.html")  # Pasar el formulario a la plantilla
-
 
 @app.route('/not-found')
 def not_found_page():

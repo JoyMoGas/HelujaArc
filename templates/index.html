@@ -38,7 +38,7 @@
             <div class="gallery-item">
                 <a href="{{ url_for('project_detail', project_id=project_id) }}" id="project-link">
                     <!-- Usamos la ruta correcta para mostrar las imágenes del proyecto -->
-                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+                    <img src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}" loading="lazy">
                     <div class="gallery-item-text">
                         <h2>{{ project.title }}</h2>
                         <p>{{ project.detail_text }}</p>
@@ -57,7 +57,7 @@
     {% for project_id, project in all_projects.items() %}
       <div class="responsive-container-block">
         <a href="{{ url_for('project_detail', project_id=project_id) }}" id="project-link">
-          <img class="img" src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}">
+          <img class="img" src="{{ url_for('static', filename=project.main_image) }}" alt="{{ project.title }}" loading="lazy">
           <div class="album-item-text">
             <h2>{{ project.title }}</h2>
           </div>
@@ -73,20 +73,20 @@
       <div class="gallery">
         <div class="gallery-item">
           <img src="static/images/renders/Ejecucion.webp" alt="">
-            <div class="gallery-item-text">
+            <div class="gallery-item-text" loading="lazy">
               <h2>EJECUCION DE OBRA</h2>
               <p>Construcción y gestión eficiente de proyectos.</p>
             </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/close-up-drafting-tools-blueprints.webp" alt=""">
+          <img src="static/images/renders/close-up-drafting-tools-blueprints.webp" alt="" loading="lazy">
           <div class="gallery-item-text">
             <h2>PROYECTO EJECUTIVO</h2>
             <p>Diseño técnico y planificación para construcción.</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="static/images/renders/architecture-plan-blueprint-layout-work-concept (1).webp">
+          <img src="static/images/renders/architecture-plan-blueprint-layout-work-concept (1).webp" loading="lazy">
           <div class="gallery-item-text">
             <h2>ANTEPROYECTO</h2>
             <p>Conceptualización y desarrollo inicial del diseño.</p>
@@ -100,39 +100,39 @@
     <h1 id="titulo"><span id="title-span">HABILIDADES</span><span id="title-span">DE SOFTWARE</span> </h1>
     <div class="wrapper">
       <div class="icon">
-        <img src="static/images/icons/software/ac.png" alt="Software 1" class="skill-logo">
+        <img src="static/images/icons/software/ac.png" alt="Software 1" class="skill-logo" loading="lazy">
         <span class="tooltip">AutoCAD</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/Ai.png" alt="Adobe Ilustrator" class="skill-logo">
+        <img src="static/images/icons/software/Ai.png" alt="Adobe Ilustrator" class="skill-logo" loading="lazy">
         <span class="tooltip">Adobe Illustrator</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/Lumion.png" alt="Software 3" class="skill-logo">
+        <img src="static/images/icons/software/Lumion.png" alt="Software 3" class="skill-logo" loading="lazy">
         <span class="tooltip">Lumion</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/image (6).png" alt="Software 4" class="skill-logo">
+        <img src="static/images/icons/software/image (6).png" alt="Software 4" class="skill-logo" loading="lazy">
         <span class="tooltip">Rhinoceros</span>
       </div>
       <div class="icon">
-          <img src="static/images/icons/software/ps.png" alt="Software 5" class="skill-logo">
+          <img src="static/images/icons/software/ps.png" alt="Software 5" class="skill-logo" loading="lazy">
           <span class="tooltip">Adobe Photoshop</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/MC.png" alt="Software 6" class="skill-logo">
+        <img src="static/images/icons/software/MC.png" alt="Software 6" class="skill-logo" loading="lazy">
         <span class="tooltip">Microsoft Office</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/Revit.png" alt="Software 7" class="skill-logo">
+        <img src="static/images/icons/software/Revit.png" alt="Software 7" class="skill-logo" loading="lazy">> 
         <span class="tooltip">Revit</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/SK.png" alt="Software 8" class="skill-logo">
+        <img src="static/images/icons/software/SK.png" alt="Software 8" class="skill-logo" loading="lazy">>
         <span class="tooltip">Sketchup</span>
       </div>
       <div class="icon">
-        <img src="static/images/icons/software/TW.png" alt="Software 9" class="skill-logo">
+        <img src="static/images/icons/software/TW.png" alt="Software 9" class="skill-logo" loading="lazy">>
         <span class="tooltip">Twinmotion</span>
       </div>
     </div>

@@ -1,7 +1,4 @@
-console.log("Script contact.js cargado correctamente");
-
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Evento DOMContentLoaded detectado");
 
     // Inicializar EmailJS con tu Public Key
     emailjs.init("IqSSuQFUDh5PsTTkW"); // Reemplaza con tu Public Key de EmailJS
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agregar evento de submit
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        console.log("Evento submit detectado");
 
         if (honeypot.value) {
             console.warn("Spam detectado.");
@@ -43,11 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
             message: message
         };
 
-        console.log("Enviando datos a EmailJS:", templateParams);
-
         emailjs.send("service_gq8g2m6", "template_7gm00eo", templateParams)
             .then(function () {
-                console.log("Mensaje enviado correctamente.");
                 statusMessage.textContent = "Mensaje enviado correctamente.";
                 statusMessage.style.color = "green";
                 form.reset();

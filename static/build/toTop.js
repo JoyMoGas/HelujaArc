@@ -4,23 +4,27 @@ const toSection = document.querySelector('.contenedor-flecha');
 const toSectionIndex = document.querySelector('.contenedor-flecha-inicio');
 const targetSection = document.getElementById('project-detail');
 const targetSectionInicio = document.getElementById('first-section');
-if (toSectionIndex) {
-    toSectionIndex.addEventListener('click', (event) => {
-        event.preventDefault(); // Evita que el enlace agregue #demoBox en la URL
-        targetSectionInicio.scrollIntoView({ behavior: 'smooth' });
-        toTop();
-    });
-}
-else if (toSection) {
-    toSection.addEventListener('click', (event) => {
-        event.preventDefault(); // Evita que el enlace agregue #demoBox en la URL
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        toTop();
-    });
-}
-else {
+window.addEventListener('scroll', (event) => {
+    event.preventDefault();
     toTop();
-}
+    if (toSectionIndex) {
+        toSectionIndex.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita que el enlace agregue #demoBox en la URL
+            targetSectionInicio.scrollIntoView({ behavior: 'smooth' });
+            toTop();
+        });
+    }
+    else if (toSection) {
+        toSection.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita que el enlace agregue #demoBox en la URL
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            toTop();
+        });
+    }
+    else {
+        toTop();
+    }
+});
 function toTop() {
     window.addEventListener('scroll', () => {
         toTopButton.addEventListener('click', (event) => {

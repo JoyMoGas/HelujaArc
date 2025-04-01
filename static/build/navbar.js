@@ -206,4 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
         menubar.classList.toggle("active");
         hamburger.classList.toggle("hamburger-active");
     });
+    document.addEventListener("click", (event) => {
+        if (!menubar.contains(event.target) && !hamburger.contains(event.target)) {
+            menubar.classList.remove("active");
+            hamburger.classList.remove("hamburger-active");
+        }
+    });
 });

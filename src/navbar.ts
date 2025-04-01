@@ -221,9 +221,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const hamburger = document.getElementById("hamburger") as HTMLElement;
   const menubar = document.querySelector(".menubar") as HTMLElement;
-
+  
   hamburger.addEventListener("click", function() {
     menubar.classList.toggle("active");
     hamburger.classList.toggle("hamburger-active");
   });
+  
+  document.addEventListener("click", (event) => {
+    if (!menubar.contains(event.target as Node) && !hamburger.contains(event.target as Node)) {
+      menubar.classList.remove("active");
+      hamburger.classList.remove("hamburger-active");
+    }
+  });
+  
 });
